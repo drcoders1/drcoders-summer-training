@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="py-7">
+    <nav className="bg-base-nav fixed top-0 z-50 w-full py-4 shadow-sm backdrop-blur-[8px]">
       <MaxContainer className="flex items-center justify-between">
         <Link href={"/"}>
           <Image
@@ -22,7 +22,11 @@ const Navbar = () => {
         <div className="flex items-center gap-10">
           <NavLinks />
 
-          <Button className={cn("px-8 text-base font-medium")}>Join Us</Button>
+          <Button
+            className={cn("px-8 text-base font-medium text-base-background")}
+          >
+            Join Us
+          </Button>
         </div>
       </MaxContainer>
     </nav>
