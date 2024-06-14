@@ -5,7 +5,9 @@ const Home = () => {
   return (
     <main>
       <HeroHighlightDemo />
-      <MainCarousel carouselData={data} />
+      <HeroHighlightDemo />
+      <HeroHighlightDemo />
+      {/* <MainCarousel carouselData={data} /> */}
     </main>
   );
 };
