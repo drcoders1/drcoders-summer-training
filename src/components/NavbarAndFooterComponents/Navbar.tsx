@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="bg-base-nav fixed top-0 z-50 w-full py-4 shadow-sm backdrop-blur-[8px]">
+    <nav className="fixed top-0 z-50 w-full bg-base-nav py-4 shadow-sm backdrop-blur-[8px]">
       <MaxContainer className="flex items-center justify-between">
         <Link href={"/"}>
           <Image
@@ -19,7 +19,7 @@ const Navbar = () => {
           />
         </Link>
 
-        <div className="flex items-center gap-10">
+        <div className="hidden items-center gap-10 md:flex">
           <NavLinks />
 
           <Button
@@ -27,6 +27,10 @@ const Navbar = () => {
           >
             Join Us
           </Button>
+        </div>
+
+        <div className="md:hidden">
+          <ImageAssets.Icons.AlignJustify />
         </div>
       </MaxContainer>
     </nav>

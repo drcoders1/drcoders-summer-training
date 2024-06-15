@@ -1,7 +1,7 @@
 export const ImageAssets = {
-  Icons: { ArrowRight },
+  Icons: { ArrowRight, AlignJustify },
   Navbar: { Logo: DrcodersLogo, alt: "Drcoders Logo" },
 };
 
-import { ArrowRight } from "lucide-react";
+import { AlignJustify, ArrowRight } from "lucide-react";
 import DrcodersLogo from "@/assets/Images/DrcodersLogo.png";

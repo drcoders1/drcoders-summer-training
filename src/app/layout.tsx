@@ -24,7 +24,7 @@ export default function RootLayout({
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <body className={cn("bg-base-blue", GeistSans.variable)}>
         <TRPCReactProvider>
-          <div className="text-base-blue relative h-full font-medium text-white antialiased">
+          <div className="relative h-full font-medium text-base-blue text-white antialiased">
             <main className="relative flex min-h-screen flex-col">
               <Navbar />
 

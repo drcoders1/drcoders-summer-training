@@ -1,11 +1,10 @@
-"use client";
-import { motion } from "framer-motion";
 import { HeroHighlight, Highlight } from "../ui/hero-highlight";
+import { MotionH1 } from "../MotionComponents";
 
-export function HeroHighlightDemo() {
+const Hero = () => {
   return (
     <HeroHighlight containerClassName="bg-base-background">
-      <motion.h1
+      <MotionH1
         initial={{
           opacity: 0,
           y: 20,
@@ -22,10 +21,12 @@ export function HeroHighlightDemo() {
       >
         With insomnia, nothing&apos;s real. Everything is far away. Everything
         is a{" "}
-        <Highlight className="text-gray-900">
+        <Highlight className=" text-gray-900">
           copy, of a copy, of a copy.
         </Highlight>
-      </motion.h1>
+      </MotionH1>
     </HeroHighlight>
   );
-}
+};
+
+export default Hero;
