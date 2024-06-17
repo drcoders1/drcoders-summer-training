@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 z-50 w-full bg-base-nav py-4 shadow-sm backdrop-blur-[8px]">
+    <nav className="fixed top-0 z-50 w-full bg-transparent py-4 shadow-sm backdrop-blur-[10px]">
       <MaxContainer className="flex items-center justify-between">
         <Link href={"/"}>
           <Image
