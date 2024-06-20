@@ -4,7 +4,7 @@ import MaxContainer from "../MaxContainer";
 const Offerings = () => {
   return (
     <>
-      <h1 className="mb-10 mt-60 text-center text-4xl font-semibold uppercase text-white">
+      <h1 className="mb-10 mt-56 text-center text-4xl font-semibold uppercase text-white">
         What We are Offering?
       </h1>
 

@@ -1,7 +1,12 @@
 import React from "react";
+import MaxContainer from "../MaxContainer";
 
 const Footer = () => {
-  return <div>Footer</div>;
+  return (
+    <footer>
+      <MaxContainer>jj</MaxContainer>
+    </footer>
+  );
 };
 
 export default Footer;
