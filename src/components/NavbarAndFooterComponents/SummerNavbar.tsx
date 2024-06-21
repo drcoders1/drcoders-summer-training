@@ -18,13 +18,15 @@ const SummerNavbar = () => {
           />
         </Link>
 
-        <Button
-          className={cn(
-            "bg-base-lime-green hover:bg-base-lime-green/90 px-8 text-base font-medium text-base-background",
-          )}
-        >
-          Join Us
-        </Button>
+        <Link href={"/summertraining2k24/form"}>
+          <Button
+            className={cn(
+              "bg-base-lime-green px-8 text-base font-medium text-base-background hover:bg-base-lime-green/90",
+            )}
+          >
+            Join Us
+          </Button>
+        </Link>
       </MaxContainer>
     </nav>
   );
