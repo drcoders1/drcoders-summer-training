@@ -26,10 +26,7 @@ export default function RootLayout({
         <TRPCReactProvider>
           <div className="relative h-full font-medium text-base-blue text-white antialiased">
             <main className="relative flex min-h-screen flex-col">
-              <Navbar />
-
               <div className="flex-1 flex-grow">{children}</div>
-              <Footer />
             </main>
           </div>
         </TRPCReactProvider>

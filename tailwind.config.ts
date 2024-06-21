@@ -36,12 +36,12 @@ const config = {
       colors: {
         // custom colors start
         base: {
-          nav: "hsl(var(--base-blue-nav))",
           background: "hsl(var(--base-blue))",
           blue: "hsl(var(--base-blue))",
           yellow: "hsl(var(--base-yellow))",
           orange: "hsl(var(--base-orange))",
           "light-blue": "hsl(var(--base-light-blue))",
+          "lime-green": "hsl(var(--base-lime-green))",
           purple: "hsl(var(--base-purple))",
         },
         // custom colors end
