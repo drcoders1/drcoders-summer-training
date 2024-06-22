@@ -20,7 +20,7 @@ const SummerFooter = () => {
         </div>
 
         <div className="lg:justify-self-center">
-          <h1 className="text-xl font-semibold md:text-2xl">Blog/Resourses</h1>
+          <h1 className="text-xl font-semibold md:text-2xl">Resourses</h1>
 
           <div className="ml-1 mt-5 flex flex-col gap-2 text-sm md:ml-2 md:text-base">
             <Link href={"/comingsoon"}>Article</Link>
@@ -30,7 +30,7 @@ const SummerFooter = () => {
           </div>
         </div>
 
-        <div className="lg:justify-self-center">
+        <div className="lg:justify-self-end lg:pr-10">
           <h1 className="text-xl font-semibold md:text-2xl">Contact Us</h1>
           <div className="ml-1 mt-5 flex flex-col gap-2 text-sm md:ml-2 md:text-base">
             <Link href={"/comingsoon"}>Contact Page</Link>
@@ -39,7 +39,7 @@ const SummerFooter = () => {
         </div>
 
         <div className="lg:justify-self-end">
-          <h1 className="text-xl font-semibold md:text-2xl">Social</h1>
+          <h1 className="text-xl font-semibold md:text-2xl">Follow Us</h1>
 
           <div className="mt-5 flex items-center gap-2">
             <Link href={"/comingsoon"}>
