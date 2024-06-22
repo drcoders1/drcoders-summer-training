@@ -2,6 +2,8 @@ import "@/styles/globals.css";
 import ResponsiveTester from "@/components/ResponsiveTester";
 import SummerNavbar from "@/components/NavbarAndFooterComponents/Summer2k24/SummerNavbar";
 import SummerFooter from "@/components/NavbarAndFooterComponents/Summer2k24/SummerFooter";
+import { Today } from "@/lib/utils";
+import Link from "next/link";
 
 export default function SummerLayout({
   children,
@@ -16,6 +18,14 @@ export default function SummerLayout({
 
           <div className="flex-1 flex-grow">{children}</div>
           <SummerFooter />
+
+          <p className="bg-base-lime-green py-5 text-center font-semibold text-base-background sm:text-base">
+            Copyright © <span>{Today.getFullYear()}</span>{" "}
+            <Link href={"/"} className="hidden md:inline-block">
+              Drcoders
+            </Link>
+            <span className="px-2">|</span> All Right Reserved
+          </p>
         </main>
       </div>
 

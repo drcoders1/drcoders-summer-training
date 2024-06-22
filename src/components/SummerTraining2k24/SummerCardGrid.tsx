@@ -4,7 +4,7 @@ import { HoverEffect } from "../ui/card-hover-effect";
 
 const SummerCardGrid = () => {
   return (
-    <MaxContainer className="">
+    <MaxContainer className="" id="features">
       <h1 className="pb-12 pt-20 text-center text-5xl font-bold text-base-lime-green lg:text-7xl">
         Features
       </h1>

@@ -1,7 +1,6 @@
 import MaxContainer from "../../MaxContainer";
 import { Button } from "../../ui/button";
 import { cn } from "@/lib/utils";
-import NavLinks from "../NavLinks";
 import Image from "next/image";
 import { ImageAssets } from "@/assets/ImageAssets";
 import Link from "next/link";

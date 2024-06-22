@@ -10,6 +10,7 @@ const SummerHero = () => {
       containerClassName="bg-base-background"
       childrenNotHorizontallyCentered
       dotHoverColor="bg-dot-thick-lime-400"
+      id="home"
     >
       <MaxContainer>
         <MotionDiv

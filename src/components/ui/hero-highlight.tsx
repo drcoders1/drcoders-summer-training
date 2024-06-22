@@ -9,7 +9,9 @@ export const HeroHighlight = ({
   containerClassName,
   childrenNotHorizontallyCentered,
   dotHoverColor,
+  id,
 }: {
+  id?: string;
   children: React.ReactNode;
   className?: string;
   containerClassName?: string;
@@ -32,6 +34,7 @@ export const HeroHighlight = ({
   }
   return (
     <div
+      id={id}
       className={cn(
         "group relative flex h-[44rem] w-full items-center bg-white dark:bg-black",
         containerClassName,
