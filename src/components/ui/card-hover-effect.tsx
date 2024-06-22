@@ -1,19 +1,27 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
+import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 
 export const HoverEffect = ({
   items,
   className,
+  cardContainerClassName,
+  cardTitleClassName,
+  cardDescriptionClassName,
+  cardImgContainerClassName,
 }: {
   items: {
+    img?: string | StaticImageData;
     title: string;
     description: string;
-    link: string;
   }[];
   className?: string;
+  cardContainerClassName?: string;
+  cardTitleClassName?: string;
+  cardDescriptionClassName?: string;
+  cardImgContainerClassName?: string;
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
@@ -25,9 +33,8 @@ export const HoverEffect = ({
       )}
     >
       {items.map((item, idx) => (
-        <Link
-          href={item?.link}
-          key={item?.link}
+        <div
+          key={idx}
           className="group relative  block h-full w-full p-2"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -49,11 +56,22 @@ export const HoverEffect = ({
               />
             )}
           </AnimatePresence>
-          <Card>
-            <CardTitle>{item.title}</CardTitle>
-            <CardDescription>{item.description}</CardDescription>
+          <Card className={cn("bg-background", cardContainerClassName)}>
+            {!!item.img && (
+              <CardImg className={cardImgContainerClassName}>
+                <Image
+                  src={item.img}
+                  alt={`Image for ${item.title}`}
+                  className="h-full w-full object-contain object-center"
+                />
+              </CardImg>
+            )}
+            <CardTitle className={cardTitleClassName}>{item.title}</CardTitle>
+            <CardDescription className={cardDescriptionClassName}>
+              {item.description}
+            </CardDescription>
           </Card>
-        </Link>
+        </div>
       ))}
     </div>
   );
@@ -108,5 +126,17 @@ export const CardDescription = ({
     >
       {children}
     </p>
+  );
+};
+
+export const CardImg = ({
+  className,
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) => {
+  return (
+    <div className={cn("m-4 mx-auto h-40 w-full", className)}>{children}</div>
   );
 };

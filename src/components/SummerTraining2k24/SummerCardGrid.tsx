@@ -1,14 +1,21 @@
+import { ImageAssets } from "@/assets/ImageAssets";
 import MaxContainer from "../MaxContainer";
 import { HoverEffect } from "../ui/card-hover-effect";
 
 const SummerCardGrid = () => {
   return (
     <MaxContainer className="">
-      <h1 className="pb-12 pt-20 text-center text-7xl font-bold text-base-lime-green">
+      <h1 className="pb-12 pt-20 text-center text-5xl font-bold text-base-lime-green lg:text-7xl">
         Features
       </h1>
 
-      <HoverEffect items={projects} />
+      <HoverEffect
+        items={projects}
+        cardImgContainerClassName="h-24"
+        cardContainerClassName="border border-white"
+        cardTitleClassName="text-center mt-8"
+        cardDescriptionClassName="text-center mt-4"
+      />
     </MaxContainer>
   );
 };
@@ -16,39 +23,35 @@ export default SummerCardGrid;
 
 export const projects = [
   {
-    title: "Stripe",
+    img: ImageAssets.Summer2k24.Internship,
+    title: "Internship",
     description:
-      "A technology company that builds economic infrastructure for the internet.",
-    link: "https://stripe.com",
+      "An opportunity for students to gain practical experience in a professional setting.",
   },
   {
-    title: "Netflix",
-    description:
-      "A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
-    link: "https://netflix.com",
+    img: ImageAssets.Summer2k24.Certification,
+    title: "Certification",
+    description: "All students will receive a certificate of completion.",
   },
   {
-    title: "Google",
+    img: ImageAssets.Summer2k24.Project,
+    title: "Project Based Learning",
     description:
-      "A multinational technology company that specializes in Internet-related services and products.",
-    link: "https://google.com",
+      "Learn by doing, with real-world projects and other hands-on exercises.",
   },
   {
-    title: "Meta",
-    description:
-      "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
-    link: "https://meta.com",
+    img: ImageAssets.Summer2k24.Recording,
+    title: "Recordings",
+    description: "All sessions will be recorded and shared with the students.",
   },
   {
-    title: "Amazon",
-    description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
-    link: "https://amazon.com",
+    img: ImageAssets.Summer2k24.Instructor,
+    title: "Expert Mentors",
+    description: "Learn from the best in the industry.",
   },
   {
-    title: "Microsoft",
-    description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
-    link: "https://microsoft.com",
+    img: ImageAssets.Summer2k24.Evaluation,
+    title: "Assessment & Evaluation",
+    description: "Regular assessments and evaluations to track your progress.",
   },
 ];

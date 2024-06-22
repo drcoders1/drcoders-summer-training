@@ -1,8 +1,7 @@
 import "@/styles/globals.css";
-import Navbar from "@/components/NavbarAndFooterComponents/Navbar";
-import Footer from "@/components/NavbarAndFooterComponents/Footer";
 import ResponsiveTester from "@/components/ResponsiveTester";
-import SummerNavbar from "@/components/NavbarAndFooterComponents/SummerNavbar";
+import SummerNavbar from "@/components/NavbarAndFooterComponents/Summer2k24/SummerNavbar";
+import SummerFooter from "@/components/NavbarAndFooterComponents/Summer2k24/SummerFooter";
 
 export default function SummerLayout({
   children,
@@ -16,7 +15,7 @@ export default function SummerLayout({
           <SummerNavbar />
 
           <div className="flex-1 flex-grow">{children}</div>
-          {/* <Footer /> */}
+          <SummerFooter />
         </main>
       </div>
 
