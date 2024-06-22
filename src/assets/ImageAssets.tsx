@@ -10,14 +10,20 @@ export const ImageAssets = {
     Recording,
     Instructor,
     Evaluation,
+    Whatsapp,
+    Linkedin,
+    Instagram,
   },
 };
 
 import { AlignJustify, ArrowRight } from "lucide-react";
 import DrcodersLogo from "@/assets/Images/DrcodersLogo.png";
-import Internship from "@/assets/Images/summer2k24/intership.svg";
-import Certification from "@/assets/Images/summer2k24/certification.svg";
-import Project from "@/assets/Images/summer2k24/project.svg";
-import Recording from "@/assets/Images/summer2k24/recording.svg";
-import Instructor from "@/assets/Images/summer2k24/expert.svg";
-import Evaluation from "@/assets/Images/summer2k24/evaluation.svg";
+import Internship from "@/assets/Images/summer2k24/cardgrid/intership.svg";
+import Certification from "@/assets/Images/summer2k24/cardgrid/certification.svg";
+import Project from "@/assets/Images/summer2k24/cardgrid/project.svg";
+import Recording from "@/assets/Images/summer2k24/cardgrid/recording.svg";
+import Instructor from "@/assets/Images/summer2k24/cardgrid/expert.svg";
+import Evaluation from "@/assets/Images/summer2k24/cardgrid/evaluation.svg";
+import Whatsapp from "@/assets/Images/summer2k24/footer/WhatsApp.svg";
+import Linkedin from "@/assets/Images/summer2k24/footer/LinkedIn.svg";
+import Instagram from "@/assets/Images/summer2k24/footer/Instagram.svg";

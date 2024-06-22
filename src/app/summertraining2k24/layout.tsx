@@ -19,12 +19,12 @@ export default function SummerLayout({
           <div className="flex-1 flex-grow">{children}</div>
           <SummerFooter />
 
-          <p className="bg-base-lime-green py-5 text-center font-semibold text-base-background sm:text-base">
+          <p className="bg-base-lime-green py-4 text-center text-sm font-semibold text-base-background">
             Copyright © <span>{Today.getFullYear()}</span>{" "}
             <Link href={"/"} className="hidden md:inline-block">
               Drcoders
             </Link>
-            <span className="px-2">|</span> All Right Reserved
+            <span className="px-2">|</span> All Rights Reserved
           </p>
         </main>
       </div>

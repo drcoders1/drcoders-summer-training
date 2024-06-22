@@ -24,7 +24,7 @@ const Navbar = () => {
 
           <Button
             className={cn(
-              "bg-base-lime-green px-8 text-base font-medium text-base-background hover:bg-base-lime-green/90",
+              "bg-base-lime-green px-4 text-base font-medium text-base-background hover:bg-base-lime-green/90",
             )}
           >
             Enroll Now
