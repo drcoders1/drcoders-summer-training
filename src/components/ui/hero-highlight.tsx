@@ -7,10 +7,14 @@ export const HeroHighlight = ({
   children,
   className,
   containerClassName,
+  childrenNotHorizontallyCentered,
+  dotHoverColor,
 }: {
   children: React.ReactNode;
   className?: string;
   containerClassName?: string;
+  childrenNotHorizontallyCentered?: boolean;
+  dotHoverColor?: string;
 }) => {
   let mouseX = useMotionValue(0);
   let mouseY = useMotionValue(0);
@@ -29,15 +33,21 @@ export const HeroHighlight = ({
   return (
     <div
       className={cn(
-        "group relative flex h-[44rem] w-full items-center justify-center bg-white dark:bg-black",
+        "group relative flex h-[44rem] w-full items-center bg-white dark:bg-black",
         containerClassName,
+        {
+          "justify-center": !childrenNotHorizontallyCentered,
+          "justify-start": childrenNotHorizontallyCentered,
+        },
       )}
       onMouseMove={handleMouseMove}
     >
       <div className="pointer-events-none absolute inset-0 bg-dot-thick-neutral-800" />
       {/* color the circle around moving cursor */}
       <motion.div
-        className="pointer-events-none absolute inset-0  opacity-0 transition duration-300 bg-dot-thick-yellow-500 group-hover:opacity-100"
+        className={cn(
+          `pointer-events-none absolute inset-0  opacity-0 transition duration-300 group-hover:opacity-100 ${dotHoverColor ? dotHoverColor : "bg-dot-thick-lime-500"}`,
+        )}
         style={{
           WebkitMaskImage: useMotionTemplate`
             radial-gradient(

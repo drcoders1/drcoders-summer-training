@@ -1,11 +1,12 @@
-import CardGrid from "@/components/SummerTraining2k24/CardGrid";
+import SummerCardGrid from "@/components/SummerTraining2k24/SummerCardGrid";
+import SummerHero from "@/components/SummerTraining2k24/SummerHero";
 import React from "react";
 
 const SummerTraining = () => {
   return (
-    <section>
-      <div className="mt-[88px]"></div>
-      <CardGrid />
+    <section className="mt-8">
+      <SummerHero />
+      <SummerCardGrid />
     </section>
   );
 };

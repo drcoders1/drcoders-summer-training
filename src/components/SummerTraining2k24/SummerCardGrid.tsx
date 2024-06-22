@@ -1,14 +1,18 @@
 import MaxContainer from "../MaxContainer";
 import { HoverEffect } from "../ui/card-hover-effect";
 
-const CardGrid = () => {
+const SummerCardGrid = () => {
   return (
     <MaxContainer className="">
+      <h1 className="pb-12 pt-20 text-center text-7xl font-bold text-base-lime-green">
+        Features
+      </h1>
+
       <HoverEffect items={projects} />
     </MaxContainer>
   );
 };
-export default CardGrid;
+export default SummerCardGrid;
 
 export const projects = [
   {
