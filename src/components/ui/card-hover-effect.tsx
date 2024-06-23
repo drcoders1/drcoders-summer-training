@@ -3,6 +3,8 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
+import { Dialog, DialogClose, DialogContent, DialogTitle } from "./dialog";
+import { Button } from "./button";
 
 export const HoverEffect = ({
   items,
@@ -16,6 +18,7 @@ export const HoverEffect = ({
     img?: string | StaticImageData;
     title: string;
     description: string;
+    detail: string;
   }[];
   className?: string;
   cardContainerClassName?: string;
@@ -24,6 +27,7 @@ export const HoverEffect = ({
   cardImgContainerClassName?: string;
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [popupOpen, setPopupOpen] = useState(false);
 
   return (
     <div
@@ -35,7 +39,7 @@ export const HoverEffect = ({
       {items.map((item, idx) => (
         <div
           key={idx}
-          className="group relative  block h-full w-full p-2"
+          className="group relative  block h-full w-full cursor-pointer p-2"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
@@ -56,7 +60,12 @@ export const HoverEffect = ({
               />
             )}
           </AnimatePresence>
-          <Card className={cn("bg-background", cardContainerClassName)}>
+          <Card
+            className={cn(
+              " bg-background px-4 pb-2 pt-4",
+              cardContainerClassName,
+            )}
+          >
             {!!item.img && (
               <CardImg className={cardImgContainerClassName}>
                 <Image
@@ -70,7 +79,28 @@ export const HoverEffect = ({
             <CardDescription className={cardDescriptionClassName}>
               {item.description}
             </CardDescription>
+
+            <div className=" mt-4 flex justify-end self-end">
+              <Button
+                className="bottom-4 right-4 mr-0 rounded-[10px] bg-base-lime-green px-6 text-base-blue hover:bg-base-lime-green/80"
+                onClick={() => setPopupOpen(!popupOpen)}
+              >
+                Details
+              </Button>
+            </div>
           </Card>
+
+          {popupOpen && (
+            <Dialog open={popupOpen} onOpenChange={setPopupOpen}>
+              <DialogContent className="border-base-lime-green">
+                <DialogTitle className="text-base-lime-green">
+                  Details for {item.title}
+                </DialogTitle>
+
+                <p className="text-zinc-400">{item.detail}</p>
+              </DialogContent>
+            </Dialog>
+          )}
         </div>
       ))}
     </div>
