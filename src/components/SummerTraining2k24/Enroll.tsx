@@ -32,11 +32,7 @@ const Enroll = () => {
 
               <p className="text-center text-xl">{Item.description}</p>
 
-              <EnrollButtons
-                details={Item.details}
-                link={Item.link}
-                title={Item.title}
-              />
+              <EnrollButtons link={Item.link} title={Item.title} />
             </div>
           );
         })}
@@ -53,15 +49,11 @@ const enrollData = [
     description: "Join as a team of three and avail a discount of 20% each.",
     image: ImageAssets.Summer2k24.Teamup,
     link: "https://forms.gle/xc6i9sbndpnXnRtE6",
-    details:
-      "Team up Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae perspiciatis reprehenderit nostrum dicta ipsam odit accusamus ipsa tempore nihil ipsum, sed mollitia cumque assumenda aliquam itaque quia fugiat sunt magni deleniti! Velit in beatae, eaque qui nam natus, totam labore non dignissimos iure pariatur modi voluptatibus quasi distinctio tempora! Deserunt?",
   },
   {
     title: "Solo",
     description: "Join solo and apply code if you have any to get discount.",
     image: ImageAssets.Summer2k24.Solo,
     link: "https://forms.gle/ytMSLp44rKb14k24A",
-    details:
-      "Solo Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae perspiciatis reprehenderit nostrum dicta ipsam odit accusamus ipsa tempore nihil ipsum, sed mollitia cumque assumenda aliquam itaque quia fugiat sunt magni deleniti! Velit in beatae, eaque qui nam natus, totam labore non dignissimos iure pariatur modi voluptatibus quasi distinctio tempora! Deserunt?",
   },
 ];
