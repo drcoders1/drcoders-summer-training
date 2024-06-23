@@ -28,6 +28,6 @@ export default SummerNavLinks;
 export const SummerNavLinksData = [
   { Name: "Home", link: "home" },
   { Name: "Features", link: "features" },
-  { Name: "Details", link: "" },
+  { Name: "Ambassadors", link: "ambassadors" },
   { Name: "Partners", link: "" },
 ];

@@ -13,6 +13,11 @@ export const ImageAssets = {
     Whatsapp,
     Linkedin,
     Instagram,
+    Ambassador1,
+    Ambassador2,
+    Ambassador3,
+    Ambassador4,
+    Ambassador5,
   },
 };
 
@@ -27,3 +32,8 @@ import Evaluation from "@/assets/Images/summer2k24/cardgrid/evaluation.svg";
 import Whatsapp from "@/assets/Images/summer2k24/footer/WhatsApp.svg";
 import Linkedin from "@/assets/Images/summer2k24/footer/LinkedIn.svg";
 import Instagram from "@/assets/Images/summer2k24/footer/Instagram.svg";
+import Ambassador1 from "@/assets/Images/summer2k24/ambassador/MuhammadZuraizZia.jpg";
+import Ambassador2 from "@/assets/Images/summer2k24/ambassador/SHAHNILSHARMA.jpg";
+import Ambassador3 from "@/assets/Images/summer2k24/ambassador/SafiullahBaig.jpg";
+import Ambassador4 from "@/assets/Images/summer2k24/ambassador/ShazibAli.jpg";
+import Ambassador5 from "@/assets/Images/summer2k24/ambassador/ZainabKashif.jpg";

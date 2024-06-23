@@ -33,6 +33,9 @@ const config = {
       },
     },
     extend: {
+      screens: {
+        xs: "450px",
+      },
       colors: {
         // custom colors start
         base: {
