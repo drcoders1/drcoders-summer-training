@@ -1,11 +1,12 @@
 import MaxContainer from "../../MaxContainer";
-import { Button } from "../../ui/button";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { ImageAssets } from "@/assets/ImageAssets";
 import Link from "next/link";
 import SummerNavLinks from "./SummerNavLinks";
 import { ScrollerLink } from "@/components/MotionComponents";
+import NavbarHamburgerAndSidebar from "./NavbarHamburgerAndSidebar";
+import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   return (
@@ -21,7 +22,7 @@ const Navbar = () => {
         </Link>
 
         <div className="hidden items-center gap-10 md:flex">
-          <SummerNavLinks />
+          <SummerNavLinks varient="base" />
 
           <ScrollerLink
             to="enroll"
@@ -30,7 +31,7 @@ const Navbar = () => {
             offset={-70}
             duration={500}
             className={cn(
-              "cursor-pointer rounded-lg bg-base-lime-green px-5 py-2 text-base font-medium text-base-background hover:bg-base-lime-green/90",
+              "cursor-pointer rounded-lg bg-base-lime-green px-3 py-2 text-sm font-medium text-base-background hover:bg-base-lime-green/90 lg:px-5 lg:text-base",
             )}
           >
             Enroll Now
@@ -38,7 +39,7 @@ const Navbar = () => {
         </div>
 
         <div className="md:hidden">
-          <ImageAssets.Icons.AlignJustify />
+          <NavbarHamburgerAndSidebar />
         </div>
       </MaxContainer>
     </nav>

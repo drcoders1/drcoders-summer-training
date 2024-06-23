@@ -32,8 +32,8 @@ export default function RootLayout({
         </TRPCReactProvider>
         {/* <Analytics /> */}
 
-        {/* TODO: remove ResponsiveTester before production */}
-        <ResponsiveTester />
+        {/*  remove ResponsiveTester before production */}
+        {/* <ResponsiveTester /> */}
       </body>
     </html>
   );

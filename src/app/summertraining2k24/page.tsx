@@ -1,5 +1,4 @@
 import Ambassador from "@/components/SummerTraining2k24/Ambassador";
-import CommunityPartners from "@/components/SummerTraining2k24/CommunityPartners";
 import Details from "@/components/SummerTraining2k24/Details";
 import Enroll from "@/components/SummerTraining2k24/Enroll";
 import SummerCardGrid from "@/components/SummerTraining2k24/SummerCardGrid";
@@ -11,8 +10,14 @@ const SummerTraining = () => {
     <section className="mt-14 md:mt-8">
       <SummerHero />
       <Details />
-      <Enroll />
+
+      <div className="invisible h-28" aria-hidden></div>
       <SummerCardGrid />
+
+      <div className="invisible h-28" aria-hidden></div>
+      <Enroll />
+
+      <div className="invisible h-28" aria-hidden></div>
       <Ambassador />
       {/* <CommunityPartners /> */}
     </section>
@@ -20,3 +25,5 @@ const SummerTraining = () => {
 };
 
 export default SummerTraining;
+
+// Purpose of these divs are to maintain spacing so that the scroll from navbar is no more than needed

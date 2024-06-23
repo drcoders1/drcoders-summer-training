@@ -1,5 +1,13 @@
 export const ImageAssets = {
-  Icons: { ArrowRight, AlignJustify },
+  Icons: {
+    ArrowRight,
+    AlignJustify,
+    Home,
+    ListCollapse,
+    NotebookPen,
+    LayoutGrid,
+    User,
+  },
 
   Navbar: { Logo: DrcodersLogo, alt: "Drcoders Logo" },
 
@@ -30,7 +38,15 @@ export const ImageAssets = {
   },
 };
 
-import { AlignJustify, ArrowRight } from "lucide-react";
+import {
+  AlignJustify,
+  ArrowRight,
+  Home,
+  LayoutGrid,
+  ListCollapse,
+  NotebookPen,
+  User,
+} from "lucide-react";
 import DrcodersLogo from "@/assets/Images/DrcodersLogo.png";
 import Internship from "@/assets/Images/summer2k24/cardgrid/intership.svg";
 import Certification from "@/assets/Images/summer2k24/cardgrid/certification.svg";

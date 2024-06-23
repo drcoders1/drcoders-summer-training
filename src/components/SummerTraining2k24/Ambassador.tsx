@@ -5,7 +5,7 @@ import AmbassadorCarousel from "./AmbassadorCarousel";
 const Ambassador = () => {
   return (
     <MaxContainer id="ambassadors">
-      <h1 className="pt-32 text-center text-5xl font-bold text-base-lime-green md:pt-40 lg:text-7xl">
+      <h1 className="pt-4 text-center text-5xl font-bold text-base-lime-green md:pt-12 lg:text-7xl">
         Ambassadors
       </h1>
 

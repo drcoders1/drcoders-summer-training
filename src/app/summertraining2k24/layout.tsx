@@ -29,8 +29,8 @@ export default function SummerLayout({
         </main>
       </div>
 
-      {/* TODO: remove ResponsiveTester before production */}
-      <ResponsiveTester />
+      {/* remove ResponsiveTester before production */}
+      {/* <ResponsiveTester /> */}
     </section>
   );
 }

@@ -5,12 +5,12 @@ import Image from "next/image";
 
 const Details = () => {
   return (
-    <MaxContainer>
+    <MaxContainer id="detail">
       <h1 className="pb-14 pt-16 text-center text-5xl font-bold text-base-lime-green lg:text-7xl">
         Details
       </h1>
 
-      <section className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <section className="mx-3 grid grid-cols-1 gap-8 sm:grid-cols-2 md:mx-0 lg:grid-cols-3">
         {detailsData.map((data, index) => (
           <div
             key={index}
@@ -19,10 +19,10 @@ const Details = () => {
             <Image
               src={data.img}
               alt={data.title}
-              className="mx-auto mb-4 h-48 w-48"
+              className="mx-auto mb-4 h-40 w-40 md:h-48 md:w-48"
               placeholder="blur"
             />
-            <h2 className="text-center text-4xl font-bold text-base-lime-green">
+            <h2 className="pt-4 text-center text-2xl font-bold text-base-lime-green md:text-4xl">
               {data.title}
             </h2>
 
@@ -40,13 +40,13 @@ export default Details;
 
 const detailsData = [
   {
-    title: "Html",
+    title: "HTML",
     img: ImageAssets.Summer2k24.HTML,
     description:
       "HTML is used to create the structure of web pages using elements like headings, paragraphs, and images.",
   },
   {
-    title: "Css",
+    title: "CSS",
     img: ImageAssets.Summer2k24.CSS,
     description:
       "CSS is responsible for styling the appearance of HTML elements on web pages.",
