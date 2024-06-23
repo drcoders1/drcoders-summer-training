@@ -19,7 +19,7 @@ export const HoverEffect = ({
     img?: string | StaticImageData;
     title: string;
     description: string;
-    detail?: string;
+    benefits?: { heading: string; detail: string }[];
   }[];
   className?: string;
   cardContainerClassName?: string;
@@ -64,7 +64,7 @@ export const HoverEffect = ({
           </AnimatePresence>
           <Card
             className={cn(
-              " bg-background px-4 pb-2 pt-4",
+              " relative bg-background px-3 pb-2 pt-4",
               cardContainerClassName,
             )}
           >
@@ -82,8 +82,8 @@ export const HoverEffect = ({
               {item.description}
             </CardDescription>
 
-            {!!item.detail && (
-              <div className=" mt-4 flex justify-end self-end">
+            {!!item.benefits && (
+              <div className="absolute bottom-3 right-3">
                 <Button
                   className="bottom-4 right-4 mr-0 rounded-[10px] bg-base-lime-green px-6 text-base-blue hover:bg-base-lime-green/80"
                   onClick={() => {
@@ -102,11 +102,28 @@ export const HoverEffect = ({
                         {items[selectedItemIndex]?.title || "Selected Item"}
                       </DialogTitle>
 
-                      <p className="text-zinc-400">
+                      <ul className="mx-4">
+                        {items[selectedItemIndex]?.benefits?.map(
+                          (benefit, index) => {
+                            return (
+                              <li
+                                key={index}
+                                className="mb-3 list-disc leading-tight"
+                              >
+                                <span className="font-bold">
+                                  {benefit.heading}
+                                </span>{" "}
+                                {benefit.detail}
+                              </li>
+                            );
+                          },
+                        )}
+                      </ul>
+                      {/* <p className="text-zinc-400">
                         {items[selectedItemIndex]?.detail || "Detail"}
-                      </p>
+                      </p> */}
 
-                      <div className="mt-2 flex items-end justify-between">
+                      <div className="flex items-end justify-between">
                         <Link href={"https://forms.gle/ytMSLp44rKb14k24A"}>
                           <Button className="rounded-[12px] bg-base-lime-green px-6 text-base-blue hover:bg-base-lime-green/90 lg:px-8">
                             Enroll Solo
@@ -145,8 +162,8 @@ export const Card = ({
         className,
       )}
     >
-      <div className="relative z-50">
-        <div className="p-4">{children}</div>
+      <div className="relative z-50 h-full">
+        <div className="h-full rounded-lg">{children}</div>
       </div>
     </div>
   );
