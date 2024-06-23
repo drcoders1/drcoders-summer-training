@@ -57,13 +57,27 @@ const SummerHero = () => {
           </ScrollerLink>
         </MotionDiv>
 
-        <div className="h-72 w-72 md:h-96 md:w-96 ">
+        <MotionDiv
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          animate={{
+            opacity: 1,
+            y: [20, -5, 0],
+          }}
+          transition={{
+            duration: 0.5,
+            ease: [0.4, 0.0, 0.2, 1],
+          }}
+          className="h-72 w-72 md:h-96 md:w-96 "
+        >
           <Image
             src={ImageAssets.Summer2k24.Summer2k24Hero}
             alt="Summer 2k24 Hero"
             className="h-full w-full object-contain object-center"
           />
-        </div>
+        </MotionDiv>
       </MaxContainer>
     </HeroHighlight>
   );

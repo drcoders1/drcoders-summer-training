@@ -7,7 +7,7 @@ import EnrollButtons from "./EnrollButtons";
 const Enroll = () => {
   return (
     <MaxContainer id="enroll">
-      <h1 className="pb-14 pt-16 text-center text-5xl font-bold text-base-lime-green lg:text-7xl">
+      <h1 className="pb-14 pt-32 text-center text-5xl font-bold text-base-lime-green md:pt-40 lg:text-7xl">
         Enroll
       </h1>
 

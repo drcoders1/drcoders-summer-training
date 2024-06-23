@@ -21,6 +21,12 @@ export const ImageAssets = {
     Teamup,
     Solo,
     Summer2k24Hero,
+    HTML,
+    CSS,
+    JS,
+    React,
+    Node,
+    Mongo,
   },
 };
 
@@ -43,3 +49,9 @@ import Ambassador5 from "@/assets/Images/summer2k24/ambassador/ZainabKashif.jpg"
 import Teamup from "@/assets/Images/summer2k24/enroll/teamup.svg";
 import Solo from "@/assets/Images/summer2k24/enroll/solo.svg";
 import Summer2k24Hero from "@/assets/Images/summer2k24/hero/summer2k24hero.png";
+import HTML from "@/assets/Images/summer2k24/details/html.png";
+import CSS from "@/assets/Images/summer2k24/details/css.png";
+import JS from "@/assets/Images/summer2k24/details/js.png";
+import React from "@/assets/Images/summer2k24/details/react.png";
+import Node from "@/assets/Images/summer2k24/details/node.png";
+import Mongo from "@/assets/Images/summer2k24/details/mongo.png";
