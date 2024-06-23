@@ -18,7 +18,7 @@ export const HoverEffect = ({
     img?: string | StaticImageData;
     title: string;
     description: string;
-    detail: string;
+    detail?: string;
   }[];
   className?: string;
   cardContainerClassName?: string;
@@ -80,17 +80,19 @@ export const HoverEffect = ({
               {item.description}
             </CardDescription>
 
-            <div className=" mt-4 flex justify-end self-end">
-              <Button
-                className="bottom-4 right-4 mr-0 rounded-[10px] bg-base-lime-green px-6 text-base-blue hover:bg-base-lime-green/80"
-                onClick={() => setPopupOpen(!popupOpen)}
-              >
-                Details
-              </Button>
-            </div>
+            {!!item.detail && (
+              <div className=" mt-4 flex justify-end self-end">
+                <Button
+                  className="bottom-4 right-4 mr-0 rounded-[10px] bg-base-lime-green px-6 text-base-blue hover:bg-base-lime-green/80"
+                  onClick={() => setPopupOpen(!popupOpen)}
+                >
+                  Details
+                </Button>
+              </div>
+            )}
           </Card>
 
-          {popupOpen && (
+          {!!item.detail && popupOpen && (
             <Dialog open={popupOpen} onOpenChange={setPopupOpen}>
               <DialogContent className="border-base-lime-green">
                 <DialogTitle className="text-base-lime-green">
