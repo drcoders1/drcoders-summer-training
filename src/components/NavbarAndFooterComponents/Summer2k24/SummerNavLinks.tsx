@@ -56,8 +56,12 @@ export default SummerNavLinks;
 
 export const SummerNavLinksData = [
   { Name: "Home", link: "home", img: ImageAssets.Icons.Home },
-  { Name: "Details", link: "detail", img: ImageAssets.Icons.ListCollapse },
-  { Name: "Features", link: "features", img: ImageAssets.Icons.LayoutGrid },
-  { Name: "Enroll", link: "enroll", img: ImageAssets.Icons.NotebookPen },
-  { Name: "Ambassadors", link: "ambassadors", img: ImageAssets.Icons.User },
+  {
+    Name: "Course Details",
+    link: "detail",
+    img: ImageAssets.Icons.ListCollapse,
+  },
+  { Name: "Benefits", link: "features", img: ImageAssets.Icons.LayoutGrid },
+  // { Name: "Enroll", link: "enroll", img: ImageAssets.Icons.NotebookPen },
+  // { Name: "Ambassadors", link: "ambassadors", img: ImageAssets.Icons.User },
 ];

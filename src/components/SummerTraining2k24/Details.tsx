@@ -7,7 +7,7 @@ const Details = () => {
   return (
     <MaxContainer id="detail">
       <h1 className="pb-14 pt-16 text-center text-5xl font-bold text-base-lime-green lg:text-7xl">
-        Details
+        Course Details
       </h1>
 
       <section className="mx-3 grid grid-cols-1 gap-8 sm:grid-cols-2 md:mx-0 lg:grid-cols-3">
