@@ -29,7 +29,7 @@ const AmbassadorCarousel = () => {
         ]}
         className="w-full"
       >
-        <div className="relative mt-10 overflow-hidden bg-transparent md:mt-20">
+        <div className="relative mt-16 overflow-hidden bg-transparent">
           <CarouselContent>
             {carouselData.map((Item, index) => (
               <CarouselItem

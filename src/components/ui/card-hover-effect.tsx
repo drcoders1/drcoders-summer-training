@@ -3,8 +3,9 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
-import { Dialog, DialogClose, DialogContent, DialogTitle } from "./dialog";
+import { Dialog, DialogContent, DialogTitle } from "./dialog";
 import { Button } from "./button";
+import Link from "next/link";
 
 export const HoverEffect = ({
   items,
@@ -28,6 +29,7 @@ export const HoverEffect = ({
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [popupOpen, setPopupOpen] = useState(false);
+  const [selectedItemIndex, setSelectedItemIndex] = useState<number>(-1);
 
   return (
     <div
@@ -84,25 +86,45 @@ export const HoverEffect = ({
               <div className=" mt-4 flex justify-end self-end">
                 <Button
                   className="bottom-4 right-4 mr-0 rounded-[10px] bg-base-lime-green px-6 text-base-blue hover:bg-base-lime-green/80"
-                  onClick={() => setPopupOpen(!popupOpen)}
+                  onClick={() => {
+                    setPopupOpen(!popupOpen);
+                    setSelectedItemIndex(idx);
+                  }}
                 >
                   Details
                 </Button>
+
+                {!!popupOpen && (
+                  <Dialog open={popupOpen} onOpenChange={setPopupOpen}>
+                    <DialogContent className="w-[95%] rounded-lg border-base-lime-green md:w-full">
+                      <DialogTitle className="text-xl text-base-lime-green">
+                        Details for{" "}
+                        {items[selectedItemIndex]?.title || "Selected Item"}
+                      </DialogTitle>
+
+                      <p className="text-zinc-400">
+                        {items[selectedItemIndex]?.detail || "Detail"}
+                      </p>
+
+                      <div className="mt-2 flex items-end justify-between">
+                        <Link href={"/"}>
+                          <Button className="rounded-[12px] bg-base-lime-green px-6 text-base-blue hover:bg-base-lime-green/90 lg:px-8">
+                            Enroll Solo
+                          </Button>
+                        </Link>
+
+                        <Link href={"/"}>
+                          <Button className="rounded-[12px] bg-base-lime-green px-6 text-base-blue hover:bg-base-lime-green/90 lg:px-8">
+                            Enroll Team
+                          </Button>
+                        </Link>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+                )}
               </div>
             )}
           </Card>
-
-          {!!item.detail && popupOpen && (
-            <Dialog open={popupOpen} onOpenChange={setPopupOpen}>
-              <DialogContent className="border-base-lime-green">
-                <DialogTitle className="text-base-lime-green">
-                  Details for {item.title}
-                </DialogTitle>
-
-                <p className="text-zinc-400">{item.detail}</p>
-              </DialogContent>
-            </Dialog>
-          )}
         </div>
       ))}
     </div>

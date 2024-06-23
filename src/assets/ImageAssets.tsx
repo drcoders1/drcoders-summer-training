@@ -18,6 +18,8 @@ export const ImageAssets = {
     Ambassador3,
     Ambassador4,
     Ambassador5,
+    Teamup,
+    Solo,
   },
 };
 
@@ -37,3 +39,5 @@ import Ambassador2 from "@/assets/Images/summer2k24/ambassador/SHAHNILSHARMA.jpg
 import Ambassador3 from "@/assets/Images/summer2k24/ambassador/SafiullahBaig.jpg";
 import Ambassador4 from "@/assets/Images/summer2k24/ambassador/ShazibAli.jpg";
 import Ambassador5 from "@/assets/Images/summer2k24/ambassador/ZainabKashif.jpg";
+import Teamup from "@/assets/Images/summer2k24/enroll/teamup.svg";
+import Solo from "@/assets/Images/summer2k24/enroll/solo.svg";
