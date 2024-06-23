@@ -43,6 +43,7 @@ const AmbassadorCarousel = () => {
                       src={Item.img}
                       alt={Item.name}
                       className="h-full w-full object-cover object-center "
+                      placeholder="blur"
                     />
                   </div>
 
