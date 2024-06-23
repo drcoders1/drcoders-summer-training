@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ImageAssets } from "@/assets/ImageAssets";
 import Link from "next/link";
 import SummerNavLinks from "./SummerNavLinks";
+import { ScrollerLink } from "@/components/MotionComponents";
 
 const Navbar = () => {
   return (
@@ -15,20 +16,25 @@ const Navbar = () => {
             src={ImageAssets.Navbar.Logo}
             alt={ImageAssets.Navbar.alt}
             priority
-            className="h-14 w-auto"
+            className="h-10 w-auto md:h-14"
           />
         </Link>
 
         <div className="hidden items-center gap-10 md:flex">
           <SummerNavLinks />
 
-          <Button
+          <ScrollerLink
+            to="enroll"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
             className={cn(
-              "bg-base-lime-green px-4 text-base font-medium text-base-background hover:bg-base-lime-green/90",
+              "cursor-pointer rounded-lg bg-base-lime-green px-5 py-2 text-base font-medium text-base-background hover:bg-base-lime-green/90",
             )}
           >
             Enroll Now
-          </Button>
+          </ScrollerLink>
         </div>
 
         <div className="md:hidden">

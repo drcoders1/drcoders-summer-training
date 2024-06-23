@@ -2,13 +2,12 @@ import React from "react";
 import MaxContainer from "../MaxContainer";
 import { ImageAssets } from "@/assets/ImageAssets";
 import Image from "next/image";
-import { Button } from "../ui/button";
 import EnrollButtons from "./EnrollButtons";
 
 const Enroll = () => {
   return (
     <MaxContainer id="enroll">
-      <h1 className="pb-14 pt-32 text-center text-5xl font-bold text-base-lime-green md:pt-40 lg:text-7xl">
+      <h1 className="pb-14 pt-16 text-center text-5xl font-bold text-base-lime-green lg:text-7xl">
         Enroll
       </h1>
 
@@ -51,9 +50,9 @@ export default Enroll;
 const enrollData = [
   {
     title: "Team Up",
-    description: "Join as a team of two and avail a discount of 20% each.",
+    description: "Join as a team of three and avail a discount of 20% each.",
     image: ImageAssets.Summer2k24.Teamup,
-    link: "/",
+    link: "https://forms.gle/xc6i9sbndpnXnRtE6",
     details:
       "Team up Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae perspiciatis reprehenderit nostrum dicta ipsam odit accusamus ipsa tempore nihil ipsum, sed mollitia cumque assumenda aliquam itaque quia fugiat sunt magni deleniti! Velit in beatae, eaque qui nam natus, totam labore non dignissimos iure pariatur modi voluptatibus quasi distinctio tempora! Deserunt?",
   },
@@ -61,7 +60,7 @@ const enrollData = [
     title: "Solo",
     description: "Join solo and apply code if you have any to get discount.",
     image: ImageAssets.Summer2k24.Solo,
-    link: "/",
+    link: "https://forms.gle/ytMSLp44rKb14k24A",
     details:
       "Solo Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae perspiciatis reprehenderit nostrum dicta ipsam odit accusamus ipsa tempore nihil ipsum, sed mollitia cumque assumenda aliquam itaque quia fugiat sunt magni deleniti! Velit in beatae, eaque qui nam natus, totam labore non dignissimos iure pariatur modi voluptatibus quasi distinctio tempora! Deserunt?",
   },

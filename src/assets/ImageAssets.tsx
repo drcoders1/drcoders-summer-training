@@ -20,6 +20,7 @@ export const ImageAssets = {
     Ambassador5,
     Teamup,
     Solo,
+    Summer2k24Hero,
   },
 };
 
@@ -41,3 +42,4 @@ import Ambassador4 from "@/assets/Images/summer2k24/ambassador/ShazibAli.jpg";
 import Ambassador5 from "@/assets/Images/summer2k24/ambassador/ZainabKashif.jpg";
 import Teamup from "@/assets/Images/summer2k24/enroll/teamup.svg";
 import Solo from "@/assets/Images/summer2k24/enroll/solo.svg";
+import Summer2k24Hero from "@/assets/Images/summer2k24/hero/summer2k24hero.png";

@@ -7,10 +7,10 @@ import React from "react";
 
 const SummerTraining = () => {
   return (
-    <section className="mt-8">
+    <section className="mt-14 md:mt-8">
       <SummerHero />
-      <SummerCardGrid />
       <Enroll />
+      <SummerCardGrid />
       <Ambassador />
       <CommunityPartners />
     </section>

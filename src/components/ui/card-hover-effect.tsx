@@ -107,13 +107,13 @@ export const HoverEffect = ({
                       </p>
 
                       <div className="mt-2 flex items-end justify-between">
-                        <Link href={"/"}>
+                        <Link href={"https://forms.gle/ytMSLp44rKb14k24A"}>
                           <Button className="rounded-[12px] bg-base-lime-green px-6 text-base-blue hover:bg-base-lime-green/90 lg:px-8">
                             Enroll Solo
                           </Button>
                         </Link>
 
-                        <Link href={"/"}>
+                        <Link href={"https://forms.gle/xc6i9sbndpnXnRtE6"}>
                           <Button className="rounded-[12px] bg-base-lime-green px-6 text-base-blue hover:bg-base-lime-green/90 lg:px-8">
                             Enroll Team
                           </Button>
