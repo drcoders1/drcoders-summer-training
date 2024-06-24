@@ -39,41 +39,47 @@ const EnrollButtons = ({ link, title }: { link: string; title: string }) => {
 
             {title === "Team Up" && (
               <div className="text-zinc-400">
-                <h1 className="text-base-lime-green">Monthly Payment Plan:</h1>
+                <h1 className="font-medium text-base-lime-green">
+                  Monthly Payment Plan:
+                </h1>
                 <div>
-                  <span className="font-bold">Original Monthly Fee:</span> Rs
-                  2,500 per member <br />{" "}
-                  <span className="font-bold">Discounted Monthly Fee:</span> Rs
-                  2,000 per member <br />{" "}
-                  <span className="font-bold">Total Monthly Fee for Team:</span>{" "}
-                  <span className="text-base-lime-green">Rs 6,000</span>{" "}
-                  {`(Rs 2,000 x 3 members)`}
+                  {/* <span className="font-bold">Original Monthly Fee:</span> Rs
+                  2,500 per member <br />{" "} */}
+                  <span className="font-semibold">Per member:</span>{" "}
+                  <span className="ml-2 text-base-lime-green">Rs 2,000</span>{" "}
+                  <span className="ml-2 line-through">Rs. 2500</span>
+                  <br /> <span className="font-semibold">For Team:</span>{" "}
+                  <span className="ml-2 text-base-lime-green">Rs 6,000</span>{" "}
+                  {`(Rs 2,000 x 3)`}
                 </div>
 
-                <h1 className="mt-5 text-base-lime-green">
+                <h1 className="mt-5 font-medium text-base-lime-green">
                   Full Payment Plan:
                 </h1>
 
                 <div>
-                  <span className="font-bold">Original Full Payment:</span> Rs
-                  7,500 per member <br />{" "}
-                  <span className="font-bold">Discounted Full Payment:</span> Rs
-                  6,000 per member <br />{" "}
-                  <span className="font-bold">
-                    Total Full Payment for Team:
-                  </span>{" "}
-                  <span className="text-base-lime-green">Rs 18,000</span>{" "}
-                  {`(Rs 6,000 x 3 members)`}
+                  {/* <span className="font-semibold">Original Full Payment:</span> Rs
+                  7,500 per member <br />{" "} */}
+                  <span className="font-semibold">Per Member:</span>{" "}
+                  <span className="ml-2 text-base-lime-green">Rs 6,000</span>{" "}
+                  <span className="ml-2 line-through">Rs. 7500</span>
+                  <br /> <span className="font-semibold">For Team:</span>{" "}
+                  <span className="ml-2 text-base-lime-green">Rs 18,000</span>{" "}
+                  {`(Rs 6,000 x 3)`}
                 </div>
               </div>
             )}
 
             {title === "Solo" && (
               <div className="text-zinc-400">
-                <h1 className="text-base-lime-green">Monthly Payment Plan:</h1>
-                <div>
-                  <span className="font-bold">Monthly Fee:</span> Rs 2,500 per
-                  member <br /> <br />
+                <div className="text-base-limegreen">
+                  <span className="font-bold ">Monthly Payment Plan: </span>
+                  <span className="ml-2 text-base-lime-green">Rs 2,500</span>
+                </div>
+                {/* <div> */}
+                {/* Rs 2,500
+                  <br /> */}
+                {/* <br />
                   <span className="font-bold">Discount Options:</span>
                   <br />{" "}
                   <span className="font-bold">
@@ -87,25 +93,31 @@ const EnrollButtons = ({ link, title }: { link: string; title: string }) => {
                   <span className="font-bold">Ambassadors Code Discount:</span>{" "}
                   15% off {`(Rs 2,125 per month)`} <br />{" "}
                   <span className="font-bold">Note:</span> Only one discount
-                  will apply at a time. <br />{" "}
+                  will apply at a time. <br />{" "} */}
+                {/* </div> */}
+
+                <div className="text-base-limegreen mt-2">
+                  <span className="font-bold">Full Payment Plan: </span>
+                  <span className="ml-2  text-base-lime-green">
+                    Rs 6,000{" "}
+                  </span>{" "}
+                  <span className="ml-2 line-through">Rs. 7500</span>
                 </div>
 
-                <h1 className="mt-5 text-base-lime-green">
-                  Full Payment Plan:
-                </h1>
-
-                <div>
+                {/* <div>
                   <span className="font-bold">Original Full Payment:</span> Rs
-                  7,500 per member <br />{" "}
-                  <span className="font-bold">Full Payment Discount:</span> 20%
-                  off {`(Rs 6,000 per student)`} <br />{" "}
+                  7,500 per member <br /> <br />{" "}
                   <span className="font-bold">Note:</span> No additional
                   discount codes apply to the full payment plan.
-                </div>
+                </div> */}
               </div>
             )}
 
-            <div className="flex items-end justify-end">
+            <div className="mt-5 flex justify-between">
+              <div className=" mt-2 text-zinc-400">
+                Discount Codes applicable if any
+              </div>
+
               <Link href={link}>
                 <Button className="rounded-[12px] bg-base-lime-green px-6 text-base-blue hover:bg-base-lime-green/90 lg:px-8">
                   Enroll Now
