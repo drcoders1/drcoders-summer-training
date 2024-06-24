@@ -23,29 +23,52 @@ export default SummerCardGrid;
 
 export const projects = [
   {
-    img: ImageAssets.Summer2k24.Instructor,
-    title: "Expert Instructors",
+    img: ImageAssets.Summer2k24.Internship,
+    title: "Internship",
     description:
-      "Learn from the best in the industry with our expert instructors.",
+      "Our top-performing students will have the exclusive opportunity to secure internships with leading software houses, based on their performance.",
     benefits: [
       {
-        heading: "Quality Education:",
-        detail:
-          "Learn from instructors with real-world experience and industry knowledge.",
+        heading: "Real-World Experience:",
+        detail: "Gain practical experience in a professional setting.",
       },
       {
-        heading: "Mentorship:",
-        detail: "Receive guidance and mentorship from seasoned professionals.",
+        heading: "Career Advancement: ",
+        detail: "Build a strong resume with relevant work experience.",
       },
       {
-        heading: "Up-to-Date Knowledge:",
-        detail:
-          "Gain insights into the latest industry trends and technologies.",
+        heading: "Networking:",
+        detail: " Connect with industry professionals and potential employers.",
       },
       {
-        heading: "Inspiration:",
+        heading: "Job Opportunities:",
         detail:
-          "Be inspired by instructors who have successfully navigated the tech industry.",
+          " Increase your chances of receiving job offers post-internship.",
+      },
+    ],
+  },
+  {
+    img: ImageAssets.Summer2k24.Certification,
+    title: "Certification",
+    description:
+      "At the end of our comprehensive web development course, you'll receive a recognized certificate of completion.",
+    benefits: [
+      {
+        heading: "Professional Recognition: ",
+        detail: "Enhance your resume with a recognized certificate.",
+      },
+      {
+        heading: "Credibility: ",
+        detail:
+          "Demonstrate your skills and commitment to potential employers.",
+      },
+      {
+        heading: "Career Opportunities: ",
+        detail: "Increase your chances of securing job interviews and offers.",
+      },
+      {
+        heading: "Personal Achievement: ",
+        detail: "Achieve a sense of accomplishment and boost your confidence.",
       },
     ],
   },
@@ -75,29 +98,56 @@ export const projects = [
       },
     ],
   },
-
   {
-    img: ImageAssets.Summer2k24.Internship,
-    title: "Internship",
+    img: ImageAssets.Summer2k24.Evaluation,
+    title: "Assessment & Evaluation",
     description:
-      "Our top-performing students will have the exclusive opportunity to secure internships with leading software houses, based on their performance.",
+      "Our Summer Training Program includes regular assessments and personalized feedback to help you identify strengths and areas for improvement.",
     benefits: [
       {
-        heading: "Real-World Experience:",
-        detail: "Gain practical experience in a professional setting.",
+        heading: "Continuous Improvement: ",
+        detail: "Receive ongoing feedback to improve your skills.",
       },
       {
-        heading: "Career Advancement: ",
-        detail: "Build a strong resume with relevant work experience.",
+        heading: "Self-Awareness: ",
+        detail: "Understand your strengths and areas needing improvement.",
       },
       {
-        heading: "Networking:",
-        detail: " Connect with industry professionals and potential employers.",
-      },
-      {
-        heading: "Job Opportunities:",
+        heading: "Goal Setting: ",
         detail:
-          " Increase your chances of receiving job offers post-internship.",
+          "Set clear goals and track your progress throughout the course.",
+      },
+      {
+        heading: "Personalized Learning: ",
+        detail:
+          "Benefit from tailored advice to maximize your learning experience.",
+      },
+    ],
+  },
+  {
+    img: ImageAssets.Summer2k24.Instructor,
+    title: "Expert Instructors",
+    description:
+      "Learn from the best in the industry with our expert instructors.",
+    benefits: [
+      {
+        heading: "Quality Education:",
+        detail:
+          "Learn from instructors with real-world experience and industry knowledge.",
+      },
+      {
+        heading: "Mentorship:",
+        detail: "Receive guidance and mentorship from seasoned professionals.",
+      },
+      {
+        heading: "Up-to-Date Knowledge:",
+        detail:
+          "Gain insights into the latest industry trends and technologies.",
+      },
+      {
+        heading: "Inspiration:",
+        detail:
+          "Be inspired by instructors who have successfully navigated the tech industry.",
       },
     ],
   },
@@ -125,58 +175,6 @@ export const projects = [
         heading: "Resource Library: ",
         detail:
           "Build a personal library of educational resources for future reference.",
-      },
-    ],
-  },
-  {
-    img: ImageAssets.Summer2k24.Certification,
-    title: "Certification",
-    description:
-      "At the end of our comprehensive web development course, you'll receive a recognized certificate of completion.",
-    benefits: [
-      {
-        heading: "Professional Recognition: ",
-        detail: "Enhance your resume with a recognized certificate.",
-      },
-      {
-        heading: "Credibility: ",
-        detail:
-          "Demonstrate your skills and commitment to potential employers.",
-      },
-      {
-        heading: "Career Opportunities: ",
-        detail: "Increase your chances of securing job interviews and offers.",
-      },
-      {
-        heading: "Personal Achievement: ",
-        detail: "Achieve a sense of accomplishment and boost your confidence.",
-      },
-    ],
-  },
-
-  {
-    img: ImageAssets.Summer2k24.Evaluation,
-    title: "Assessment & Evaluation",
-    description:
-      "Our Summer Training Program includes regular assessments and personalized feedback to help you identify strengths and areas for improvement.",
-    benefits: [
-      {
-        heading: "Continuous Improvement: ",
-        detail: "Receive ongoing feedback to improve your skills.",
-      },
-      {
-        heading: "Self-Awareness: ",
-        detail: "Understand your strengths and areas needing improvement.",
-      },
-      {
-        heading: "Goal Setting: ",
-        detail:
-          "Set clear goals and track your progress throughout the course.",
-      },
-      {
-        heading: "Personalized Learning: ",
-        detail:
-          "Benefit from tailored advice to maximize your learning experience.",
       },
     ],
   },
