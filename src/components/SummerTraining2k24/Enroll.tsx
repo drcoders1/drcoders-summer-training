@@ -3,6 +3,8 @@ import MaxContainer from "../MaxContainer";
 import { ImageAssets } from "@/assets/ImageAssets";
 import Image from "next/image";
 import EnrollButtons from "./EnrollButtons";
+import { MotionDiv } from "../MotionComponents";
+import { Scale } from "lucide-react";
 
 const Enroll = () => {
   return (
@@ -14,9 +16,10 @@ const Enroll = () => {
       <section className="mx-auto grid max-w-4xl grid-cols-1 gap-10 md:grid-cols-2">
         {enrollData.map((Item, index) => {
           return (
-            <div
+            <MotionDiv
+              whileHover={{ scale: 1.03 }}
               key={index}
-              className="flex flex-col items-center gap-7 rounded-lg border-2 border-base-lime-green p-10"
+              className="flex cursor-pointer flex-col items-center gap-7 rounded-lg border-2 border-base-lime-green p-10"
             >
               <div className="h-40">
                 <Image
@@ -33,7 +36,7 @@ const Enroll = () => {
               <p className="text-center text-xl">{Item.description}</p>
 
               <EnrollButtons link={Item.link} title={Item.title} />
-            </div>
+            </MotionDiv>
           );
         })}
       </section>
