@@ -7,8 +7,9 @@ import React from "react";
 const SummerFooter = () => {
   return (
     <section>
-      <MaxContainer className="mb-[65px] mt-[130px] grid grid-cols-2 gap-y-16 md:grid-cols-4">
-        <div>
+      {/* <MaxContainer className="mb-[65px] mt-[130px] grid grid-cols-2 gap-y-16 md:grid-cols-4"> */}
+      <MaxContainer className="mb-[65px] mt-[130px] flex-col ">
+        {/* <div>
           <h1 className="text-xl font-semibold md:text-2xl">Quick Links</h1>
 
           <div className="ml-1 mt-5 flex flex-col gap-2 text-sm md:ml-2 md:text-base">
@@ -36,21 +37,38 @@ const SummerFooter = () => {
             <Link href={"/comingsoon"}>Contact Page</Link>
             <Link href="mailto:drcoders1@gmail.com">Email Us</Link>
           </div>
-        </div>
+        </div> */}
 
-        <div className="lg:justify-self-end">
-          <h1 className="text-xl font-semibold md:text-2xl">Follow Us</h1>
+        <h1 className=" mx-auto w-36 text-xl rounded-md  font-semibold md:text-2xl text-center bg-base-lime-green text-base-background">Follow Us</h1>
+        <div className=" flex gap-40 justify-center mt-10" >
 
-          <div className="mt-5 flex items-center gap-2">
-            <Link href={"/comingsoon"}>
+
+          <div className="mt-5 flex gap-2">
+            <h1 className="text-xl font-semibold md:text-2xl">Dr coders: </h1>
+            {/* <Link href={"/comingsoon"}>
               <Image src={ImageAssets.Summer2k24.Whatsapp} alt="whatsapp" />
-            </Link>
+            </Link> */}
 
-            <Link href={"/comingsoon"}>
+            <Link href={"https://www.instagram.com/dr.coders/"} target="#">
               <Image src={ImageAssets.Summer2k24.Instagram} alt="instagram" />
             </Link>
 
-            <Link href={"/comingsoon"}>
+            <Link href={"https://www.linkedin.com/company/dr-coders/"} target="#">
+              <Image src={ImageAssets.Summer2k24.Linkedin} alt="linkedin" />
+            </Link>
+          </div>
+
+          <div className="mt-5 flex items-center gap-2 ">
+            <h1 className="text-xl font-semibold md:text-2xl">Dr coders Academy:</h1>
+            {/* <Link href={"/comingsoon"}>
+              <Image src={ImageAssets.Summer2k24.Whatsapp} alt="whatsapp" />
+            </Link> */}
+
+            <Link href={"https://www.instagram.com/drcoders_academy/"} target="#">
+              <Image src={ImageAssets.Summer2k24.Instagram} alt="instagram" />
+            </Link>
+
+            <Link href={"https://www.linkedin.com/company/dr-coders-academy/"} target="#">
               <Image src={ImageAssets.Summer2k24.Linkedin} alt="linkedin" />
             </Link>
           </div>
