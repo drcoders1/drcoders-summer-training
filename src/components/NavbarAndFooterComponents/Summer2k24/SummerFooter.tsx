@@ -39,10 +39,10 @@ const SummerFooter = () => {
           </div>
         </div> */}
 
-        <h1 className=" mx-auto w-36 text-xl rounded-md  font-semibold md:text-2xl text-center bg-base-lime-green text-base-background">Follow Us</h1>
-        <div className=" flex gap-40 justify-center mt-10" >
-
-
+        <h1 className="pb-5 text-center text-4xl font-bold text-base-lime-green md:pb-10 md:pt-16 lg:text-6xl">
+          Follow Us
+        </h1>
+        <div className="  flex flex-col justify-center md:flex-row md:gap-40">
           <div className="mt-5 flex gap-2">
             <h1 className="text-xl font-semibold md:text-2xl">Dr coders: </h1>
             {/* <Link href={"/comingsoon"}>
@@ -53,22 +53,33 @@ const SummerFooter = () => {
               <Image src={ImageAssets.Summer2k24.Instagram} alt="instagram" />
             </Link>
 
-            <Link href={"https://www.linkedin.com/company/dr-coders/"} target="#">
+            <Link
+              href={"https://www.linkedin.com/company/dr-coders/"}
+              target="#"
+            >
               <Image src={ImageAssets.Summer2k24.Linkedin} alt="linkedin" />
             </Link>
           </div>
 
           <div className="mt-5 flex items-center gap-2 ">
-            <h1 className="text-xl font-semibold md:text-2xl">Dr coders Academy:</h1>
+            <h1 className="text-xl font-semibold md:text-2xl">
+              Dr coders Academy:
+            </h1>
             {/* <Link href={"/comingsoon"}>
               <Image src={ImageAssets.Summer2k24.Whatsapp} alt="whatsapp" />
             </Link> */}
 
-            <Link href={"https://www.instagram.com/drcoders_academy/"} target="#">
+            <Link
+              href={"https://www.instagram.com/drcoders_academy/"}
+              target="#"
+            >
               <Image src={ImageAssets.Summer2k24.Instagram} alt="instagram" />
             </Link>
 
-            <Link href={"https://www.linkedin.com/company/dr-coders-academy/"} target="#">
+            <Link
+              href={"https://www.linkedin.com/company/dr-coders-academy/"}
+              target="#"
+            >
               <Image src={ImageAssets.Summer2k24.Linkedin} alt="linkedin" />
             </Link>
           </div>
