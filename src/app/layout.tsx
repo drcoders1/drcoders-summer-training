@@ -8,6 +8,7 @@ import Navbar from "@/components/NavbarAndFooterComponents/Navbar";
 import Footer from "@/components/NavbarAndFooterComponents/Footer";
 import ResponsiveTester from "@/components/ResponsiveTester";
 import Script from "next/script";
+import ReactGA from "react-ga4";
 
 export const metadata = {
   title: "Drcoders",
@@ -20,6 +21,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  ReactGA.initialize("G-1WLDJ85260");
+
   return (
     <html lang="en" className="h-full text-foreground">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
