@@ -14,7 +14,7 @@ const Details = () => {
         {detailsData.map((data, index) => (
           <div
             key={index}
-            className="cursorpointer group relative cursor-pointer overflow-hidden rounded-lg border-2 border-base-lime-green p-10 shadow-md transition duration-300 ease-in-out hover:shadow-xl"
+            className="group relative cursor-pointer overflow-hidden rounded-lg border-2 border-base-lime-green p-10 shadow-md transition duration-300 ease-in-out hover:shadow-xl"
           >
             <Image
               src={data.img}
