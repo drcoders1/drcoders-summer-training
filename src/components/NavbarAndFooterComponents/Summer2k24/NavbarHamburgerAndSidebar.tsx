@@ -35,7 +35,6 @@ const NavbarHamburgerAndSidebar = () => {
             </Link>
             <section className="flex w-full flex-col items-start gap-2">
               <Separator className=" bg-zinc-400" />
-
               <SummerNavLinks varient="mobile" />
             </section>
           </SheetHeader>
@@ -49,9 +48,9 @@ const NavbarHamburgerAndSidebar = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              className="mx-auto w-full"
+              className="mx-auto w-full "
             >
-              <SheetClose className="w-full">
+              <SheetClose className="w-full ">
                 <Button
                   type="submit"
                   variant={"ghost"}
@@ -83,7 +82,7 @@ export const SideBarField = ({
     <Button
       type="submit"
       variant={"ghost"}
-      className={`flex w-full items-center justify-start gap-4 text-base font-medium ${className}`}
+      className={`flex w-full items-center justify-start gap-4 text-base font-medium hover:bg-indigo-950 ${className}`}
     >
       <Img className="h-4 w-4" />
       <h1>{text}</h1>

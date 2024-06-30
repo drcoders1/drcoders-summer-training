@@ -42,7 +42,7 @@ const SummerNavLinks = ({ varient }: { varient: "base" | "mobile" }) => {
               activeClass="text-base-lime-green"
               className={cn("relative cursor-pointer text-xl font-semibold")}
             >
-              <SheetClose className="w-full">
+              <SheetClose className="w-full ">
                 <SideBarField text={Item.Name} Img={Item.img} />
               </SheetClose>
             </ScrollerLink>
@@ -63,5 +63,5 @@ export const SummerNavLinksData = [
   },
   { Name: "Benefits", link: "features", img: ImageAssets.Icons.LayoutGrid },
   // { Name: "Enroll", link: "enroll", img: ImageAssets.Icons.NotebookPen },
-  // { Name: "Ambassadors", link: "ambassadors", img: ImageAssets.Icons.User },
+  { Name: "Ambassadors", link: "ambassadors", img: ImageAssets.Icons.User },
 ];
