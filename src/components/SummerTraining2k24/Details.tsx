@@ -10,6 +10,41 @@ const Details = () => {
         Course Details
       </h1>
 
+      {/* <p className="text-lg text-zinc-400">
+        This program is designed to equip you with the essential skills needed
+        to become a proficient web developer. Over the course of 8 weeks, you'll
+        engage in interactive sessions, hands-on projects, and receive
+        mentorship from industry experts. By the end of the program, you will
+        have built a portfolio of projects and gained the confidence to start
+        your career in web development.
+      </p>
+
+      <h1 className="pb-14 pt-16 text-center text-5xl font-bold text-base-lime-green lg:text-7xl">
+        Key Information
+      </h1> */}
+
+      <ul className="flex flex-col gap-5 text-2xl font-semibold text-zinc-400">
+        <li>
+          <span className="mr-2 text-base-lime-green">Duration:</span> 8 weeks
+        </li>
+        <li>
+          <span className="mr-2 text-base-lime-green">Time:</span> Mondays and
+          Wednesdays, {`(10 AM - 12 PM)`}
+        </li>
+        <li>
+          <span className="mr-2 text-base-lime-green">Classes:</span> Live
+          online sessions with recordings available
+        </li>
+        <li>
+          <span className="mr-2 text-base-lime-green">Starting Date:</span> July
+          1, 2024
+        </li>
+      </ul>
+
+      <h1 className="pb-14 pt-16 text-center text-5xl font-bold text-base-lime-green lg:text-7xl">
+        What to Cover
+      </h1>
+
       <section className="mx-3 grid grid-cols-1 gap-8 sm:grid-cols-2 md:mx-0 lg:grid-cols-3">
         {detailsData.map((data, index) => (
           <div
