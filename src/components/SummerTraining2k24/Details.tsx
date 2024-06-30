@@ -6,7 +6,7 @@ import Image from "next/image";
 const Details = () => {
   return (
     <MaxContainer id="detail">
-      <h1 className="pb-14 pt-16 text-center text-5xl font-bold text-base-lime-green lg:text-7xl">
+      <h1 className="pb-10 pt-16 text-center text-5xl font-bold text-base-lime-green md:pb-14 lg:text-7xl">
         Course Details
       </h1>
 
@@ -23,21 +23,34 @@ const Details = () => {
         Key Information
       </h1> */}
 
-      <ul className="flex flex-col gap-5 text-2xl font-semibold text-zinc-400">
-        <li>
-          <span className="mr-2 text-base-lime-green">Duration:</span> 8 weeks
+      <ul className="flex flex-col gap-5 text-lg font-semibold text-zinc-400 md:gap-5 md:text-xl lg:text-2xl">
+        <li className="flex">
+          <span className="mr-2 w-[32%] text-base-lime-green md:w-44 ">
+            Duration:
+          </span>{" "}
+          <span className="w-[68%]">8 weeks</span>
         </li>
-        <li>
-          <span className="mr-2 text-base-lime-green">Time:</span> Mondays and
-          Wednesdays, {`(10 AM - 12 PM)`}
+        <li className="flex">
+          <span className="mr-2 w-[32%] text-base-lime-green md:w-44 ">
+            Time:
+          </span>{" "}
+          <span className="w-[68%]">
+            Mondays and Wednesdays, {`(10 AM - 12 PM)`}
+          </span>
         </li>
-        <li>
-          <span className="mr-2 text-base-lime-green">Classes:</span> Live
-          online sessions with recordings available
+        <li className="flex">
+          <span className="mr-2 w-[32%] text-base-lime-green md:w-44 ">
+            Classes:
+          </span>{" "}
+          <span className="w-[68%]">
+            Live online sessions with recordings available
+          </span>
         </li>
-        <li>
-          <span className="mr-2 text-base-lime-green">Starting Date:</span> July
-          1, 2024
+        <li className="flex">
+          <span className="mr-2 w-[32%] text-base-lime-green md:w-44 ">
+            Starting Date:
+          </span>{" "}
+          <span className="w-[68%]">July 1, 2024</span>
         </li>
       </ul>
 
