@@ -8,7 +8,7 @@ const SummerFooter = () => {
   return (
     <section>
       {/* <MaxContainer className="mb-[65px] mt-[130px] grid grid-cols-2 gap-y-16 md:grid-cols-4"> */}
-      <MaxContainer className="mb-[65px] mt-[130px] flex-col ">
+      <MaxContainer className="mb-[65px] mt-[80px] flex-col ">
         {/* <div>
           <h1 className="text-xl font-semibold md:text-2xl">Quick Links</h1>
 

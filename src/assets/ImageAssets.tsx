@@ -7,6 +7,7 @@ export const ImageAssets = {
     NotebookPen,
     LayoutGrid,
     User,
+    ChevronRight,
   },
 
   Navbar: { Logo: DrcodersLogo, alt: "Drcoders Logo" },
@@ -77,12 +78,15 @@ export const ImageAssets = {
     Ambassador45,
     Ambassador46,
     Ambassador47,
+    ManPlaceholer,
+    WomanPlaceholer,
   },
 };
 
 import {
   AlignJustify,
   ArrowRight,
+  ChevronRight,
   Home,
   LayoutGrid,
   ListCollapse,
@@ -155,3 +159,5 @@ import Ambassador44 from "@/assets/Images/summer2k24/ambassador/Hassan Faisal.jp
 import Ambassador45 from "@/assets/Images/summer2k24/ambassador/muntazir hasan.jpg";
 import Ambassador46 from "@/assets/Images/summer2k24/ambassador/syeda asmara hassan.jpg";
 import Ambassador47 from "@/assets/Images/summer2k24/ambassador/zahid nasim.jpg";
+import ManPlaceholer from "@/assets/Images/summer2k24/manplaceholder.jpg";
+import WomanPlaceholer from "@/assets/Images/summer2k24/womenplaceholder.jpg";

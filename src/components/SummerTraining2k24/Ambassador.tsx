@@ -1,6 +1,8 @@
 import React from "react";
 import MaxContainer from "../MaxContainer";
 import AmbassadorCarousel from "./AmbassadorCarousel";
+import { Button } from "../ui/button";
+import { ImageAssets } from "@/assets/ImageAssets";
 
 const Ambassador = () => {
   return (
