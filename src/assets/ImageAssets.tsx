@@ -73,7 +73,7 @@ export const ImageAssets = {
     Ambassador40,
     Ambassador41,
     Ambassador42,
-    Ambassador43,
+    // Ambassador43,
     Ambassador44,
     Ambassador45,
     Ambassador46,
@@ -154,7 +154,7 @@ import Ambassador39 from "@/assets/Images/summer2k24/ambassador/Zainab Kashif.jp
 import Ambassador40 from "@/assets/Images/summer2k24/ambassador/Zaira Rajput.jpg";
 import Ambassador41 from "@/assets/Images/summer2k24/ambassador/bilal shahid.jpg";
 import Ambassador42 from "@/assets/Images/summer2k24/ambassador/bisma umar.jpg";
-import Ambassador43 from "@/assets/Images/summer2k24/ambassador/hifza jutt.jpg";
+// import Ambassador43 from "@/assets/Images/summer2k24/ambassador/hifza jutt.jpg";
 import Ambassador44 from "@/assets/Images/summer2k24/ambassador/Hassan Faisal.jpg";
 import Ambassador45 from "@/assets/Images/summer2k24/ambassador/muntazir hasan.jpg";
 import Ambassador46 from "@/assets/Images/summer2k24/ambassador/syeda asmara hassan.jpg";
