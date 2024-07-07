@@ -78,6 +78,8 @@ export const ImageAssets = {
     Ambassador45,
     Ambassador46,
     Ambassador47,
+    Ambassador48,
+    Ambassador49,
     ManPlaceholer,
     WomanPlaceholer,
   },
@@ -159,5 +161,7 @@ import Ambassador44 from "@/assets/Images/summer2k24/ambassador/Hassan Faisal.jp
 import Ambassador45 from "@/assets/Images/summer2k24/ambassador/muntazir hasan.jpg";
 import Ambassador46 from "@/assets/Images/summer2k24/ambassador/syeda asmara hassan.jpg";
 import Ambassador47 from "@/assets/Images/summer2k24/ambassador/zahid nasim.jpg";
+import Ambassador48 from "@/assets/Images/summer2k24/ambassador/fatima khurram.jpeg";
+import Ambassador49 from "@/assets/Images/summer2k24/ambassador/Harmain Khan.jpeg";
 import ManPlaceholer from "@/assets/Images/summer2k24/manplaceholder.jpg";
 import WomanPlaceholer from "@/assets/Images/summer2k24/womenplaceholder.jpg";

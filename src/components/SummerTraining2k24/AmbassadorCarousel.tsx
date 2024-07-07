@@ -173,6 +173,8 @@ const carouselData: { name: string; img: string | StaticImageData }[] = [
     img: ImageAssets.Summer2k24.WomanPlaceholer,
   },
   { name: "zahid nasim", img: ImageAssets.Summer2k24.ManPlaceholer },
+  { name: "Fatima Khurram", img: ImageAssets.Summer2k24.Ambassador48 },
+  { name: "Harmain Khan", img: ImageAssets.Summer2k24.Ambassador49 },
 ];
 
 const totalItems = carouselData.length;
