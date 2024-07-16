@@ -135,7 +135,7 @@ const carouselData: { name: string; img: string | StaticImageData }[] = [
   { name: "Anas Malik", img: ImageAssets.Summer2k24.Ambassador10 },
   { name: "BATOOL KHAN", img: ImageAssets.Summer2k24.WomanPlaceholer },
   { name: "Dilawaiz Khan", img: ImageAssets.Summer2k24.WomanPlaceholer },
-  { name: "Faheela Farooq", img: ImageAssets.Summer2k24.Ambassador13 },
+  // { name: "Faheela Farooq", img: ImageAssets.Summer2k24.Ambassador13 },
   { name: "Fatima Aamer", img: ImageAssets.Summer2k24.Ambassador14 },
   { name: "Halima Fahim", img: ImageAssets.Summer2k24.Ambassador15 },
   { name: "Hasnain", img: ImageAssets.Summer2k24.Ambassador16 },
