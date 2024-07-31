@@ -31,16 +31,16 @@ const SummerHero = () => {
           className="flex flex-col gap-6 sm:max-w-xl sm:gap-7 md:max-w-lg md:gap-8 lg:max-w-2xl"
         >
           <div className=" text-3xl font-bold text-white md:text-4xl md:leading-[50px] lg:text-6xl lg:leading-[75px]">
-            Summer Web <span className="text-base-lime-green">{`(MERN)`}</span>
+            Summer Mobile <span className="text-base-lime-green">{`(Flutter)`}</span>
             <br /> Training Program
           </div>
 
           <div className="text-xl font-medium">
             Join our exclusive{" "}
             <span className="text-base-lime-green">
-              3-month web training program!
+              3-month mobile training program!
             </span>{" "}
-            to be Junior MERN stack developer!
+            to strat your career in mbiel app development.
           </div>
 
           <ScrollerLink

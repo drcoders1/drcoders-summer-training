@@ -37,38 +37,38 @@ const EnrollButtons = ({ link, title }: { link: string; title: string }) => {
               Details of {title} offer
             </DialogTitle>
 
-            {title === "Team Up" && (
-              <div className="text-zinc-400">
-                <h1 className="font-medium text-base-lime-green">
-                  Monthly Payment Plan:
-                </h1>
-                <div>
-                  {/* <span className="font-bold">Original Monthly Fee:</span> Rs
-                  2,500 per member <br />{" "} */}
-                  <span className="font-semibold">Per member:</span>{" "}
-                  <span className="ml-2 text-base-lime-green">Rs 2,000</span>{" "}
-                  <span className="ml-2 line-through">Rs. 2500</span>
-                  <br /> <span className="font-semibold">For Team:</span>{" "}
-                  <span className="ml-2 text-base-lime-green">Rs 6,000</span>{" "}
-                  {`(Rs 2,000 x 3)`}
-                </div>
+            {/* {title === "Team Up" && (
+                <div className="text-zinc-400">
+                  <h1 className="font-medium text-base-lime-green">
+                    Monthly Payment Plan:
+                  </h1>
+                  <div>
+                    {/* <span className="font-bold">Original Monthly Fee:</span> Rs
+                    2,500 per member <br />{" "} 
+                    <span className="font-semibold">Per member:</span>{" "}
+                    <span className="ml-2 text-base-lime-green">Rs 2,000</span>{" "}
+                    <span className="ml-2 line-through">Rs. 2500</span>
+                    <br /> <span className="font-semibold">For Team:</span>{" "}
+                    <span className="ml-2 text-base-lime-green">Rs 6,000</span>{" "}
+                    {`(Rs 2,000 x 3)`}
+                  </div>
 
-                <h1 className="mt-5 font-medium text-base-lime-green">
-                  Full Payment Plan:
-                </h1>
+                  <h1 className="mt-5 font-medium text-base-lime-green">
+                    Full Payment Plan:
+                  </h1>
 
-                <div>
-                  {/* <span className="font-semibold">Original Full Payment:</span> Rs
-                  7,500 per member <br />{" "} */}
-                  <span className="font-semibold">Per Member:</span>{" "}
-                  <span className="ml-2 text-base-lime-green">Rs 6,000</span>{" "}
-                  <span className="ml-2 line-through">Rs. 7500</span>
-                  <br /> <span className="font-semibold">For Team:</span>{" "}
-                  <span className="ml-2 text-base-lime-green">Rs 18,000</span>{" "}
-                  {`(Rs 6,000 x 3)`}
+                  <div>
+                    {/* <span className="font-semibold">Original Full Payment:</span> Rs
+                    7,500 per member <br />{" "} 
+                    <span className="font-semibold">Per Member:</span>{" "}
+                    <span className="ml-2 text-base-lime-green">Rs 6,000</span>{" "}
+                    <span className="ml-2 line-through">Rs. 7500</span>
+                    <br /> <span className="font-semibold">For Team:</span>{" "}
+                    <span className="ml-2 text-base-lime-green">Rs 18,000</span>{" "}
+                    {`(Rs 6,000 x 3)`}
+                  </div>
                 </div>
-              </div>
-            )}
+             )}*/}
 
             {title === "Solo" && (
               <div className="text-zinc-400">

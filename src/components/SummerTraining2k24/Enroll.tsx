@@ -47,12 +47,12 @@ const Enroll = () => {
 export default Enroll;
 
 const enrollData = [
-  {
-    title: "Team Up",
-    description: "Join as a team of three and avail a discount of 20% each.",
-    image: ImageAssets.Summer2k24.Teamup,
-    link: "https://forms.gle/xc6i9sbndpnXnRtE6",
-  },
+  // {
+  //   title: "Team Up",
+  //   description: "Join as a team of three and avail a discount of 20% each.",
+  //   image: ImageAssets.Summer2k24.Teamup,
+  //   link: "https://forms.gle/xc6i9sbndpnXnRtE6",
+  // },
   {
     title: "Solo",
     description: "Join solo and apply code if you have any to get discount.",

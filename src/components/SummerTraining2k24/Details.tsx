@@ -35,7 +35,7 @@ const Details = () => {
             Time:
           </span>{" "}
           <span className="w-[68%]">
-            Mondays and Wednesdays, {`(10 AM - 12 PM)`}
+            Saturdays and Sundays, {`(3 PM - 5 PM)`}
           </span>
         </li>
         <li className="flex">
@@ -50,7 +50,7 @@ const Details = () => {
           <span className="mr-2 w-[32%] text-base-lime-green md:w-44 ">
             Starting Date:
           </span>{" "}
-          <span className="w-[68%]">July 1, 2024</span>
+          <span className="w-[68%]">AUGUST 10, 2024</span>
         </li>
       </ul>
 
@@ -59,7 +59,7 @@ const Details = () => {
       </h1>
 
       <section className="mx-3 grid grid-cols-1 gap-8 sm:grid-cols-2 md:mx-0 lg:grid-cols-3">
-        {detailsData.map((data, index) => (
+        {mobiledetailsData.map((data, index) => (
           <div
             key={index}
             className="group relative cursor-pointer overflow-hidden rounded-lg border-2 border-base-lime-green p-10 shadow-md transition duration-300 ease-in-out hover:shadow-xl"
@@ -86,41 +86,55 @@ const Details = () => {
 
 export default Details;
 
-const detailsData = [
+// const detailsData = [
+//   {
+//     title: "HTML",
+//     img: ImageAssets.Summer2k24.HTML,
+//     description:
+//       "HTML is used to create the structure of web pages using elements like headings, paragraphs, and images.",
+//   },
+//   {
+//     title: "CSS",
+//     img: ImageAssets.Summer2k24.CSS,
+//     description:
+//       "CSS is responsible for styling the appearance of HTML elements on web pages.",
+//   },
+//   {
+//     title: "Javascript",
+//     img: ImageAssets.Summer2k24.JS,
+//     description:
+//       "JavaScript is a programming language used to make web pages interactive.",
+//   },
+//   {
+//     title: "React",
+//     img: ImageAssets.Summer2k24.React,
+//     description:
+//       "React is a JavaScript library for building user interfaces, developed by Facebook.",
+//   },
+//   {
+//     title: "Node & Express",
+//     img: ImageAssets.Summer2k24.Node,
+//     description:
+//       "Node.js is a server-side JavaScript runtime, while Express is a minimal and flexible Node.js web application framework.",
+//   },
+//   {
+//     title: "Mongodb",
+//     img: ImageAssets.Summer2k24.Mongo,
+//     description:
+//       "MongoDB is a NoSQL database that stores data in flexible, JSON-like documents.",
+//   },
+// ];
+const mobiledetailsData = [
   {
-    title: "HTML",
-    img: ImageAssets.Summer2k24.HTML,
+    title: "Flutter",
+    img: ImageAssets.Summer2k24.Flutter,
     description:
-      "HTML is used to create the structure of web pages using elements like headings, paragraphs, and images.",
+      "We will be using flutter in our app traingin program",
   },
   {
     title: "CSS",
-    img: ImageAssets.Summer2k24.CSS,
+    img: ImageAssets.Summer2k24.Flutter,
     description:
       "CSS is responsible for styling the appearance of HTML elements on web pages.",
-  },
-  {
-    title: "Javascript",
-    img: ImageAssets.Summer2k24.JS,
-    description:
-      "JavaScript is a programming language used to make web pages interactive.",
-  },
-  {
-    title: "React",
-    img: ImageAssets.Summer2k24.React,
-    description:
-      "React is a JavaScript library for building user interfaces, developed by Facebook.",
-  },
-  {
-    title: "Node & Express",
-    img: ImageAssets.Summer2k24.Node,
-    description:
-      "Node.js is a server-side JavaScript runtime, while Express is a minimal and flexible Node.js web application framework.",
-  },
-  {
-    title: "Mongodb",
-    img: ImageAssets.Summer2k24.Mongo,
-    description:
-      "MongoDB is a NoSQL database that stores data in flexible, JSON-like documents.",
   },
 ];
