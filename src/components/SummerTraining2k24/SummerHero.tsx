@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import MaxContainer from "../MaxContainer";
 import Image from "next/image";
 import { ImageAssets } from "@/assets/ImageAssets";
+import Link from "next/link";
 
 const SummerHero = () => {
   return (
@@ -30,8 +31,9 @@ const SummerHero = () => {
           }}
           className="flex flex-col gap-6 sm:max-w-xl sm:gap-7 md:max-w-lg md:gap-8 lg:max-w-2xl"
         >
-          <div className=" text-3xl font-bold text-white md:text-4xl md:leading-[50px] lg:text-6xl lg:leading-[75px]">
-            Summer Mobile <span className="text-base-lime-green">{`(Flutter)`}</span>
+          <div className=" text-3xl font-bold text-white md:text-4xl md:leading-[50px] lg:text-5xl lg:leading-[70px]">
+            Summer Mobile{" "}
+            <span className="text-base-lime-green">{`(Flutter)`}</span>
             <br /> Training Program
           </div>
 
@@ -43,7 +45,16 @@ const SummerHero = () => {
             to strat your career in mbiel app development.
           </div>
 
-          <ScrollerLink
+          <Link
+            href="https://forms.gle/34kuhgsASRiYPhfL9"
+            target="_blank"
+            className={cn(
+              "max-w-32 cursor-pointer rounded-lg bg-base-lime-green py-2 text-center text-base font-medium text-base-background hover:bg-base-lime-green/90",
+            )}
+          >
+            Enroll Now
+          </Link>
+          {/* <ScrollerLink
             to="enroll"
             spy={true}
             smooth={true}
@@ -54,7 +65,7 @@ const SummerHero = () => {
             )}
           >
             Enroll Now
-          </ScrollerLink>
+          </ScrollerLink> */}
         </MotionDiv>
 
         <MotionDiv

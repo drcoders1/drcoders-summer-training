@@ -83,6 +83,10 @@ export const ImageAssets = {
     Ambassador49,
     ManPlaceholer,
     WomanPlaceholer,
+    Flutter2,
+    Firebase,
+    Dart,
+    Api,
   },
 };
 
@@ -110,7 +114,7 @@ import Teamup from "@/assets/Images/summer2k24/enroll/teamup.svg";
 import Solo from "@/assets/Images/summer2k24/enroll/solo.svg";
 import Summer2k24Hero from "@/assets/Images/summer2k24/hero/summer2k24hero.png";
 import HTML from "@/assets/Images/summer2k24/details/html.png";
-import Flutter from "@/assets/Images/summer2k24/details/Flutter.png";
+import Flutter from "@/assets/Images/summer2k24/details/flutter.png";
 import CSS from "@/assets/Images/summer2k24/details/css.png";
 import JS from "@/assets/Images/summer2k24/details/js.png";
 import React from "@/assets/Images/summer2k24/details/react.png";
@@ -167,3 +171,7 @@ import Ambassador48 from "@/assets/Images/summer2k24/ambassador/fatima khurram.j
 import Ambassador49 from "@/assets/Images/summer2k24/ambassador/Harmain Khan.jpeg";
 import ManPlaceholer from "@/assets/Images/summer2k24/manplaceholder.jpg";
 import WomanPlaceholer from "@/assets/Images/summer2k24/womenplaceholder.jpg";
+import Flutter2 from "@/assets/Images/summer2k24/details/flutter2.jpg";
+import Firebase from "@/assets/Images/summer2k24/details/firebase.jpg";
+import Api from "@/assets/Images/summer2k24/details/api.jpg";
+import Dart from "@/assets/Images/summer2k24/details/dart.png";

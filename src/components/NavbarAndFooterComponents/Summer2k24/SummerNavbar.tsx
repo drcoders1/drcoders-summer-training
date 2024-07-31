@@ -24,7 +24,16 @@ const Navbar = () => {
         <div className="hidden items-center gap-10 md:flex">
           <SummerNavLinks varient="base" />
 
-          <ScrollerLink
+          <Link
+            className={cn(
+              "cursor-pointer rounded-lg bg-base-lime-green px-3 py-2 text-sm font-medium text-base-background hover:bg-base-lime-green/90 lg:px-5 lg:text-base",
+            )}
+            href="https://forms.gle/34kuhgsASRiYPhfL9"
+            target="_blank"
+          >
+            Enroll Now
+          </Link>
+          {/* <ScrollerLink
             to="enroll"
             spy={true}
             smooth={true}
@@ -35,7 +44,7 @@ const Navbar = () => {
             )}
           >
             Enroll Now
-          </ScrollerLink>
+          </ScrollerLink> */}
         </div>
 
         <div className="md:hidden">

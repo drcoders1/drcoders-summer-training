@@ -68,7 +68,7 @@ const Details = () => {
               src={data.img}
               alt={data.title}
               className="mx-auto mb-4 h-40 w-40 md:h-48 md:w-48"
-              placeholder="blur"
+              // placeholder="blur"
             />
             <h2 className="pt-4 text-center text-2xl font-bold text-base-lime-green md:text-4xl">
               {data.title}
@@ -126,15 +126,39 @@ export default Details;
 // ];
 const mobiledetailsData = [
   {
+    title: "Dart",
+    img: ImageAssets.Summer2k24.Dart,
+    description:
+      "Dart is a programming language optimized for building mobile, web, and server apps, providing a strong foundation for Flutter development.",
+  },
+  {
     title: "Flutter",
     img: ImageAssets.Summer2k24.Flutter,
     description:
-      "We will be using flutter in our app traingin program",
+      "Flutter is a UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase.",
   },
   {
-    title: "CSS",
+    title: "Firebase",
+    img: ImageAssets.Summer2k24.Dart,
+    description:
+      "Firebase is a platform providing backend services like real-time databases, authentication, and analytics for app development.",
+  },
+  {
+    title: "Api Integration",
     img: ImageAssets.Summer2k24.Flutter,
     description:
-      "CSS is responsible for styling the appearance of HTML elements on web pages.",
+      "API integration allows apps to communicate with external services, fetching data or executing functions seamlessly within your application.",
+  },
+  {
+    title: "State Management",
+    img: ImageAssets.Summer2k24.Dart,
+    description:
+      "State management in Flutter involves managing the app's dynamic data, ensuring UI consistency and responsiveness to user interactions.",
+  },
+  {
+    title: "Widget Lifecycle",
+    img: ImageAssets.Summer2k24.Flutter,
+    description:
+      "Widget lifecycle in Flutter refers to the sequence of events and states a widget undergoes, from creation to disposal.",
   },
 ];
