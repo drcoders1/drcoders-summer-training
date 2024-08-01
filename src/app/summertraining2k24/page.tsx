@@ -27,7 +27,9 @@ const SummerTraining = () => {
 
       <div className="invisible h-28" aria-hidden></div>
       <Ambassador />
-      {/* <CommunityPartners /> */}
+
+      {/* <div className="invisible h-28" aria-hidden></div> */}
+      <CommunityPartners />
     </section>
   );
 };

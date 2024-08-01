@@ -89,6 +89,13 @@ export const ImageAssets = {
     Api,
     Widget,
     Git,
+    Partner1,
+    Partner2,
+    Partner3,
+    Partner4,
+    Partner5,
+    Partner6,
+    Partner7,
   },
 };
 
@@ -179,3 +186,10 @@ import Api from "@/assets/Images/summer2k24/details/api.png";
 import Dart from "@/assets/Images/summer2k24/details/dart.png";
 import Widget from "@/assets/Images/summer2k24/details/widget.png";
 import Git from "@/assets/Images/summer2k24/details/git.png";
+import Partner1 from "@/assets/Images/summer2k24/partners/logo1.png";
+import Partner2 from "@/assets/Images/summer2k24/partners/logo2.png";
+import Partner3 from "@/assets/Images/summer2k24/partners/logo3.jpg";
+import Partner4 from "@/assets/Images/summer2k24/partners/logo4.png";
+import Partner5 from "@/assets/Images/summer2k24/partners/logo5.png";
+import Partner6 from "@/assets/Images/summer2k24/partners/logo6.png";
+import Partner7 from "@/assets/Images/summer2k24/partners/logo7.png";
