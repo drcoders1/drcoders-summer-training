@@ -22,12 +22,12 @@ const SummerTraining = () => {
       <div className="invisible h-28" aria-hidden></div>
       <SummerCardGrid />
 
-      <div className="invisible h-28" aria-hidden></div>
+      {/* <div className="invisible h-28" aria-hidden></div> */}
       {/* <Enroll /> */}
 
       <div className="invisible h-28" aria-hidden></div>
       <Ambassador />
-      <CommunityPartners />
+      {/* <CommunityPartners /> */}
     </section>
   );
 };

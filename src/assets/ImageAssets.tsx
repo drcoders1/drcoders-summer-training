@@ -87,6 +87,8 @@ export const ImageAssets = {
     Firebase,
     Dart,
     Api,
+    Widget,
+    Git,
   },
 };
 
@@ -172,6 +174,8 @@ import Ambassador49 from "@/assets/Images/summer2k24/ambassador/Harmain Khan.jpe
 import ManPlaceholer from "@/assets/Images/summer2k24/manplaceholder.jpg";
 import WomanPlaceholer from "@/assets/Images/summer2k24/womenplaceholder.jpg";
 import Flutter2 from "@/assets/Images/summer2k24/details/flutter2.jpg";
-import Firebase from "@/assets/Images/summer2k24/details/firebase.jpg";
-import Api from "@/assets/Images/summer2k24/details/api.jpg";
+import Firebase from "@/assets/Images/summer2k24/details/firebase.png";
+import Api from "@/assets/Images/summer2k24/details/api.png";
 import Dart from "@/assets/Images/summer2k24/details/dart.png";
+import Widget from "@/assets/Images/summer2k24/details/widget.png";
+import Git from "@/assets/Images/summer2k24/details/git.png";

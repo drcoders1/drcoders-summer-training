@@ -139,26 +139,26 @@ const mobiledetailsData = [
   },
   {
     title: "Firebase",
-    img: ImageAssets.Summer2k24.Dart,
+    img: ImageAssets.Summer2k24.Firebase,
     description:
       "Firebase is a platform providing backend services like real-time databases, authentication, and analytics for app development.",
   },
   {
     title: "Api Integration",
-    img: ImageAssets.Summer2k24.Flutter,
+    img: ImageAssets.Summer2k24.Api,
     description:
       "API integration allows apps to communicate with external services, fetching data or executing functions seamlessly within your application.",
   },
   {
-    title: "State Management",
-    img: ImageAssets.Summer2k24.Dart,
-    description:
-      "State management in Flutter involves managing the app's dynamic data, ensuring UI consistency and responsiveness to user interactions.",
-  },
-  {
     title: "Widget Lifecycle",
-    img: ImageAssets.Summer2k24.Flutter,
+    img: ImageAssets.Summer2k24.Widget,
     description:
       "Widget lifecycle in Flutter refers to the sequence of events and states a widget undergoes, from creation to disposal.",
+  },
+  {
+    title: "Git",
+    img: ImageAssets.Summer2k24.Git,
+    description:
+      "Git is a distributed version control system that tracks changes in source code, enabling multiple developers to collaborate, manage versions, and merge code efficiently.",
   },
 ];
