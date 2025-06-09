@@ -1,3 +1,4 @@
+"use client";
 import MaxContainer from "../../MaxContainer";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -7,8 +8,12 @@ import SummerNavLinks from "./SummerNavLinks";
 import { ScrollerLink } from "@/components/MotionComponents";
 import NavbarHamburgerAndSidebar from "./NavbarHamburgerAndSidebar";
 import { Button } from "@/components/ui/button";
+import { useSwitchCourseStore } from "@/stores/SwitchCourse";
 
 const Navbar = () => {
+  const switchCourse = useSwitchCourseStore((state) => state.switch);
+  const currentCourse = useSwitchCourseStore((state) => state.course);
+
   return (
     <nav className="fixed top-0 z-50 w-full bg-transparent py-4 shadow-sm backdrop-blur-[10px]">
       <MaxContainer className="flex items-center justify-between">
@@ -20,6 +25,10 @@ const Navbar = () => {
             className="h-10 w-auto md:h-14"
           />
         </Link>
+
+        <Button onClick={switchCourse}>
+          {currentCourse === "web" ? "Is Web" : "Is Mobile"}
+        </Button>
 
         <div className="hidden items-center gap-10 md:flex">
           <SummerNavLinks varient="base" />

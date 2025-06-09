@@ -4,6 +4,7 @@ import Details from "@/components/SummerTraining2k24/Details";
 import Enroll from "@/components/SummerTraining2k24/Enroll";
 import SummerCardGrid from "@/components/SummerTraining2k24/SummerCardGrid";
 import SummerHero from "@/components/SummerTraining2k24/SummerHero";
+import WebOrMobile from "@/components/WebOrMobile";
 import React from "react";
 import ReactGA from "react-ga4";
 
@@ -16,6 +17,9 @@ const SummerTraining = () => {
 
   return (
     <section className="mt-14 md:mt-8">
+      <div className="pt-16">
+        <WebOrMobile />
+      </div>
       <SummerHero />
       <Details />
 
