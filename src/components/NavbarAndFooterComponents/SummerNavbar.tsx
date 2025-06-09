@@ -1,14 +1,14 @@
 "use client";
-import MaxContainer from "../../MaxContainer";
+import MaxContainer from "../MaxContainer";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { ImageAssets } from "@/assets/ImageAssets";
 import Link from "next/link";
 import SummerNavLinks from "./SummerNavLinks";
 import { ScrollerLink } from "@/components/MotionComponents";
-import NavbarHamburgerAndSidebar from "./NavbarHamburgerAndSidebar";
 import { Button } from "@/components/ui/button";
 import { useSwitchCourseStore } from "@/stores/SwitchCourse";
+import NavbarHamburgerAndSidebar from "./NavbarHamburgerAndSidebar";
 
 const Navbar = () => {
   const switchCourse = useSwitchCourseStore((state) => state.switch);

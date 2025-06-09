@@ -9,15 +9,6 @@ const config = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/summertraining2k24",
-        permanent: true, // This will use a 308 status for permanent redirect
-      },
-    ];
-  },
 };
 
 export default config;

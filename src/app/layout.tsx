@@ -4,9 +4,6 @@ import { GeistSans } from "geist/font/sans";
 
 import { TRPCReactProvider } from "@/trpc/react";
 import { cn } from "@/lib/utils";
-import Navbar from "@/components/NavbarAndFooterComponents/Navbar";
-import Footer from "@/components/NavbarAndFooterComponents/Footer";
-import ResponsiveTester from "@/components/ResponsiveTester";
 import Script from "next/script";
 import ReactGA from "react-ga4";
 

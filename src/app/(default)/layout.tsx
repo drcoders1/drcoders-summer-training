@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import ResponsiveTester from "@/components/ResponsiveTester";
-import SummerNavbar from "@/components/NavbarAndFooterComponents/Summer2k24/SummerNavbar";
-import SummerFooter from "@/components/NavbarAndFooterComponents/Summer2k24/SummerFooter";
+import SummerNavbar from "@/components/NavbarAndFooterComponents/SummerNavbar";
+import SummerFooter from "@/components/NavbarAndFooterComponents/SummerFooter";
 import { Today } from "@/lib/utils";
 import Link from "next/link";
 
