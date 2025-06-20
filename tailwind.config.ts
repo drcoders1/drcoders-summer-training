@@ -40,6 +40,7 @@ const config = {
         // custom colors start
         base: {
           background: "hsl(var(--base-blue))",
+          skyMint: "hsl(var(--base-sky-mint))",
           blue: "hsl(var(--base-blue))",
           yellow: "hsl(var(--base-yellow))",
           orange: "hsl(var(--base-orange))",

@@ -4,27 +4,35 @@
 
 @layer base {
   :root {
-    --background: 237 90% 12%;
-    --foreground: 60 9.1% 97.8%;
-    --card: 237 90% 12%;
-    --card-foreground: 60 9.1% 97.8%;
-    --popover: 237 90% 12%;
-    --popover-foreground: 60 9.1% 97.8%;
-    --primary: 52 100% 50%;
-    --primary-foreground: 26 83.3% 14.1%;
-    --secondary: 12 6.5% 15.1%;
-    --secondary-foreground: 60 9.1% 97.8%;
-    --muted: 12 6.5% 15.1%;
-    --muted-foreground: 24 5.4% 63.9%;
-    --accent: 12 6.5% 15.1%;
-    --accent-foreground: 60 9.1% 97.8%;
+    /* Updated to use your brand colors */
+    --background: 186 36% 5%; /* Your primary dark #091213 */
+    --foreground: 210 100% 100%; /* Your white #FDFEFF */
+    --card: 186 36% 5%;
+    --card-foreground: 210 100% 100%;
+    --popover: 186 36% 5%;
+    --popover-foreground: 210 100% 100%;
+    --primary: 185 64% 62%; /* Your sky mint #60D2DC */
+    --primary-foreground: 186 36% 5%;
+    --secondary: 195 4% 44%; /* Your grey #6B7173 */
+    --secondary-foreground: 210 100% 100%;
+    --muted: 195 4% 44%;
+    --muted-foreground: 195 4% 44%;
+    --accent: 185 64% 62%; /* Sky mint for accents */
+    --accent-foreground: 186 36% 5%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 60 9.1% 97.8%;
-    --border: 12 6.5% 15.1%;
-    --input: 12 6.5% 15.1%;
-    --ring: 35.5 91.7% 32.9%;
+    --destructive-foreground: 210 100% 100%;
+    --border: 195 4% 44%;
+    --input: 186 36% 5%;
+    --ring: 185 64% 62%; /* Sky mint for focus rings */
     --radius: 1rem;
 
+    /* Your brand color palette */
+    --brand-primary: 186 36% 5%; /* #091213 */
+    --brand-sky-mint: 185 64% 62%; /* #60D2DC */
+    --brand-white: 210 100% 100%; /* #FDFEFF */
+    --brand-grey: 195 4% 44%; /* #6B7173 */
+
+    /* Additional colors from your existing setup */
     --base-blue: 237 90% 12%;
     --base-yellow: 52 100% 50%;
     --base-orange: 24 100% 50%;
@@ -34,26 +42,33 @@
   }
 
   .colors {
-    --background: hsl(237 90% 12%);
-    --foreground: hsl(60 9.1% 97.8%);
-    --card: hsl(237 90% 12%);
-    --card-foreground: hsl(60 9.1% 97.8%);
-    --popover: hsl(237 90% 12%);
-    --popover-foreground: hsl(60 9.1% 97.8%);
-    --primary: hsl(52 100% 50%);
-    --primary-foreground: hsl(26 83.3% 14.1%);
-    --secondary: hsl(12 6.5% 15.1%);
-    --secondary-foreground: hsl(60 9.1% 97.8%);
-    --muted: hsl(12 6.5% 15.1%);
-    --muted-foreground: hsl(24 5.4% 63.9%);
-    --accent: hsl(12 6.5% 15.1%);
-    --accent-foreground: hsl(60 9.1% 97.8%);
+    --background: hsl(186 36% 5%);
+    --foreground: hsl(210 100% 100%);
+    --card: hsl(186 36% 5%);
+    --card-foreground: hsl(210 100% 100%);
+    --popover: hsl(186 36% 5%);
+    --popover-foreground: hsl(210 100% 100%);
+    --primary: hsl(185 64% 62%);
+    --primary-foreground: hsl(186 36% 5%);
+    --secondary: hsl(195 4% 44%);
+    --secondary-foreground: hsl(210 100% 100%);
+    --muted: hsl(195 4% 44%);
+    --muted-foreground: hsl(195 4% 44%);
+    --accent: hsl(185 64% 62%);
+    --accent-foreground: hsl(186 36% 5%);
     --destructive: hsl(0 62.8% 30.6%);
-    --destructive-foreground: hsl(60 9.1% 97.8%);
-    --border: hsl(12 6.5% 15.1%);
-    --input: hsl(12 6.5% 15.1%);
-    --ring: hsl(35.5 91.7% 32.9%);
+    --destructive-foreground: hsl(210 100% 100%);
+    --border: hsl(195 4% 44%);
+    --input: hsl(186 36% 5%);
+    --ring: hsl(185 64% 62%);
 
+    /* Brand colors as HSL */
+    --brand-primary: hsl(186 36% 5%);
+    --brand-sky-mint: hsl(185 64% 62%);
+    --brand-white: hsl(210 100% 100%);
+    --brand-grey: hsl(195 4% 44%);
+
+    /* Additional colors */
     --base-blue: hsl(237 90% 12%);
     --base-yellow: hsl(52 100% 50%);
     --base-orange: hsl(24 100% 50%);
@@ -63,25 +78,25 @@
   }
 
   .dark {
-    --background: 20 14.3% 4.1%;
-    --foreground: 60 9.1% 97.8%;
-    --card: 20 14.3% 4.1%;
-    --card-foreground: 60 9.1% 97.8%;
-    --popover: 20 14.3% 4.1%;
-    --popover-foreground: 60 9.1% 97.8%;
-    --primary: 47.9 95.8% 53.1%;
-    --primary-foreground: 26 83.3% 14.1%;
-    --secondary: 12 6.5% 15.1%;
-    --secondary-foreground: 60 9.1% 97.8%;
-    --muted: 12 6.5% 15.1%;
-    --muted-foreground: 24 5.4% 63.9%;
-    --accent: 12 6.5% 15.1%;
-    --accent-foreground: 60 9.1% 97.8%;
+    --background: 186 36% 5%;
+    --foreground: 210 100% 100%;
+    --card: 186 36% 5%;
+    --card-foreground: 210 100% 100%;
+    --popover: 186 36% 5%;
+    --popover-foreground: 210 100% 100%;
+    --primary: 185 64% 62%;
+    --primary-foreground: 186 36% 5%;
+    --secondary: 195 4% 44%;
+    --secondary-foreground: 210 100% 100%;
+    --muted: 195 4% 44%;
+    --muted-foreground: 195 4% 44%;
+    --accent: 185 64% 62%;
+    --accent-foreground: 186 36% 5%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 60 9.1% 97.8%;
-    --border: 12 6.5% 15.1%;
-    --input: 12 6.5% 15.1%;
-    --ring: 35.5 91.7% 32.9%;
+    --destructive-foreground: 210 100% 100%;
+    --border: 195 4% 44%;
+    --input: 186 36% 5%;
+    --ring: 185 64% 62%;
   }
 }
 
@@ -91,6 +106,42 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Custom utility classes for your brand colors */
+@layer utilities {
+  .bg-brand-primary {
+    background-color: hsl(var(--brand-primary));
+  }
+  .bg-brand-sky-mint {
+    background-color: hsl(var(--brand-sky-mint));
+  }
+  .bg-brand-white {
+    background-color: hsl(var(--brand-white));
+  }
+  .bg-brand-grey {
+    background-color: hsl(var(--brand-grey));
+  }
+  
+  .text-brand-primary {
+    color: hsl(var(--brand-primary));
+  }
+  .text-brand-sky-mint {
+    color: hsl(var(--brand-sky-mint));
+  }
+  .text-brand-white {
+    color: hsl(var(--brand-white));
+  }
+  .text-brand-grey {
+    color: hsl(var(--brand-grey));
+  }
+  
+  .border-brand-sky-mint {
+    border-color: hsl(var(--brand-sky-mint));
+  }
+  .border-brand-grey {
+    border-color: hsl(var(--brand-grey));
   }
 }
 
