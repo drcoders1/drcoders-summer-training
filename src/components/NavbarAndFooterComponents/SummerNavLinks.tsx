@@ -17,7 +17,7 @@ const SummerNavLinks = ({ varient }: { varient: "base" | "mobile" }) => {
             smooth={true}
             offset={-80}
             duration={500}
-            activeClass="text-base-lime-green before:absolute before:bottom-0 before:h-[2px] before:w-full before:rounded-full before:bg-base-lime-green"
+            activeClass="text-base-sky-mint before:absolute before:bottom-0 before:h-[2px] before:w-full before:rounded-full before:bg-base-sky-mint"
             className={cn("relative cursor-pointer font-semibold lg:text-lg")}
           >
             {link.Name}
@@ -39,7 +39,7 @@ const SummerNavLinks = ({ varient }: { varient: "base" | "mobile" }) => {
               smooth={true}
               offset={-80}
               duration={500}
-              activeClass="text-base-lime-green"
+              activeClass="text-base-sky-mint"
               className={cn("relative cursor-pointer text-xl font-semibold")}
             >
               <SheetClose className="w-full ">

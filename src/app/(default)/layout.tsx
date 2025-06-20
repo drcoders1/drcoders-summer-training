@@ -4,6 +4,8 @@ import SummerNavbar from "@/components/NavbarAndFooterComponents/SummerNavbar";
 import SummerFooter from "@/components/NavbarAndFooterComponents/SummerFooter";
 import { Today } from "@/lib/utils";
 import Link from "next/link";
+import Navbar from "@/components/VoComponents/navbar";
+import Footer from "@/components/VoComponents/footer";
 
 export default function SummerLayout({
   children,
@@ -11,13 +13,13 @@ export default function SummerLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="bg-base-blue">
+    <section className="">
       <div className="relative h-full font-medium text-base-blue text-white antialiased">
         <main className="relative flex min-h-screen flex-col">
-          <SummerNavbar />
+          <Navbar />
 
           <div className="flex-1 flex-grow">{children}</div>
-          <SummerFooter />
+          <Footer />
 
           <p className="bg-base-lime-green py-4 text-center text-sm font-semibold text-base-background">
             Copyright © <span>{Today.getFullYear()}</span>{" "}

@@ -34,7 +34,7 @@ export default function RootLayout({
                 
           gtag('config', 'G-1WLDJ85260');`}
       </Script>
-      <body className={cn("bg-base-blue", GeistSans.variable)}>
+      <body className={cn("", GeistSans.variable)}>
         <TRPCReactProvider>
           <div className="relative h-full font-medium text-base-blue text-white antialiased">
             <main className="relative flex min-h-screen flex-col">

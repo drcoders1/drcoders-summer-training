@@ -1,39 +1,45 @@
-import Ambassador from "@/components/HomeComponents/Ambassador";
-import CommunityPartners from "@/components/HomeComponents/CommunityPartners";
-import Details from "@/components/HomeComponents/Details";
-import Enroll from "@/components/HomeComponents/Enroll";
-import SummerCardGrid from "@/components/HomeComponents/SummerCardGrid";
-import SummerHero from "@/components/HomeComponents/SummerHero";
-import WebOrMobile from "@/components/WebOrMobile";
+import CourseDetails from "@/components/VoComponents/course-details";
+import CoursesOffered from "@/components/VoComponents/courses-offered";
+import FaqSection from "@/components/VoComponents/faq-section";
+import HeroSection from "@/components/VoComponents/hero-section";
+import PartnerSection from "@/components/VoComponents/partner-section";
+import ProjectsSection from "@/components/VoComponents/projects-section";
+import StatsSection from "@/components/VoComponents/stats-section";
+import TestimonialSection from "@/components/VoComponents/testimonial-section";
+import WhyChooseUs from "@/components/VoComponents/why-choose-us";
 import React from "react";
 import ReactGA from "react-ga4";
 
 const SummerTraining = () => {
   ReactGA.send({
     hitType: "pageview",
-    page: "/summertraining2k24",
+    page: "/summertraining2k25",
     title: "SummerTraniningPage",
   });
 
   return (
     <section className="mt-14 md:mt-8">
-      <div className="pt-16">
-        <WebOrMobile />
-      </div>
-      <SummerHero />
-      <Details />
+      <HeroSection />
 
-      <div className="invisible h-28" aria-hidden></div>
-      <SummerCardGrid />
+      {/* <div className="invisible h-28" aria-hidden></div>
+      <SummerCardGrid /> */}
 
-      {/* <div className="invisible h-28" aria-hidden></div> */}
-      {/* <Enroll /> */}
+      {/* <div className="invisible h-28" aria-hidden></div>
+      <Enroll /> */}
 
-      <div className="invisible h-28" aria-hidden></div>
-      <Ambassador />
+      {/* <div className="invisible h-28" aria-hidden></div>
+      <Ambassador /> */}
 
       {/* <div className="invisible h-28" aria-hidden></div> */}
-      <CommunityPartners />
+      {/* <CommunityPartners /> */}
+      <PartnerSection />
+      <WhyChooseUs />
+      <StatsSection />
+      <CoursesOffered />
+      <CourseDetails />
+      <TestimonialSection />
+      <ProjectsSection />
+      <FaqSection />
     </section>
   );
 };
