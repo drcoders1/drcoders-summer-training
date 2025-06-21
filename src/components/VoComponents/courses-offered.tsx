@@ -75,7 +75,7 @@ export default function CoursesOffered() {
       className="bg-brand-primary relative overflow-hidden py-20"
     >
       {/* Gradient blob effects */}
-      <div className="bg-brand-sky-mint/10 absolute bottom-20 right-10 h-80 w-80 rounded-full blur-3xl filter"></div>
+      <div className="bg-brand-sky-mint-10 absolute bottom-20 right-10 h-80 w-80 rounded-full blur-3xl filter"></div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div
@@ -95,8 +95,8 @@ export default function CoursesOffered() {
               key={course.title}
               className={`h-[500px] border-none transition-all duration-300 hover:scale-105 ${
                 course.isHighlighted
-                  ? "from-brand-sky-mint to-brand-sky-mint/80 text-brand-primary bg-gradient-to-br"
-                  : "bg-brand-white/5 border-brand-white/10 text-brand-white hover:bg-brand-white/10 backdrop-blur-sm"
+                  ? "from-brand-sky-mint to-brand-sky-mint-80 text-brand-primary bg-gradient-to-br"
+                  : "bg-brand-white-5 border-brand-white-10 text-brand-white hover:bg-brand-white-10 backdrop-blur-sm"
               } ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
@@ -104,8 +104,8 @@ export default function CoursesOffered() {
                 <div
                   className={`mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full ${
                     course.isHighlighted
-                      ? "bg-brand-primary/20"
-                      : "bg-brand-sky-mint/20"
+                      ? "bg-brand-primary-20"
+                      : "bg-brand-sky-mint-20"
                   }`}
                 >
                   <course.icon
@@ -114,7 +114,7 @@ export default function CoursesOffered() {
                 </div>
                 <h3 className="text-2xl font-bold">{course.title}</h3>
                 <p
-                  className={`${course.isHighlighted ? "text-brand-primary/80" : "text-brand-grey"}`}
+                  className={`${course.isHighlighted ? "text-brand-primary-80" : "text-brand-grey"}`}
                 >
                   {course.description}
                 </p>
@@ -135,8 +135,8 @@ export default function CoursesOffered() {
                 <Button
                   className={`w-full font-semibold ${
                     course.isHighlighted
-                      ? "bg-brand-primary hover:bg-brand-primary/90 text-brand-sky-mint"
-                      : "bg-brand-sky-mint hover:bg-brand-sky-mint/90 text-brand-primary"
+                      ? "bg-brand-primary hover:bg-brand-primary-90 text-brand-sky-mint"
+                      : "bg-brand-sky-mint hover:bg-brand-sky-mint-90 text-brand-primary"
                   }`}
                 >
                   Learn More

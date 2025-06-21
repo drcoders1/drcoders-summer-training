@@ -69,7 +69,7 @@ export default function FaqSection() {
       className="bg-brand-primary relative overflow-hidden py-20"
     >
       {/* Gradient blob effects */}
-      <div className="bg-brand-sky-mint/10 absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 transform rounded-full blur-3xl filter"></div>
+      <div className="bg-brand-sky-mint-10 absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 transform rounded-full blur-3xl filter"></div>
 
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div
@@ -93,7 +93,7 @@ export default function FaqSection() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-brand-white/5 border-brand-white/10 hover:bg-brand-white/10 rounded-xl px-6 backdrop-blur-sm transition-all duration-300"
+                className="bg-brand-white-5 border-brand-white-10 hover:bg-brand-white-10 rounded-xl px-6 backdrop-blur-sm transition-all duration-300"
               >
                 <AccordionTrigger className="text-brand-white hover:text-brand-sky-mint text-lg font-semibold">
                   {faq.question}

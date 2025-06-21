@@ -50,7 +50,7 @@ export default function CourseDetails() {
     <section
       id="course-details"
       ref={sectionRef}
-      className="bg-brand-sky-mint/5 py-20"
+      className="bg-brand-sky-mint-5 py-20"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
@@ -75,7 +75,7 @@ export default function CourseDetails() {
                   }`}
                   style={{ transitionDelay: `${index * 200}ms` }}
                 >
-                  <div className="bg-brand-sky-mint/20 mb-2 inline-flex h-12 w-12 items-center justify-center rounded-full">
+                  <div className="bg-brand-sky-mint-20 mb-2 inline-flex h-12 w-12 items-center justify-center rounded-full">
                     <stat.icon className="text-brand-sky-mint h-6 w-6" />
                   </div>
                   <div className="text-brand-white font-semibold">
@@ -88,7 +88,7 @@ export default function CourseDetails() {
 
             <Button
               size="lg"
-              className="bg-brand-sky-mint hover:bg-brand-sky-mint/90 text-brand-primary px-8 font-semibold"
+              className="bg-brand-sky-mint hover:bg-brand-sky-mint-90 text-brand-primary px-8 font-semibold"
             >
               Enroll Now - $2,999
             </Button>
@@ -97,7 +97,7 @@ export default function CourseDetails() {
           <div
             className={`transition-all duration-1000 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}`}
           >
-            <div className="bg-brand-white/5 rounded-xl p-8 backdrop-blur-sm">
+            <div className="bg-brand-white-5 rounded-xl p-8 backdrop-blur-sm">
               <h3 className="text-brand-white mb-6 text-2xl font-semibold">
                 What You'll Learn
               </h3>

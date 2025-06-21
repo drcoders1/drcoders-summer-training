@@ -69,7 +69,7 @@ export default function WhyChooseUs() {
       className="bg-brand-primary relative overflow-hidden py-20"
     >
       {/* Gradient blob effects */}
-      <div className="bg-brand-sky-mint/10 absolute bottom-20 left-10 h-80 w-80 rounded-full blur-3xl filter"></div>
+      <div className="bg-brand-sky-mint-20 absolute bottom-20 left-0 h-80 w-80 rounded-full blur-3xl filter"></div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div
@@ -86,7 +86,7 @@ export default function WhyChooseUs() {
             {features.slice(0, 2).map((feature, index) => (
               <Card
                 key={feature.title}
-                className={`bg-brand-white/5 border-brand-white/10 hover:bg-brand-sky-mint hover:text-brand-primary group h-[285px] cursor-pointer backdrop-blur-sm transition-all duration-500 hover:scale-105 ${
+                className={`bg-brand-glass border-brand-white hover:bg-brand-sky-mint hover:text-brand-primary group h-[285px] cursor-pointer backdrop-blur-sm transition-all duration-500 hover:scale-105 ${
                   isVisible
                     ? "translate-y-0 opacity-100"
                     : "translate-y-10 opacity-0"
@@ -94,7 +94,7 @@ export default function WhyChooseUs() {
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
                 <CardHeader>
-                  <div className="bg-brand-sky-mint/20 group-hover:bg-brand-primary/20 mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full transition-colors">
+                  <div className="bg-brand-sky-mint-20 group-hover:bg-brand-primary-20 mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full transition-colors">
                     <feature.icon className="text-brand-sky-mint group-hover:text-brand-primary h-6 w-6" />
                   </div>
                   <h3 className="text-brand-white group-hover:text-brand-primary text-xl font-semibold">
@@ -102,7 +102,7 @@ export default function WhyChooseUs() {
                   </h3>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-brand-grey group-hover:text-brand-primary/80">
+                  <p className="text-brand-grey group-hover:text-brand-primary-80">
                     {feature.description}
                   </p>
                 </CardContent>
@@ -115,7 +115,7 @@ export default function WhyChooseUs() {
             {features.slice(2, 4).map((feature, index) => (
               <Card
                 key={feature.title}
-                className={`bg-brand-white/5 border-brand-white/10 hover:bg-brand-sky-mint hover:text-brand-primary group h-[285px] cursor-pointer backdrop-blur-sm transition-all duration-500 hover:scale-105 ${
+                className={`bg-brand-white-5 border-brand-white-10 hover:bg-brand-sky-mint hover:text-brand-primary group h-[285px] cursor-pointer backdrop-blur-sm transition-all duration-500 hover:scale-105 ${
                   isVisible
                     ? "translate-y-0 opacity-100"
                     : "translate-y-10 opacity-0"
@@ -123,7 +123,7 @@ export default function WhyChooseUs() {
                 style={{ transitionDelay: `${(index + 2) * 200}ms` }}
               >
                 <CardHeader>
-                  <div className="bg-brand-sky-mint/20 group-hover:bg-brand-primary/20 mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full transition-colors">
+                  <div className="bg-brand-sky-mint-20 group-hover:bg-brand-primary-20 mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full transition-colors">
                     <feature.icon className="text-brand-sky-mint group-hover:text-brand-primary h-6 w-6" />
                   </div>
                   <h3 className="text-brand-white group-hover:text-brand-primary text-xl font-semibold">
@@ -131,7 +131,7 @@ export default function WhyChooseUs() {
                   </h3>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-brand-grey group-hover:text-brand-primary/80">
+                  <p className="text-brand-grey group-hover:text-brand-primary-80">
                     {feature.description}
                   </p>
                 </CardContent>
@@ -141,7 +141,7 @@ export default function WhyChooseUs() {
 
           {/* Right column - Main feature card */}
           <Card
-            className={`from-brand-sky-mint to-brand-sky-mint/80 text-brand-primary cursor-pointer bg-gradient-to-br transition-all duration-500 hover:scale-105 ${
+            className={`from-brand-sky-mint text-brand-primary cursor-pointer bg-gradient-to-br transition-all duration-500 hover:scale-105 ${
               isVisible
                 ? "translate-y-0 opacity-100"
                 : "translate-y-10 opacity-0"
@@ -149,17 +149,17 @@ export default function WhyChooseUs() {
             style={{ transitionDelay: "800ms" }}
           >
             <CardHeader>
-              <div className="bg-brand-primary/20 mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full">
+              <div className="bg-brand-primary-20 mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full">
                 <mainFeature.icon className="text-brand-primary h-8 w-8" />
               </div>
               <h3 className="text-2xl font-bold">{mainFeature.title}</h3>
             </CardHeader>
             <CardContent className="flex h-full flex-col">
-              <p className="text-brand-primary/80 mb-6 flex-1">
+              <p className="text-brand-primary-80 mb-6 flex-1 bg-blue-400">
                 {mainFeature.description}
               </p>
 
-              <div className="mb-8 space-y-3">
+              <div className=" mb-8 space-y-3 bg-red-400">
                 {mainFeature.features.map((feature, index) => (
                   <div key={index} className="flex items-center space-x-2">
                     <span className="text-sm">{feature}</span>
@@ -167,7 +167,7 @@ export default function WhyChooseUs() {
                 ))}
               </div>
 
-              <Button className="bg-brand-primary hover:bg-brand-primary/90 text-brand-sky-mint w-full font-semibold">
+              <Button className="bg-brand-primary hover:bg-brand-primary-90 text-brand-sky-mint w-full font-semibold">
                 Free Demo Class
               </Button>
             </CardContent>

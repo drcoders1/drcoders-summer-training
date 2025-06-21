@@ -35,6 +35,7 @@ const SummerTraining = () => {
       {/* <CommunityPartners /> */}
       <PartnerSection />
       <WhyChooseUs />
+
       <StatsSection />
       <CoursesOffered />
       <CourseDetails />

@@ -45,7 +45,7 @@ export default function PartnerSection() {
       className="bg-brand-primary relative overflow-hidden py-20"
     >
       {/* Gradient blob effects */}
-      <div className="bg-brand-sky-mint/10 absolute right-20 top-10 h-96 w-96 rounded-full blur-3xl filter"></div>
+      {/* <div className="bg-brand-sky-mint-10 absolute right-20 top-10 h-96 w-96 rounded-full blur-3xl filter"></div> */}
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div
@@ -65,7 +65,7 @@ export default function PartnerSection() {
             {[...partners, ...partners].map((partner, index) => (
               <div
                 key={`${partner}-${index}`}
-                className="bg-brand-white/5 border-brand-white/10 mx-8 flex-shrink-0 rounded-lg border px-6 py-4 backdrop-blur-sm"
+                className="bg-brand-white-5 border-brand-white-10 mx-8 flex-shrink-0 rounded-lg border px-6 py-4 backdrop-blur-sm"
               >
                 <div className="text-brand-white whitespace-nowrap text-lg font-semibold">
                   {partner}

@@ -76,7 +76,7 @@ export default function ProjectsSection() {
     <section
       id="projects"
       ref={sectionRef}
-      className="bg-brand-sky-mint/5 py-20"
+      className="bg-brand-sky-mint-5 py-20"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div
@@ -102,14 +102,14 @@ export default function ProjectsSection() {
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <div className="bg-brand-white/5 hover:bg-brand-white/10 group overflow-hidden rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105">
+              <div className="bg-brand-white-5 hover:bg-brand-white-10 group overflow-hidden rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105">
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
                     className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />
-                  <div className="bg-brand-primary/20 group-hover:bg-brand-primary/10 absolute inset-0 transition-colors" />
+                  <div className="bg-brand-primary-20 group-hover:bg-brand-primary-10 absolute inset-0 transition-colors" />
                 </div>
 
                 <div className="p-6">
@@ -147,7 +147,7 @@ export default function ProjectsSection() {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="bg-brand-sky-mint/20 text-brand-sky-mint rounded-full px-3 py-1 text-xs"
+                        className="bg-brand-sky-mint-20 text-brand-sky-mint rounded-full px-3 py-1 text-xs"
                       >
                         {tech}
                       </span>

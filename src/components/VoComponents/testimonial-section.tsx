@@ -70,7 +70,7 @@ export default function TestimonialSection() {
       className="bg-brand-primary relative overflow-hidden py-20"
     >
       {/* Gradient blob effects */}
-      <div className="bg-brand-sky-mint/10 absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 transform rounded-full blur-3xl filter"></div>
+      <div className="bg-brand-sky-mint-10 absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 transform rounded-full blur-3xl filter"></div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div
@@ -96,8 +96,8 @@ export default function TestimonialSection() {
                 <div
                   className={`flex h-[300px] flex-col rounded-xl p-8 ${
                     testimonial.isHighlighted
-                      ? "from-brand-white to-brand-white/90 text-brand-primary bg-gradient-to-br"
-                      : "bg-brand-white/5 border-brand-white/10 text-brand-white border backdrop-blur-sm"
+                      ? "from-brand-white to-brand-white-90 text-brand-primary bg-gradient-to-br"
+                      : "bg-brand-white-5 border-brand-white-10 text-brand-white border backdrop-blur-sm"
                   }`}
                 >
                   <div className="mb-4 flex items-center space-x-1">
@@ -110,7 +110,7 @@ export default function TestimonialSection() {
                   </div>
 
                   <p
-                    className={`mb-6 flex-1 ${testimonial.isHighlighted ? "text-brand-primary/80" : "text-brand-grey"}`}
+                    className={`mb-6 flex-1 ${testimonial.isHighlighted ? "text-brand-primary-80" : "text-brand-grey"}`}
                   >
                     "{testimonial.content}"
                   </p>
@@ -128,7 +128,7 @@ export default function TestimonialSection() {
                     <div
                       className={`text-sm ${
                         testimonial.isHighlighted
-                          ? "text-brand-primary/60"
+                          ? "text-brand-primary-60"
                           : "text-brand-sky-mint"
                       }`}
                     >

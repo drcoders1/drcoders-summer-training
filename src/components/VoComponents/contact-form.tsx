@@ -43,8 +43,8 @@ export default function ContactForm() {
       className="bg-brand-primary relative overflow-hidden py-20"
     >
       {/* Gradient blob effects */}
-      <div className="bg-brand-sky-mint/10 absolute bottom-10 left-10 h-80 w-80 rounded-full blur-3xl filter"></div>
-      <div className="bg-brand-sky-mint/5 absolute right-10 top-10 h-96 w-96 rounded-full blur-3xl filter"></div>
+      <div className="bg-brand-sky-mint-10 absolute bottom-10 left-10 h-80 w-80 rounded-full blur-3xl filter"></div>
+      <div className="bg-brand-sky-mint-5 absolute right-10 top-10 h-96 w-96 rounded-full blur-3xl filter"></div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div
@@ -65,7 +65,7 @@ export default function ContactForm() {
             className={`transition-all duration-1000 ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"}`}
             style={{ transitionDelay: "200ms" }}
           >
-            <Card className="bg-brand-white/5 border-brand-white/10 h-full backdrop-blur-sm">
+            <Card className="bg-brand-white-5 border-brand-white-10 h-full backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="text-brand-white mb-6 text-2xl font-bold">
                   Get in Touch
@@ -73,7 +73,7 @@ export default function ContactForm() {
               </CardHeader>
               <CardContent className="space-y-8">
                 <div className="flex items-center space-x-4">
-                  <div className="bg-brand-sky-mint/20 inline-flex h-12 w-12 items-center justify-center rounded-full">
+                  <div className="bg-brand-sky-mint-20 inline-flex h-12 w-12 items-center justify-center rounded-full">
                     <Mail className="text-brand-sky-mint h-6 w-6" />
                   </div>
                   <div>
@@ -83,7 +83,7 @@ export default function ContactForm() {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="bg-brand-sky-mint/20 inline-flex h-12 w-12 items-center justify-center rounded-full">
+                  <div className="bg-brand-sky-mint-20 inline-flex h-12 w-12 items-center justify-center rounded-full">
                     <Phone className="text-brand-sky-mint h-6 w-6" />
                   </div>
                   <div>
@@ -93,7 +93,7 @@ export default function ContactForm() {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="bg-brand-sky-mint/20 inline-flex h-12 w-12 items-center justify-center rounded-full">
+                  <div className="bg-brand-sky-mint-20 inline-flex h-12 w-12 items-center justify-center rounded-full">
                     <MapPin className="text-brand-sky-mint h-6 w-6" />
                   </div>
                   <div>
@@ -107,16 +107,16 @@ export default function ContactForm() {
                     Why Choose Us?
                   </h3>
                   <div className="flex flex-wrap gap-2">
-                    <span className="bg-brand-sky-mint/20 text-brand-sky-mint rounded-full px-3 py-1 text-sm">
+                    <span className="bg-brand-sky-mint-20 text-brand-sky-mint rounded-full px-3 py-1 text-sm">
                       🚀 Fast Track Learning
                     </span>
-                    <span className="bg-brand-sky-mint/20 text-brand-sky-mint rounded-full px-3 py-1 text-sm">
+                    <span className="bg-brand-sky-mint-20 text-brand-sky-mint rounded-full px-3 py-1 text-sm">
                       💼 Job Placement
                     </span>
-                    <span className="bg-brand-sky-mint/20 text-brand-sky-mint rounded-full px-3 py-1 text-sm">
+                    <span className="bg-brand-sky-mint-20 text-brand-sky-mint rounded-full px-3 py-1 text-sm">
                       🏆 Industry Certified
                     </span>
-                    <span className="bg-brand-sky-mint/20 text-brand-sky-mint rounded-full px-3 py-1 text-sm">
+                    <span className="bg-brand-sky-mint-20 text-brand-sky-mint rounded-full px-3 py-1 text-sm">
                       👥 Expert Mentors
                     </span>
                   </div>
@@ -130,7 +130,7 @@ export default function ContactForm() {
             className={`transition-all duration-1000 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}`}
             style={{ transitionDelay: "400ms" }}
           >
-            <Card className="bg-brand-white/5 border-brand-white/10 backdrop-blur-sm">
+            <Card className="bg-brand-white-5 border-brand-white-10 backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="text-brand-white text-2xl font-bold">
                   Enroll Now
@@ -146,7 +146,7 @@ export default function ContactForm() {
                       <Input
                         id="firstName"
                         placeholder="John"
-                        className="bg-brand-white/10 border-brand-white/20 text-brand-white placeholder:text-brand-grey focus:border-brand-sky-mint"
+                        className="bg-brand-white-10 border-brand-white-20 text-brand-white placeholder:text-brand-grey focus:border-brand-sky-mint"
                       />
                     </div>
                     <div className="space-y-2">
@@ -156,7 +156,7 @@ export default function ContactForm() {
                       <Input
                         id="lastName"
                         placeholder="Doe"
-                        className="bg-brand-white/10 border-brand-white/20 text-brand-white placeholder:text-brand-grey focus:border-brand-sky-mint"
+                        className="bg-brand-white-10 border-brand-white-20 text-brand-white placeholder:text-brand-grey focus:border-brand-sky-mint"
                       />
                     </div>
                   </div>
@@ -169,7 +169,7 @@ export default function ContactForm() {
                       id="email"
                       type="email"
                       placeholder="john@example.com"
-                      className="bg-brand-white/10 border-brand-white/20 text-brand-white placeholder:text-brand-grey focus:border-brand-sky-mint"
+                      className="bg-brand-white-10 border-brand-white-20 text-brand-white placeholder:text-brand-grey focus:border-brand-sky-mint"
                     />
                   </div>
 
@@ -180,7 +180,7 @@ export default function ContactForm() {
                     <Input
                       id="phone"
                       placeholder="+1 (555) 123-4567"
-                      className="bg-brand-white/10 border-brand-white/20 text-brand-white placeholder:text-brand-grey focus:border-brand-sky-mint"
+                      className="bg-brand-white-10 border-brand-white-20 text-brand-white placeholder:text-brand-grey focus:border-brand-sky-mint"
                     />
                   </div>
 
@@ -189,25 +189,25 @@ export default function ContactForm() {
                       Interested Course
                     </Label>
                     <Select>
-                      <SelectTrigger className="bg-brand-white/10 border-brand-white/20 text-brand-white focus:border-brand-sky-mint">
+                      <SelectTrigger className="bg-brand-white-10 border-brand-white-20 text-brand-white focus:border-brand-sky-mint">
                         <SelectValue placeholder="Select a course" />
                       </SelectTrigger>
-                      <SelectContent className="bg-brand-primary border-brand-white/20">
+                      <SelectContent className="bg-brand-primary border-brand-white-20">
                         <SelectItem
                           value="fullstack"
-                          className="text-brand-white hover:bg-brand-sky-mint/20"
+                          className="text-brand-white hover:bg-brand-sky-mint-20"
                         >
                           Full Stack Development
                         </SelectItem>
                         <SelectItem
                           value="mobile"
-                          className="text-brand-white hover:bg-brand-sky-mint/20"
+                          className="text-brand-white hover:bg-brand-sky-mint-20"
                         >
                           Mobile App Development
                         </SelectItem>
                         <SelectItem
                           value="frontend"
-                          className="text-brand-white hover:bg-brand-sky-mint/20"
+                          className="text-brand-white hover:bg-brand-sky-mint-20"
                         >
                           Frontend Development
                         </SelectItem>
@@ -222,13 +222,13 @@ export default function ContactForm() {
                     <Textarea
                       id="message"
                       placeholder="Tell us about your goals and experience..."
-                      className="bg-brand-white/10 border-brand-white/20 text-brand-white placeholder:text-brand-grey focus:border-brand-sky-mint min-h-[100px]"
+                      className="bg-brand-white-10 border-brand-white-20 text-brand-white placeholder:text-brand-grey focus:border-brand-sky-mint min-h-[100px]"
                     />
                   </div>
 
                   <Button
                     type="submit"
-                    className="bg-brand-sky-mint hover:bg-brand-sky-mint/90 text-brand-primary group w-full py-3 font-semibold"
+                    className="bg-brand-sky-mint hover:bg-brand-sky-mint-90 text-brand-primary group w-full py-3 font-semibold"
                   >
                     <Send className="mr-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                     Send Message

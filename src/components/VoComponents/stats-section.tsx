@@ -98,7 +98,7 @@ export default function StatsSection() {
       className="bg-brand-primary relative overflow-hidden py-20"
     >
       {/* Gradient blob effects */}
-      <div className="bg-brand-sky-mint/10 absolute left-20 top-10 h-96 w-96 rounded-full blur-3xl filter"></div>
+      <div className="bg-brand-sky-mint-10 absolute left-20 top-10 h-96 w-96 rounded-full blur-3xl filter"></div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div
@@ -113,7 +113,7 @@ export default function StatsSection() {
           {stats.map((stat, index) => (
             <Card
               key={stat.label}
-              className={`bg-brand-sky-mint/90 border-none text-center backdrop-blur-sm transition-all duration-300 hover:scale-105 ${
+              className={`bg-brand-sky-mint-90 border-none text-center backdrop-blur-sm transition-all duration-300 hover:scale-105 ${
                 isVisible
                   ? "translate-y-0 opacity-100"
                   : "translate-y-10 opacity-0"
@@ -121,7 +121,7 @@ export default function StatsSection() {
               style={{ transitionDelay: `${index * 200}ms` }}
             >
               <CardContent className="p-8">
-                <div className="bg-brand-primary/20 mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full">
+                <div className="bg-brand-primary-20 mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full">
                   <stat.icon className="text-brand-primary h-8 w-8" />
                 </div>
                 <AnimatedCounter target={stat.number} suffix={stat.suffix} />

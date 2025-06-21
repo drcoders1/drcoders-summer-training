@@ -35,7 +35,7 @@ const Navbar = () => {
 
           <Link
             className={cn(
-              "bg-base-skyMint hover:bg-base-skymint/90 cursor-pointer rounded-lg px-3 py-2 text-sm font-medium text-base-background lg:px-5 lg:text-base",
+              "hover:bg-base-skymint-90 cursor-pointer rounded-lg bg-base-skyMint px-3 py-2 text-sm font-medium text-base-background lg:px-5 lg:text-base",
             )}
             href="https://forms.gle/34kuhgsASRiYPhfL9"
             target="_blank"

@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 
 const navItems = [
   { name: "Home", href: "#hero" },
@@ -12,38 +12,42 @@ const navItems = [
   { name: "Testimonials", href: "#testimonials" },
   { name: "Projects", href: "#projects" },
   { name: "FAQ", href: "#faq" },
-]
+];
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
+    const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-    setIsOpen(false)
-  }
+    setIsOpen(false);
+  };
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-brand-primary/95 backdrop-blur-sm shadow-lg" : "bg-transparent"
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
+        scrolled
+          ? "bg-brand-primary-95 shadow-lg backdrop-blur-sm"
+          : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-brand-sky-mint">EduPlatform</h1>
+            <h1 className="text-brand-sky-mint text-2xl font-bold">
+              EduPlatform
+            </h1>
           </div>
 
           {/* Desktop Navigation */}
@@ -53,7 +57,7 @@ export default function Navbar() {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-brand-white hover:text-brand-sky-mint px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  className="text-brand-white hover:text-brand-sky-mint rounded-md px-3 py-2 text-sm font-medium transition-colors duration-200"
                 >
                   {item.name}
                 </button>
@@ -63,7 +67,10 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-brand-white hover:text-brand-sky-mint">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-brand-white hover:text-brand-sky-mint"
+            >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -72,13 +79,13 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-brand-primary/95 backdrop-blur-sm">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="bg-brand-primary-95 backdrop-blur-sm md:hidden">
+          <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-brand-white hover:text-brand-sky-mint block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors duration-200"
+                className="text-brand-white hover:text-brand-sky-mint block w-full rounded-md px-3 py-2 text-left text-base font-medium transition-colors duration-200"
               >
                 {item.name}
               </button>
@@ -87,5 +94,5 @@ export default function Navbar() {
         </div>
       )}
     </nav>
-  )
+  );
 }

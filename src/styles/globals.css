@@ -30,6 +30,7 @@
     --brand-primary: 186 36% 5%; /* #091213 */
     --brand-sky-mint: 185 64% 62%; /* #60D2DC */
     --brand-white: 210 100% 100%; /* #FDFEFF */
+    --brand-white-low: 0, 0%, 100%, 0.025; /* #FDFEFF */
     --brand-grey: 195 4% 44%; /* #6B7173 */
 
     /* Additional colors from your existing setup */
@@ -66,6 +67,7 @@
     --brand-primary: hsl(186 36% 5%);
     --brand-sky-mint: hsl(185 64% 62%);
     --brand-white: hsl(210 100% 100%);
+    --brand-white-low: hsla(0, 0%, 100%, 0.304);
     --brand-grey: hsl(195 4% 44%);
 
     /* Additional colors */
@@ -109,20 +111,136 @@
   }
 }
 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations for hero section */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Enhanced button hover effects */
+@layer utilities {
+  .hover-glow {
+    transition: all 0.3s ease;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 30px rgba(96, 210, 220, 0.4);
+  }
+}
+
+/* Scrolling marquee animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
 /* Custom utility classes for your brand colors */
 @layer utilities {
+
+  .from-brand-sky-mint {
+    --tw-gradient-from: hsl(var(--brand-sky-mint));
+    --tw-gradient-to: hsl(var(--brand-sky-mint) / 0.60);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
   .bg-brand-primary {
     background-color: hsl(var(--brand-primary));
   }
+  .bg-brand-primary-10 {
+    background-color: hsla(var(--brand-primary)/0.10);
+  }
+  .bg-brand-primary-20 {
+    background-color: hsla(var(--brand-primary)/0.20);
+  }
+  .bg-brand-primary-60 {
+    background-color: hsla(var(--brand-primary)/0.60);
+  }
+  .bg-brand-primary-80 {
+    background-color: hsla(var(--brand-primary)/0.80);
+  }
+  .bg-brand-primary-90 {
+    background-color: hsla(var(--brand-primary)/0.90);
+  }
+  .bg-brand-primary-95 {
+    background-color: hsla(var(--brand-primary)/0.95);
+  }
+
+  /* SKY MINT varients */
   .bg-brand-sky-mint {
     background-color: hsl(var(--brand-sky-mint));
   }
+  .bg-brand-sky-mint-5 {
+    background-color: hsla(var(--brand-sky-mint)/ 0.05);
+  }
+  .bg-brand-sky-mint-10 {
+    background-color: hsla(var(--brand-sky-mint)/ 0.10);
+  }
+  .bg-brand-sky-mint-20 {
+    background-color: hsla(var(--brand-sky-mint)/ 0.20);
+  }
+  .bg-brand-sky-mint-25 {
+    background-color: hsla(var(--brand-sky-mint)/ 0.25);
+  }
+  .bg-brand-sky-mint-80 {
+    background-color: hsla(var(--brand-sky-mint)/ 0.80);
+  }
+  .bg-brand-sky-mint-90 {
+    background-color: hsla(var(--brand-sky-mint)/ 0.90);
+  }
+
   .bg-brand-white {
     background-color: hsl(var(--brand-white));
   }
+  .bg-brand-white-5 {
+    background-color: hsla(var(--brand-white)/0.05);
+  }
+  .bg-brand-white-10 {
+    background-color: hsla(var(--brand-white)/0.10);
+  }
+  .bg-brand-white-20 {
+    background-color: hsla(var(--brand-white)/0.20);
+  }
+  .bg-brand-white-30 {
+    background-color: hsla(var(--brand-white)/0.30);
+  }
+  .bg-brand-white-90 {
+    background-color: hsla(var(--brand-white)/0.90);
+  }
+  .bg-brand-glass {
+    background-color: hsla(var(--brand-white) / 0.02);
+  }
+  
   .bg-brand-grey {
     background-color: hsl(var(--brand-grey));
   }
+
   
   .text-brand-primary {
     color: hsl(var(--brand-primary));
