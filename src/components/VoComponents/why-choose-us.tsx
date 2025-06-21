@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Users, BookOpen, Award, Briefcase, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 const features = [
   {
@@ -83,72 +84,77 @@ export default function WhyChooseUs() {
           {/* Left column - 2 cards */}
           <div className="space-y-6">
             {features.slice(0, 2).map((feature, index) => (
-              <div
+              <Card
                 key={feature.title}
-                className={`bg-brand-white/5 border-brand-white/10 hover:bg-brand-sky-mint hover:text-brand-primary group h-[285px] cursor-pointer rounded-xl border p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 ${
+                className={`bg-brand-white/5 border-brand-white/10 hover:bg-brand-sky-mint hover:text-brand-primary group h-[285px] cursor-pointer backdrop-blur-sm transition-all duration-500 hover:scale-105 ${
                   isVisible
                     ? "translate-y-0 opacity-100"
                     : "translate-y-10 opacity-0"
                 }`}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
-                <div className="flex h-full flex-col">
+                <CardHeader>
                   <div className="bg-brand-sky-mint/20 group-hover:bg-brand-primary/20 mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full transition-colors">
                     <feature.icon className="text-brand-sky-mint group-hover:text-brand-primary h-6 w-6" />
                   </div>
-                  <h3 className="text-brand-white group-hover:text-brand-primary mb-3 text-xl font-semibold">
+                  <h3 className="text-brand-white group-hover:text-brand-primary text-xl font-semibold">
                     {feature.title}
                   </h3>
-                  <p className="text-brand-grey group-hover:text-brand-primary/80 flex-1">
+                </CardHeader>
+                <CardContent>
+                  <p className="text-brand-grey group-hover:text-brand-primary/80">
                     {feature.description}
                   </p>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
 
           {/* Middle column - 2 cards */}
           <div className="space-y-6">
             {features.slice(2, 4).map((feature, index) => (
-              <div
+              <Card
                 key={feature.title}
-                className={`bg-brand-white/5 border-brand-white/10 hover:bg-brand-sky-mint hover:text-brand-primary group h-[285px] cursor-pointer rounded-xl border p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 ${
+                className={`bg-brand-white/5 border-brand-white/10 hover:bg-brand-sky-mint hover:text-brand-primary group h-[285px] cursor-pointer backdrop-blur-sm transition-all duration-500 hover:scale-105 ${
                   isVisible
                     ? "translate-y-0 opacity-100"
                     : "translate-y-10 opacity-0"
                 }`}
                 style={{ transitionDelay: `${(index + 2) * 200}ms` }}
               >
-                <div className="flex h-full flex-col">
+                <CardHeader>
                   <div className="bg-brand-sky-mint/20 group-hover:bg-brand-primary/20 mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full transition-colors">
                     <feature.icon className="text-brand-sky-mint group-hover:text-brand-primary h-6 w-6" />
                   </div>
-                  <h3 className="text-brand-white group-hover:text-brand-primary mb-3 text-xl font-semibold">
+                  <h3 className="text-brand-white group-hover:text-brand-primary text-xl font-semibold">
                     {feature.title}
                   </h3>
-                  <p className="text-brand-grey group-hover:text-brand-primary/80 flex-1">
+                </CardHeader>
+                <CardContent>
+                  <p className="text-brand-grey group-hover:text-brand-primary/80">
                     {feature.description}
                   </p>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
 
           {/* Right column - Main feature card */}
-          <div
-            className={`from-brand-sky-mint to-brand-sky-mint/80 text-brand-primary cursor-pointer rounded-xl bg-gradient-to-br p-8 transition-all duration-500 hover:scale-105 ${
+          <Card
+            className={`from-brand-sky-mint to-brand-sky-mint/80 text-brand-primary cursor-pointer bg-gradient-to-br transition-all duration-500 hover:scale-105 ${
               isVisible
                 ? "translate-y-0 opacity-100"
                 : "translate-y-10 opacity-0"
             }`}
             style={{ transitionDelay: "800ms" }}
           >
-            <div className="flex h-full flex-col">
+            <CardHeader>
               <div className="bg-brand-primary/20 mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full">
                 <mainFeature.icon className="text-brand-primary h-8 w-8" />
               </div>
-
-              <h3 className="mb-4 text-2xl font-bold">{mainFeature.title}</h3>
+              <h3 className="text-2xl font-bold">{mainFeature.title}</h3>
+            </CardHeader>
+            <CardContent className="flex h-full flex-col">
               <p className="text-brand-primary/80 mb-6 flex-1">
                 {mainFeature.description}
               </p>
@@ -164,8 +170,8 @@ export default function WhyChooseUs() {
               <Button className="bg-brand-primary hover:bg-brand-primary/90 text-brand-sky-mint w-full font-semibold">
                 Free Demo Class
               </Button>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

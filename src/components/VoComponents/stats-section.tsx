@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { BookOpen, Users, Award, GraduationCap } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 const stats = [
   { icon: BookOpen, number: 25, suffix: "+", label: "Courses Available" },
@@ -110,23 +111,25 @@ export default function StatsSection() {
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, index) => (
-            <div
+            <Card
               key={stat.label}
-              className={`bg-brand-sky-mint/90 rounded-xl p-8 text-center backdrop-blur-sm transition-all duration-300 hover:scale-105 ${
+              className={`bg-brand-sky-mint/90 border-none text-center backdrop-blur-sm transition-all duration-300 hover:scale-105 ${
                 isVisible
                   ? "translate-y-0 opacity-100"
                   : "translate-y-10 opacity-0"
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <div className="bg-brand-primary/20 mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full">
-                <stat.icon className="text-brand-primary h-8 w-8" />
-              </div>
-              <AnimatedCounter target={stat.number} suffix={stat.suffix} />
-              <div className="text-brand-primary mt-2 text-lg font-medium">
-                {stat.label}
-              </div>
-            </div>
+              <CardContent className="p-8">
+                <div className="bg-brand-primary/20 mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full">
+                  <stat.icon className="text-brand-primary h-8 w-8" />
+                </div>
+                <AnimatedCounter target={stat.number} suffix={stat.suffix} />
+                <div className="text-brand-primary mt-2 text-lg font-medium">
+                  {stat.label}
+                </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>

@@ -1,3 +1,4 @@
+import ContactForm from "@/components/VoComponents/contact-form";
 import CourseDetails from "@/components/VoComponents/course-details";
 import CoursesOffered from "@/components/VoComponents/courses-offered";
 import FaqSection from "@/components/VoComponents/faq-section";
@@ -40,6 +41,7 @@ const SummerTraining = () => {
       <TestimonialSection />
       <ProjectsSection />
       <FaqSection />
+      <ContactForm />
     </section>
   );
 };

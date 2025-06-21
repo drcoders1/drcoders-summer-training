@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Smartphone, Code, Monitor } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 const courses = [
   {
@@ -90,69 +91,58 @@ export default function CoursesOffered() {
 
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
           {courses.map((course, index) => (
-            <div
+            <Card
               key={course.title}
-              className={`transition-all duration-1000 ${
-                isVisible
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-10 opacity-0"
-              }`}
+              className={`h-[500px] border-none transition-all duration-300 hover:scale-105 ${
+                course.isHighlighted
+                  ? "from-brand-sky-mint to-brand-sky-mint/80 text-brand-primary bg-gradient-to-br"
+                  : "bg-brand-white/5 border-brand-white/10 text-brand-white hover:bg-brand-white/10 backdrop-blur-sm"
+              } ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <div
-                className={`h-[500px] rounded-xl p-8 transition-all duration-300 hover:scale-105 ${
-                  course.isHighlighted
-                    ? "from-brand-sky-mint to-brand-sky-mint/80 text-brand-primary bg-gradient-to-br"
-                    : "bg-brand-white/5 border-brand-white/10 text-brand-white hover:bg-brand-white/10 border backdrop-blur-sm"
-                }`}
-              >
-                <div className="flex h-full flex-col">
-                  <div
-                    className={`mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full ${
-                      course.isHighlighted
-                        ? "bg-brand-primary/20"
-                        : "bg-brand-sky-mint/20"
-                    }`}
-                  >
-                    <course.icon
-                      className={`h-8 w-8 ${course.isHighlighted ? "text-[#091213]" : "text-[#60D2DC]"}`}
-                    />
-                  </div>
-
-                  <h3
-                    className={`mb-4 text-2xl font-bold  ${course.isHighlighted ? "text-[#000000]" : "text-[#FDFEFF]"}`}
-                  >
-                    {course.title}
-                  </h3>
-                  <p
-                    className={`mb-6 ${course.isHighlighted ? "text-white/80" : "text-brand-grey"}`}
-                  >
-                    {course.description}
-                  </p>
-
-                  <div className="mb-8 flex-1 space-y-3">
-                    {course.features.map((feature, featureIndex) => (
-                      <div
-                        key={featureIndex}
-                        className="flex items-center space-x-2"
-                      >
-                        <span className="text-sm">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <Button
-                    className={`w-full font-semibold ${
-                      course.isHighlighted
-                        ? "bg-brand-primary hover:bg-brand-primary/90 text-brand-sky-mint"
-                        : "bg-brand-sky-mint hover:bg-brand-sky-mint/90 text-brand-primary"
-                    }`}
-                  >
-                    Learn More
-                  </Button>
+              <CardHeader>
+                <div
+                  className={`mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full ${
+                    course.isHighlighted
+                      ? "bg-brand-primary/20"
+                      : "bg-brand-sky-mint/20"
+                  }`}
+                >
+                  <course.icon
+                    className={`h-8 w-8 ${course.isHighlighted ? "text-brand-primary" : "text-brand-sky-mint"}`}
+                  />
                 </div>
-              </div>
-            </div>
+                <h3 className="text-2xl font-bold">{course.title}</h3>
+                <p
+                  className={`${course.isHighlighted ? "text-brand-primary/80" : "text-brand-grey"}`}
+                >
+                  {course.description}
+                </p>
+              </CardHeader>
+
+              <CardContent className="flex h-full flex-col">
+                <div className="mb-8 flex-1 space-y-3">
+                  {course.features.map((feature, featureIndex) => (
+                    <div
+                      key={featureIndex}
+                      className="flex items-center space-x-2"
+                    >
+                      <span className="text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <Button
+                  className={`w-full font-semibold ${
+                    course.isHighlighted
+                      ? "bg-brand-primary hover:bg-brand-primary/90 text-brand-sky-mint"
+                      : "bg-brand-sky-mint hover:bg-brand-sky-mint/90 text-brand-primary"
+                  }`}
+                >
+                  Learn More
+                </Button>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>

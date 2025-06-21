@@ -1,7 +1,12 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-import { ChevronDown } from "lucide-react"
+import { useEffect, useRef, useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const faqs = [
   {
@@ -34,81 +39,73 @@ const faqs = [
     answer:
       "Yes, you'll receive a verified certificate upon successful completion of your course, which you can add to your LinkedIn profile and resume.",
   },
-]
+];
 
 export default function FaqSection() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
-  const sectionRef = useRef<HTMLElement>(null)
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
+        if (entry!.isIntersecting) {
+          setIsVisible(true);
         }
       },
       { threshold: 0.1 },
-    )
+    );
 
     if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+      observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect()
-  }, [])
-
-  const toggleFaq = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index)
-  }
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section id="faq" ref={sectionRef} className="py-20 bg-brand-primary">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="faq"
+      ref={sectionRef}
+      className="bg-brand-primary relative overflow-hidden py-20"
+    >
+      {/* Gradient blob effects */}
+      <div className="bg-brand-sky-mint/10 absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 transform rounded-full blur-3xl filter"></div>
+
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div
-          className={`text-center mb-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          className={`mb-16 text-center transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-white mb-4">Frequently Asked Questions</h2>
-          <p className="text-brand-grey text-lg max-w-2xl mx-auto">
-            Get answers to the most common questions about our courses and programs
+          <h2 className="text-brand-white mb-4 text-3xl font-bold md:text-4xl">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-brand-grey mx-auto max-w-2xl text-lg">
+            Get answers to the most common questions about our courses and
+            programs
           </p>
         </div>
 
-        <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className={`transition-all duration-1000 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
-              <div className="bg-brand-white/5 backdrop-blur-sm rounded-xl overflow-hidden hover:bg-brand-white/10 transition-all duration-300">
-                <button
-                  onClick={() => toggleFaq(index)}
-                  className="w-full px-6 py-4 text-left flex items-center justify-between focus:outline-none"
-                >
-                  <span className="text-brand-white font-semibold text-lg">{faq.question}</span>
-                  <ChevronDown
-                    className={`h-5 w-5 text-brand-sky-mint transition-transform duration-300 ${
-                      openIndex === index ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-                <div
-                  className={`overflow-hidden transition-all duration-300 ${
-                    openIndex === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <div className="px-6 pb-4">
-                    <p className="text-brand-grey">{faq.answer}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
+        <div
+          className={`transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+          style={{ transitionDelay: "300ms" }}
+        >
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqs.map((faq, index) => (
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="bg-brand-white/5 border-brand-white/10 hover:bg-brand-white/10 rounded-xl px-6 backdrop-blur-sm transition-all duration-300"
+              >
+                <AccordionTrigger className="text-brand-white hover:text-brand-sky-mint text-lg font-semibold">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-brand-grey pt-2">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </div>
     </section>
-  )
+  );
 }
