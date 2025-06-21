@@ -3,7 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import { Users, BookOpen, Award, Briefcase, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
 
 const features = [
   {
@@ -154,26 +159,36 @@ export default function WhyChooseUs() {
               </div>
               <h3 className="text-2xl font-bold">{mainFeature.title}</h3>
             </CardHeader>
-            <CardContent className="flex h-full flex-col">
-              <p className="text-brand-primary-80 mb-6 flex-1 bg-blue-400">
+            <CardContent className="flex flex-col">
+              <p className="text-brand-primary-80 flex-1">
                 {mainFeature.description}
               </p>
 
-              <div className=" mb-8 space-y-3 bg-red-400">
+              <div className=" mb-8 space-y-3 ">
                 {mainFeature.features.map((feature, index) => (
                   <div key={index} className="flex items-center space-x-2">
                     <span className="text-sm">{feature}</span>
                   </div>
                 ))}
               </div>
-
+            </CardContent>
+            <CardFooter className="mt-auto">
               <Button className="bg-brand-primary hover:bg-brand-primary-90 text-brand-sky-mint w-full font-semibold">
                 Free Demo Class
               </Button>
-            </CardContent>
+            </CardFooter>
           </Card>
         </div>
       </div>
     </section>
   );
+}
+
+{
+  /* <div className="grid-col-3">
+  <div></div>
+  <div></div>
+  <div className="row-span-2"></div>
+  <div className="col-span-2"></div>
+</div>; */
 }

@@ -10,6 +10,8 @@ export const ImageAssets = {
     ChevronRight,
   },
 
+  Newlogo,
+
   Navbar: { Logo: DrcodersLogo, alt: "Drcoders Logo" },
 
   Summer2k24: {
@@ -193,3 +195,4 @@ import Partner4 from "@/assets/Images/summer2k24/partners/logo4.png";
 import Partner5 from "@/assets/Images/summer2k24/partners/logo5.png";
 import Partner6 from "@/assets/Images/summer2k24/partners/logo6.png";
 import Partner7 from "@/assets/Images/summer2k24/partners/logo7.png";
+import Newlogo from "@/assets/Images/logo.png";

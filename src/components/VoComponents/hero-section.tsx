@@ -29,8 +29,8 @@ export default function HeroSection() {
       {/* Animated Star Effects */}
       <div className="absolute inset-0 overflow-hidden">
         {/* gradient glob */}
-        <div className="bg-brand-sky-mint-10 absolute -right-20 top-10 h-96 w-96 rounded-full blur-3xl filter"></div>
-        <div className="bg-brand-sky-mint-10 absolute -left-20 bottom-14 h-96 w-96 rounded-full blur-3xl filter"></div>
+        <div className="bg-brand-sky-mint-20 absolute -right-20 top-10 h-96 w-96 rounded-full blur-3xl filter"></div>
+        <div className="bg-brand-sky-mint-20 absolute -left-20 bottom-14 h-96 w-96 rounded-full blur-3xl filter"></div>
 
         {/* Main star image */}
         <div className="left-1/8 absolute top-1/3 h-32 w-32 animate-pulse opacity-60">
