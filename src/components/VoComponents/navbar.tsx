@@ -7,8 +7,8 @@ import { ImageAssets } from "@/assets/ImageAssets";
 
 const navItems = [
   { name: "Home", href: "#hero" },
-  { name: "Stats", href: "#stats" },
   { name: "Why Us", href: "#why-choose-us" },
+  { name: "Stats", href: "#stats" },
   { name: "Courses", href: "#courses" },
   { name: "Testimonials", href: "#testimonials" },
 ];
@@ -42,9 +42,9 @@ export default function Navbar() {
             <Image
               src={ImageAssets.Newlogo}
               alt="Logo"
-              width={60}
-              height={60}
-              className="h-12 w-12 sm:h-14 sm:w-14"
+              width={80}
+              height={80}
+              className="h-12 w-24 sm:h-20 sm:w-20"
             />
           </div>
 
@@ -54,14 +54,14 @@ export default function Navbar() {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-base font-semibold text-white transition hover:text-sky-300 sm:text-lg"
+                className="text-brand-white hover:text-brand-sky-mint text-base font-semibold transition sm:text-lg"
               >
                 {item.name}
               </button>
             ))}
             <button
               onClick={() => scrollToSection("#enroll")}
-              className="text-brand-primary ml-6 rounded-lg bg-sky-400 px-5 py-2.5 text-base font-semibold transition hover:bg-sky-500 sm:text-lg"
+              className="bg-brand-sky-mint text-brand-primary hover:bg-brand-sky-mint-90 ml-6 rounded-lg px-5 py-2.5 text-base font-semibold transition sm:text-lg"
             >
               Enroll Now
             </button>
@@ -71,7 +71,7 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center rounded-md p-2 text-white hover:text-sky-300 focus:outline-none"
+              className="text-brand-white hover:text-brand-sky-mint inline-flex items-center justify-center rounded-md p-2 focus:outline-none"
             >
               <span className="sr-only">Open main menu</span>
               {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -91,14 +91,14 @@ export default function Navbar() {
             <button
               key={item.name}
               onClick={() => scrollToSection(item.href)}
-              className="hover:bg-brand-primary/90 block w-full rounded-md px-4 py-2 text-left text-lg font-medium text-white transition hover:text-sky-300"
+              className="text-brand-white hover:text-brand-sky-mint hover:bg-brand-primary/90 block w-full rounded-md px-4 py-2 text-left text-lg font-medium transition"
             >
               {item.name}
             </button>
           ))}
           <button
             onClick={() => scrollToSection("#enroll")}
-            className="text-brand-primary mt-2 block w-full rounded-lg bg-sky-400 px-4 py-2 text-left text-lg font-semibold transition hover:bg-sky-500"
+            className="bg-brand-sky-mint text-brand-primary hover:bg-brand-sky-mint-90 mt-2 block w-full rounded-lg px-4 py-2 text-left text-lg font-semibold transition"
           >
             Enroll Now
           </button>
