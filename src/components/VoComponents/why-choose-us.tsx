@@ -71,76 +71,88 @@ export default function WhyChooseUs() {
     <section
       id="why-choose-us"
       ref={sectionRef}
-      className="bg-brand-primary relative overflow-hidden px-2 py-20"
+      className="bg-brand-primary relative overflow-hidden px-4 py-20"
     >
       {/* Gradient blob effects */}
       <div className="bg-brand-sky-mint-20 absolute bottom-28 left-0 h-80 w-80 rounded-full blur-3xl filter"></div>
 
       <div className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8">
         <div
-          className={`text-center transition-all duration-1000 sm:mb-16 lg:mb-28 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+          className={`text-center transition-all duration-1000 sm:mb-16 lg:mb-28 ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+          }`}
         >
           <h2 className="text-gradient-skymint-white mb-4 text-2xl font-bold xs:text-3xl sm:text-4xl lg:text-5xl">
             Why Dr Coders Academy is best for you?
           </h2>
         </div>
-        <div className="grid auto-rows-auto grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-3">
           {/* Left column - 2 cards */}
           <div className="space-y-4 sm:space-y-6">
             {features.slice(0, 2).map((feature, index) => (
               <Card
                 key={feature.title}
-                className={`bg-brand-glass border-brand-white hover:bg-brand-sky-mint hover:text-brand-primary group h-auto cursor-pointer backdrop-blur-sm transition-all duration-500 hover:scale-105 sm:h-[285px] ${
+                className={`bg-brand-glass border-brand-white-20 group relative h-auto cursor-pointer overflow-hidden border backdrop-blur-sm transition-all duration-500 hover:scale-105 sm:h-[285px] ${
                   isVisible
                     ? "translate-y-0 opacity-100"
                     : "translate-y-10 opacity-0"
                 }`}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
-                <CardHeader>
-                  <div className="bg-brand-sky-mint-20 group-hover:bg-brand-primary-20 mb-2 inline-flex h-10 w-10 items-center justify-center rounded-full transition-colors sm:mb-4 sm:h-12 sm:w-12">
-                    <feature.icon className="text-brand-sky-mint group-hover:text-brand-primary h-5 w-5 sm:h-6 sm:w-6" />
-                  </div>
-                  <h3 className="text-brand-white group-hover:text-brand-primary text-base font-semibold sm:text-xl">
-                    {feature.title}
-                  </h3>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-brand-grey group-hover:text-brand-primary-80 text-sm sm:text-base">
-                    {feature.description}
-                  </p>
-                </CardContent>
+                {/* Hover reveal overlay */}
+                <div className="bg-brand-sky-mint absolute inset-0 -translate-y-full transform transition-transform duration-500 group-hover:translate-y-0"></div>
+                <div className="relative z-10 flex h-full flex-col p-2">
+                  <CardHeader>
+                    <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-opacity-50 transition-colors group-hover:bg-opacity-100 sm:mb-4 sm:h-12 sm:w-12">
+                      <feature.icon className="text-brand-sky-mint group-hover:text-brand-primary h-5 w-5 sm:h-6 sm:w-6" />
+                    </div>
+                    <h3 className="text-brand-white text-base font-semibold group-hover:text-black sm:text-xl">
+                      {feature.title}
+                    </h3>
+                  </CardHeader>
+                  <CardContent className="flex-1">
+                    <p className="text-brand-grey text-sm group-hover:text-black sm:text-base">
+                      {feature.description}
+                    </p>
+                  </CardContent>
+                </div>
               </Card>
             ))}
           </div>
+
           {/* Middle column - 2 cards */}
           <div className="space-y-4 sm:space-y-6">
             {features.slice(2, 4).map((feature, index) => (
               <Card
                 key={feature.title}
-                className={`bg-brand-white-5 border-brand-white-10 hover:bg-brand-sky-mint hover:text-brand-primary group h-auto cursor-pointer backdrop-blur-sm transition-all duration-500 hover:scale-105 sm:h-[285px] ${
+                className={`bg-brand-glass border-brand-white-20 group relative h-auto cursor-pointer overflow-hidden border backdrop-blur-sm transition-all duration-500 hover:scale-105 sm:h-[285px] ${
                   isVisible
                     ? "translate-y-0 opacity-100"
                     : "translate-y-10 opacity-0"
                 }`}
                 style={{ transitionDelay: `${(index + 2) * 200}ms` }}
               >
-                <CardHeader>
-                  <div className="bg-brand-sky-mint-20 group-hover:bg-brand-primary-20 mb-2 inline-flex h-10 w-10 items-center justify-center rounded-full transition-colors sm:mb-4 sm:h-12 sm:w-12">
-                    <feature.icon className="text-brand-sky-mint group-hover:text-brand-primary h-5 w-5 sm:h-6 sm:w-6" />
-                  </div>
-                  <h3 className="text-brand-white group-hover:text-brand-primary text-base font-semibold sm:text-xl">
-                    {feature.title}
-                  </h3>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-brand-grey group-hover:text-brand-primary-80 text-sm sm:text-base">
-                    {feature.description}
-                  </p>
-                </CardContent>
+                {/* Hover reveal overlay */}
+                <div className="bg-brand-sky-mint absolute inset-0 -translate-y-full transform transition-transform duration-500 group-hover:translate-y-0"></div>
+                <div className="relative z-10 flex h-full flex-col p-2">
+                  <CardHeader>
+                    <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-opacity-50 transition-colors group-hover:bg-opacity-100 sm:mb-4 sm:h-12 sm:w-12">
+                      <feature.icon className="text-brand-sky-mint group-hover:text-brand-primary h-5 w-5 sm:h-6 sm:w-6" />
+                    </div>
+                    <h3 className="text-brand-white text-base font-semibold group-hover:text-black sm:text-xl">
+                      {feature.title}
+                    </h3>
+                  </CardHeader>
+                  <CardContent className="flex-1">
+                    <p className="text-brand-grey text-sm group-hover:text-black sm:text-base">
+                      {feature.description}
+                    </p>
+                  </CardContent>
+                </div>
               </Card>
             ))}
           </div>
+
           {/* Right column - Main feature card */}
           <Card
             className={`from-brand-sky-mint text-brand-primary h-auto cursor-pointer bg-gradient-to-br transition-all duration-500 hover:scale-105 sm:h-full ${
@@ -163,9 +175,9 @@ export default function WhyChooseUs() {
                 {mainFeature.description}
               </p>
               <div className="mb-4 space-y-2 sm:mb-8 sm:space-y-3">
-                {mainFeature.features.map((feature, index) => (
-                  <div key={index} className="flex items-center space-x-2">
-                    <span className="text-xs sm:text-sm">{feature}</span>
+                {mainFeature.features.map((feat, idx) => (
+                  <div key={idx} className="flex items-center space-x-2">
+                    <span className="text-xs sm:text-sm">{feat}</span>
                   </div>
                 ))}
               </div>
@@ -180,13 +192,4 @@ export default function WhyChooseUs() {
       </div>
     </section>
   );
-}
-
-{
-  /* <div className="grid-col-3">
-  <div></div>
-  <div></div>
-  <div className="row-span-2"></div>
-  <div className="col-span-2"></div>
-</div>; */
 }
