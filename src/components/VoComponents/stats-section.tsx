@@ -95,21 +95,19 @@ export default function StatsSection() {
     <section
       id="stats"
       ref={sectionRef}
-      className="bg-brand-primary relative overflow-hidden py-20"
+      className="bg-brand-primary relative overflow-hidden py-12 sm:py-20"
     >
       {/* Gradient blob effects */}
-      <div className="bg-brand-sky-mint-10 absolute left-20 top-10 h-96 w-96 rounded-full blur-3xl filter"></div>
-
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="bg-brand-sky-mint-10 absolute left-4 top-4 h-40 w-40 rounded-full blur-2xl filter sm:left-20 sm:top-10 sm:h-96 sm:w-96 sm:blur-3xl"></div>
+      <div className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8">
         <div
-          className={`mb-16 text-center transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+          className={`mb-8 text-center transition-all duration-1000 sm:mb-16 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
         >
-          <h2 className="text-brand-white mb-4 text-3xl font-bold md:text-4xl">
+          <h2 className="text-brand-white mb-2 text-2xl font-bold xs:text-3xl sm:mb-4 sm:text-4xl">
             What We Build till now
           </h2>
         </div>
-
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, index) => (
             <Card
               key={stat.label}
@@ -120,12 +118,12 @@ export default function StatsSection() {
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <CardContent className="p-8">
-                <div className="bg-brand-primary-20 mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full">
-                  <stat.icon className="text-brand-primary h-8 w-8" />
+              <CardContent className="p-4 xs:p-6 sm:p-8">
+                <div className="bg-brand-primary-20 mb-2 inline-flex h-10 w-10 items-center justify-center rounded-full sm:mb-4 sm:h-16 sm:w-16">
+                  <stat.icon className="text-brand-primary h-5 w-5 sm:h-8 sm:w-8" />
                 </div>
                 <AnimatedCounter target={stat.number} suffix={stat.suffix} />
-                <div className="text-brand-primary mt-2 text-lg font-medium">
+                <div className="text-brand-primary mt-1 text-base font-medium sm:mt-2 sm:text-lg">
                   {stat.label}
                 </div>
               </CardContent>

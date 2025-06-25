@@ -72,28 +72,26 @@ export default function CoursesOffered() {
     <section
       id="courses"
       ref={sectionRef}
-      className="bg-brand-primary relative overflow-hidden py-20"
+      className="bg-brand-primary relative overflow-hidden py-12 sm:py-20"
     >
       {/* Gradient blob effects */}
-      <div className="bg-brand-sky-mint-10 absolute bottom-20 right-10 h-80 w-80 rounded-full blur-3xl filter"></div>
-
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="bg-brand-sky-mint-10 absolute bottom-4 right-4 h-40 w-40 rounded-full blur-2xl filter sm:bottom-20 sm:right-10 sm:h-80 sm:w-80 sm:blur-3xl"></div>
+      <div className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8">
         <div
-          className={`mb-16 text-center transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+          className={`mb-8 text-center transition-all duration-1000 sm:mb-16 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
         >
-          <h2 className="text-brand-white mb-4 text-3xl font-bold md:text-4xl">
+          <h2 className="text-brand-white mb-2 text-2xl font-bold xs:text-3xl sm:mb-4 sm:text-4xl">
             What this summer got for you
           </h2>
-          <p className="text-brand-grey mx-auto max-w-2xl text-lg">
+          <p className="text-brand-grey mx-auto max-w-xs text-base xs:max-w-md xs:text-lg sm:max-w-2xl">
             Choose your path and start building your future today
           </p>
         </div>
-
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-4 sm:max-w-6xl sm:gap-8 md:grid-cols-3">
           {courses.map((course, index) => (
             <Card
               key={course.title}
-              className={`h-[500px] border-none transition-all duration-300 hover:scale-105 ${
+              className={`h-80 border-none transition-all duration-300 hover:scale-105 sm:h-[500px] ${
                 course.isHighlighted
                   ? "from-brand-sky-mint to-brand-sky-mint-80 text-brand-primary bg-gradient-to-br"
                   : "bg-brand-white-5 border-brand-white-10 text-brand-white hover:bg-brand-white-10 backdrop-blur-sm"
@@ -102,38 +100,38 @@ export default function CoursesOffered() {
             >
               <CardHeader>
                 <div
-                  className={`mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full ${
+                  className={`mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full sm:mb-6 sm:h-16 sm:w-16 ${
                     course.isHighlighted
                       ? "bg-brand-primary-20"
                       : "bg-brand-sky-mint-20"
                   }`}
                 >
                   <course.icon
-                    className={`h-8 w-8 ${course.isHighlighted ? "text-brand-primary" : "text-brand-sky-mint"}`}
+                    className={`h-6 w-6 sm:h-8 sm:w-8 ${course.isHighlighted ? "text-brand-primary" : "text-brand-sky-mint"}`}
                   />
                 </div>
-                <h3 className="text-2xl font-bold">{course.title}</h3>
+                <h3 className="text-lg font-bold sm:text-2xl">
+                  {course.title}
+                </h3>
                 <p
-                  className={`${course.isHighlighted ? "text-brand-primary-80" : "text-brand-grey"}`}
+                  className={`text-sm sm:text-base ${course.isHighlighted ? "text-brand-primary-80" : "text-brand-grey"}`}
                 >
                   {course.description}
                 </p>
               </CardHeader>
-
               <CardContent className="flex h-full flex-col">
-                <div className="mb-8 flex-1 space-y-3">
+                <div className="mb-4 flex-1 space-y-2 sm:mb-8 sm:space-y-3">
                   {course.features.map((feature, featureIndex) => (
                     <div
                       key={featureIndex}
                       className="flex items-center space-x-2"
                     >
-                      <span className="text-sm">{feature}</span>
+                      <span className="text-xs sm:text-sm">{feature}</span>
                     </div>
                   ))}
                 </div>
-
                 <Button
-                  className={`w-full font-semibold ${
+                  className={`w-full text-xs font-semibold sm:text-base ${
                     course.isHighlighted
                       ? "bg-brand-primary hover:bg-brand-primary-90 text-brand-sky-mint"
                       : "bg-brand-sky-mint hover:bg-brand-sky-mint-90 text-brand-primary"

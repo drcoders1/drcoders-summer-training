@@ -76,22 +76,21 @@ export default function ProjectsSection() {
     <section
       id="projects"
       ref={sectionRef}
-      className="bg-brand-sky-mint-5 py-20"
+      className="bg-brand-sky-mint-5 py-12 sm:py-20"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8">
         <div
-          className={`mb-16 text-center transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+          className={`mb-8 text-center transition-all duration-1000 sm:mb-16 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
         >
-          <h2 className="text-brand-white mb-4 text-3xl font-bold md:text-4xl">
+          <h2 className="text-brand-white mb-2 text-2xl font-bold xs:text-3xl sm:mb-4 sm:text-4xl">
             Student Projects
           </h2>
-          <p className="text-brand-grey mx-auto max-w-2xl text-lg">
+          <p className="text-brand-grey mx-auto max-w-xs text-base xs:max-w-md xs:text-lg sm:max-w-2xl">
             See the amazing projects our students have built during their
             learning journey
           </p>
         </div>
-
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:gap-8 md:grid-cols-2">
           {projects.map((project, index) => (
             <div
               key={project.title}
@@ -107,26 +106,25 @@ export default function ProjectsSection() {
                   <img
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="h-32 w-full object-cover transition-transform duration-300 group-hover:scale-110 xs:h-40 sm:h-48"
                   />
                   <div className="bg-brand-primary-20 group-hover:bg-brand-primary-10 absolute inset-0 transition-colors" />
                 </div>
-
-                <div className="p-6">
+                <div className="p-4 xs:p-6">
                   <div className="mb-2 flex items-center justify-between">
-                    <span className="text-brand-sky-mint text-sm font-medium">
+                    <span className="text-brand-sky-mint text-xs font-medium xs:text-sm">
                       {project.course}
                     </span>
-                    <div className="flex space-x-2">
+                    <div className="flex space-x-1 xs:space-x-2">
                       <Button
-                        size="sm"
+                        size="icon"
                         variant="ghost"
                         className="text-brand-grey hover:text-brand-sky-mint p-1"
                       >
                         <ExternalLink className="h-4 w-4" />
                       </Button>
                       <Button
-                        size="sm"
+                        size="icon"
                         variant="ghost"
                         className="text-brand-grey hover:text-brand-sky-mint p-1"
                       >
@@ -134,20 +132,20 @@ export default function ProjectsSection() {
                       </Button>
                     </div>
                   </div>
-
-                  <h3 className="text-brand-white mb-2 text-xl font-semibold">
+                  <h3 className="text-brand-white mb-1 text-lg font-semibold xs:mb-2 xs:text-xl">
                     {project.title}
                   </h3>
-                  <p className="text-brand-grey mb-3 text-sm">
+                  <p className="text-brand-grey mb-1 text-xs xs:mb-3 xs:text-sm">
                     by {project.student}
                   </p>
-                  <p className="text-brand-grey mb-4">{project.description}</p>
-
-                  <div className="flex flex-wrap gap-2">
+                  <p className="text-brand-grey mb-2 text-sm xs:mb-4 xs:text-base">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-1 xs:gap-2">
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="bg-brand-sky-mint-20 text-brand-sky-mint rounded-full px-3 py-1 text-xs"
+                        className="bg-brand-sky-mint-20 text-brand-sky-mint rounded-full px-2 py-0.5 text-xs xs:px-3 xs:py-1"
                       >
                         {tech}
                       </span>

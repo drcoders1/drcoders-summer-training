@@ -43,38 +43,34 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          <div className="h-20 w-20">
+      <div className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8">
+        <div className="flex h-14 items-center justify-between sm:h-16">
+          <div className="h-12 w-12 sm:h-20 sm:w-20">
             <Image
               src={ImageAssets.Newlogo}
               alt={"logo"}
-              className="h-full w-full object-cover object-center "
-
-              // placeholder="blur"
+              className="h-full w-full object-cover object-center"
             />
           </div>
-
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="ml-4 flex items-baseline space-x-2 sm:ml-10 sm:space-x-4">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-brand-white hover:text-brand-sky-mint rounded-md px-3 py-2 text-sm font-medium transition-colors duration-200"
+                  className="text-brand-white hover:text-brand-sky-mint rounded-md px-2 py-1 text-xs font-medium transition-colors duration-200 sm:px-3 sm:py-2 sm:text-sm"
                 >
                   {item.name}
                 </button>
               ))}
             </div>
           </div>
-
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-brand-white hover:text-brand-sky-mint"
+              className="text-brand-white hover:text-brand-sky-mint p-2"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -90,7 +86,7 @@ export default function Navbar() {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-brand-white hover:text-brand-sky-mint block w-full rounded-md px-3 py-2 text-left text-base font-medium transition-colors duration-200"
+                className="text-brand-white hover:text-brand-sky-mint block w-full rounded-md px-2 py-2 text-left text-base font-medium transition-colors duration-200"
               >
                 {item.name}
               </button>

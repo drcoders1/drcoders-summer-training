@@ -67,22 +67,20 @@ export default function TestimonialSection() {
     <section
       id="testimonials"
       ref={sectionRef}
-      className="bg-brand-primary relative overflow-hidden py-20"
+      className="bg-brand-primary relative overflow-hidden py-12 sm:py-20"
     >
       {/* Gradient blob effects */}
-      <div className="bg-brand-sky-mint-10 absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 transform rounded-full blur-3xl filter"></div>
-
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="bg-brand-sky-mint-10 absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 transform rounded-full blur-2xl filter sm:h-96 sm:w-96 sm:blur-3xl"></div>
+      <div className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8">
         <div
-          className={`mb-16 text-center transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+          className={`mb-8 text-center transition-all duration-1000 sm:mb-16 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
         >
-          <h2 className="text-brand-white mb-4 text-3xl font-bold md:text-4xl">
+          <h2 className="text-brand-white mb-2 text-2xl font-bold xs:text-3xl sm:mb-4 sm:text-4xl">
             What Students say about us?
           </h2>
         </div>
-
         <div className="relative">
-          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-4 sm:max-w-6xl sm:gap-8 md:grid-cols-3">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
@@ -94,30 +92,28 @@ export default function TestimonialSection() {
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
                 <div
-                  className={`flex h-[300px] flex-col rounded-xl p-8 ${
+                  className={`flex h-60 flex-col rounded-xl p-4 xs:p-6 sm:h-[300px] sm:p-8 ${
                     testimonial.isHighlighted
                       ? "from-brand-white to-brand-white-90 text-brand-primary bg-gradient-to-br"
                       : "bg-brand-white-5 border-brand-white-10 text-brand-white border backdrop-blur-sm"
                   }`}
                 >
-                  <div className="mb-4 flex items-center space-x-1">
+                  <div className="mb-2 flex items-center space-x-1 sm:mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star
                         key={i}
-                        className="h-5 w-5 fill-current text-yellow-400"
+                        className="h-4 w-4 fill-current text-yellow-400 sm:h-5 sm:w-5"
                       />
                     ))}
                   </div>
-
                   <p
-                    className={`mb-6 flex-1 ${testimonial.isHighlighted ? "text-brand-primary-80" : "text-brand-grey"}`}
+                    className={`mb-4 flex-1 text-xs xs:text-sm sm:mb-6 sm:text-base ${testimonial.isHighlighted ? "text-brand-primary-80" : "text-brand-grey"}`}
                   >
                     "{testimonial.content}"
                   </p>
-
                   <div>
                     <div
-                      className={`font-semibold ${
+                      className={`text-sm font-semibold sm:text-base ${
                         testimonial.isHighlighted
                           ? "text-brand-primary"
                           : "text-brand-white"
@@ -126,7 +122,7 @@ export default function TestimonialSection() {
                       {testimonial.name}
                     </div>
                     <div
-                      className={`text-sm ${
+                      className={`text-xs sm:text-sm ${
                         testimonial.isHighlighted
                           ? "text-brand-primary-60"
                           : "text-brand-sky-mint"
@@ -139,14 +135,13 @@ export default function TestimonialSection() {
               </div>
             ))}
           </div>
-
           {/* Navigation buttons */}
-          <div className="mt-8 flex justify-center space-x-4">
+          <div className="mt-6 flex justify-center space-x-3 sm:mt-8 sm:space-x-4">
             <Button
               onClick={prevTestimonial}
               variant="outline"
               size="sm"
-              className="border-brand-sky-mint text-brand-sky-mint hover:bg-brand-sky-mint hover:text-brand-primary"
+              className="border-brand-sky-mint text-brand-sky-mint hover:bg-brand-sky-mint hover:text-brand-primary px-3 py-2"
             >
               <ChevronLeft className="h-4 w-4" />
             </Button>
@@ -154,7 +149,7 @@ export default function TestimonialSection() {
               onClick={nextTestimonial}
               variant="outline"
               size="sm"
-              className="border-brand-sky-mint text-brand-sky-mint hover:bg-brand-sky-mint hover:text-brand-primary"
+              className="border-brand-sky-mint text-brand-sky-mint hover:bg-brand-sky-mint hover:text-brand-primary px-3 py-2"
             >
               <ChevronRight className="h-4 w-4" />
             </Button>

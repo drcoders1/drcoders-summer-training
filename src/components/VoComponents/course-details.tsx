@@ -50,21 +50,20 @@ export default function CourseDetails() {
     <section
       id="course-details"
       ref={sectionRef}
-      className="bg-brand-sky-mint-5 py-20"
+      className="bg-brand-sky-mint-5 py-12 sm:py-20"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+      <div className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-8 sm:gap-12 lg:grid-cols-2">
           <div
             className={`transition-all duration-1000 ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"}`}
           >
-            <h2 className="text-brand-white mb-6 text-3xl font-bold md:text-4xl">
+            <h2 className="text-brand-white mb-4 text-2xl font-bold xs:text-3xl sm:mb-6 sm:text-4xl">
               {courseDetails.title}
             </h2>
-            <p className="text-brand-grey mb-8 text-lg">
+            <p className="text-brand-grey mb-6 text-base xs:text-lg sm:mb-8">
               {courseDetails.description}
             </p>
-
-            <div className="mb-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
+            <div className="mb-6 grid grid-cols-1 gap-4 sm:mb-8 sm:grid-cols-3 sm:gap-6">
               {courseDetails.stats.map((stat, index) => (
                 <div
                   key={stat.label}
@@ -75,45 +74,47 @@ export default function CourseDetails() {
                   }`}
                   style={{ transitionDelay: `${index * 200}ms` }}
                 >
-                  <div className="bg-brand-sky-mint-20 mb-2 inline-flex h-12 w-12 items-center justify-center rounded-full">
-                    <stat.icon className="text-brand-sky-mint h-6 w-6" />
+                  <div className="bg-brand-sky-mint-20 mb-1 inline-flex h-8 w-8 items-center justify-center rounded-full sm:mb-2 sm:h-12 sm:w-12">
+                    <stat.icon className="text-brand-sky-mint h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
-                  <div className="text-brand-white font-semibold">
+                  <div className="text-brand-white text-sm font-semibold xs:text-base">
                     {stat.value}
                   </div>
-                  <div className="text-brand-grey text-sm">{stat.label}</div>
+                  <div className="text-brand-grey text-xs xs:text-sm">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
-
             <Button
               size="lg"
-              className="bg-brand-sky-mint hover:bg-brand-sky-mint-90 text-brand-primary px-8 font-semibold"
+              className="bg-brand-sky-mint hover:bg-brand-sky-mint-90 text-brand-primary px-6 py-3 text-base font-semibold sm:px-8 sm:py-4 sm:text-lg"
             >
               Enroll Now - $2,999
             </Button>
           </div>
-
           <div
             className={`transition-all duration-1000 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}`}
           >
-            <div className="bg-brand-white-5 rounded-xl p-8 backdrop-blur-sm">
-              <h3 className="text-brand-white mb-6 text-2xl font-semibold">
+            <div className="bg-brand-white-5 rounded-xl p-4 backdrop-blur-sm xs:p-6 sm:p-8">
+              <h3 className="text-brand-white mb-4 text-lg font-semibold sm:mb-6 sm:text-2xl">
                 What You'll Learn
               </h3>
-              <div className="space-y-4">
+              <div className="space-y-2 sm:space-y-4">
                 {courseDetails.features.map((feature, index) => (
                   <div
                     key={feature}
-                    className={`flex items-start space-x-3 transition-all duration-1000 ${
+                    className={`flex items-start space-x-2 transition-all duration-1000 sm:space-x-3 ${
                       isVisible
                         ? "translate-x-0 opacity-100"
                         : "translate-x-10 opacity-0"
                     }`}
                     style={{ transitionDelay: `${index * 100}ms` }}
                   >
-                    <CheckCircle className="text-brand-sky-mint mt-0.5 h-6 w-6 flex-shrink-0" />
-                    <span className="text-brand-grey">{feature}</span>
+                    <CheckCircle className="text-brand-sky-mint mt-0.5 h-5 w-5 flex-shrink-0 sm:h-6 sm:w-6" />
+                    <span className="text-brand-grey text-sm xs:text-base">
+                      {feature}
+                    </span>
                   </div>
                 ))}
               </div>

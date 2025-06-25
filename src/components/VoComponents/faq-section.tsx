@@ -66,39 +66,41 @@ export default function FaqSection() {
     <section
       id="faq"
       ref={sectionRef}
-      className="bg-brand-primary relative overflow-hidden py-20"
+      className="bg-brand-primary relative overflow-hidden py-12 sm:py-20"
     >
       {/* Gradient blob effects */}
-      <div className="bg-brand-sky-mint-10 absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 transform rounded-full blur-3xl filter"></div>
-
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div className="bg-brand-sky-mint-10 absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 transform rounded-full blur-2xl filter sm:h-96 sm:w-96 sm:blur-3xl"></div>
+      <div className="mx-auto max-w-2xl px-2 sm:max-w-4xl sm:px-4 md:px-6 lg:px-8">
         <div
-          className={`mb-16 text-center transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+          className={`mb-8 text-center transition-all duration-1000 sm:mb-16 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
         >
-          <h2 className="text-brand-white mb-4 text-3xl font-bold md:text-4xl">
+          <h2 className="text-brand-white mb-2 text-2xl font-bold xs:text-3xl sm:mb-4 sm:text-4xl">
             Frequently Asked Questions
           </h2>
-          <p className="text-brand-grey mx-auto max-w-2xl text-lg">
+          <p className="text-brand-grey mx-auto max-w-xs text-base xs:max-w-md xs:text-lg sm:max-w-2xl">
             Get answers to the most common questions about our courses and
             programs
           </p>
         </div>
-
         <div
           className={`transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
           style={{ transitionDelay: "300ms" }}
         >
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion
+            type="single"
+            collapsible
+            className="space-y-3 sm:space-y-4"
+          >
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-brand-white-5 border-brand-white-10 hover:bg-brand-white-10 rounded-xl px-6 backdrop-blur-sm transition-all duration-300"
+                className="bg-brand-white-5 border-brand-white-10 hover:bg-brand-white-10 rounded-xl px-3 backdrop-blur-sm transition-all duration-300 xs:px-4 sm:px-6"
               >
-                <AccordionTrigger className="text-brand-white hover:text-brand-sky-mint text-lg font-semibold">
+                <AccordionTrigger className="text-brand-white hover:text-brand-sky-mint text-base font-semibold xs:text-lg">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-brand-grey pt-2">
+                <AccordionContent className="text-brand-grey pt-1 text-sm xs:pt-2 xs:text-base">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

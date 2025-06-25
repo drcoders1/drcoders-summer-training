@@ -33,14 +33,14 @@ const SummerTraining = () => {
 
       {/* <div className="invisible h-28" aria-hidden></div> */}
       {/* <CommunityPartners /> */}
-      <PartnerSection />
+      {/* <PartnerSection /> */}
       <WhyChooseUs />
 
       <StatsSection />
       <CoursesOffered />
       <CourseDetails />
       <TestimonialSection />
-      <ProjectsSection />
+      {/* <ProjectsSection /> */}
       <FaqSection />
       <ContactForm />
     </section>

@@ -71,27 +71,26 @@ export default function WhyChooseUs() {
     <section
       id="why-choose-us"
       ref={sectionRef}
-      className="bg-brand-primary relative overflow-hidden py-20"
+      className="bg-brand-primary relative overflow-hidden px-2 py-20"
     >
       {/* Gradient blob effects */}
-      <div className="bg-brand-sky-mint-20 absolute bottom-20 left-0 h-80 w-80 rounded-full blur-3xl filter"></div>
+      <div className="bg-brand-sky-mint-20 absolute bottom-28 left-0 h-80 w-80 rounded-full blur-3xl filter"></div>
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8">
         <div
-          className={`mb-16 text-center transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+          className={`text-center transition-all duration-1000 sm:mb-16 lg:mb-28 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
         >
-          <h2 className="text-brand-white mb-4 text-3xl font-bold md:text-4xl">
+          <h2 className="text-gradient-skymint-white mb-4 text-2xl font-bold xs:text-3xl sm:text-4xl lg:text-5xl">
             Why Dr Coders Academy is best for you?
           </h2>
         </div>
-
-        <div className="grid h-[600px] grid-cols-1 gap-6 lg:grid-cols-3">
+        <div className="grid auto-rows-auto grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-3">
           {/* Left column - 2 cards */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {features.slice(0, 2).map((feature, index) => (
               <Card
                 key={feature.title}
-                className={`bg-brand-glass border-brand-white hover:bg-brand-sky-mint hover:text-brand-primary group h-[285px] cursor-pointer backdrop-blur-sm transition-all duration-500 hover:scale-105 ${
+                className={`bg-brand-glass border-brand-white hover:bg-brand-sky-mint hover:text-brand-primary group h-auto cursor-pointer backdrop-blur-sm transition-all duration-500 hover:scale-105 sm:h-[285px] ${
                   isVisible
                     ? "translate-y-0 opacity-100"
                     : "translate-y-10 opacity-0"
@@ -99,28 +98,27 @@ export default function WhyChooseUs() {
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
                 <CardHeader>
-                  <div className="bg-brand-sky-mint-20 group-hover:bg-brand-primary-20 mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full transition-colors">
-                    <feature.icon className="text-brand-sky-mint group-hover:text-brand-primary h-6 w-6" />
+                  <div className="bg-brand-sky-mint-20 group-hover:bg-brand-primary-20 mb-2 inline-flex h-10 w-10 items-center justify-center rounded-full transition-colors sm:mb-4 sm:h-12 sm:w-12">
+                    <feature.icon className="text-brand-sky-mint group-hover:text-brand-primary h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
-                  <h3 className="text-brand-white group-hover:text-brand-primary text-xl font-semibold">
+                  <h3 className="text-brand-white group-hover:text-brand-primary text-base font-semibold sm:text-xl">
                     {feature.title}
                   </h3>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-brand-grey group-hover:text-brand-primary-80">
+                  <p className="text-brand-grey group-hover:text-brand-primary-80 text-sm sm:text-base">
                     {feature.description}
                   </p>
                 </CardContent>
               </Card>
             ))}
           </div>
-
           {/* Middle column - 2 cards */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {features.slice(2, 4).map((feature, index) => (
               <Card
                 key={feature.title}
-                className={`bg-brand-white-5 border-brand-white-10 hover:bg-brand-sky-mint hover:text-brand-primary group h-[285px] cursor-pointer backdrop-blur-sm transition-all duration-500 hover:scale-105 ${
+                className={`bg-brand-white-5 border-brand-white-10 hover:bg-brand-sky-mint hover:text-brand-primary group h-auto cursor-pointer backdrop-blur-sm transition-all duration-500 hover:scale-105 sm:h-[285px] ${
                   isVisible
                     ? "translate-y-0 opacity-100"
                     : "translate-y-10 opacity-0"
@@ -128,25 +126,24 @@ export default function WhyChooseUs() {
                 style={{ transitionDelay: `${(index + 2) * 200}ms` }}
               >
                 <CardHeader>
-                  <div className="bg-brand-sky-mint-20 group-hover:bg-brand-primary-20 mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full transition-colors">
-                    <feature.icon className="text-brand-sky-mint group-hover:text-brand-primary h-6 w-6" />
+                  <div className="bg-brand-sky-mint-20 group-hover:bg-brand-primary-20 mb-2 inline-flex h-10 w-10 items-center justify-center rounded-full transition-colors sm:mb-4 sm:h-12 sm:w-12">
+                    <feature.icon className="text-brand-sky-mint group-hover:text-brand-primary h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
-                  <h3 className="text-brand-white group-hover:text-brand-primary text-xl font-semibold">
+                  <h3 className="text-brand-white group-hover:text-brand-primary text-base font-semibold sm:text-xl">
                     {feature.title}
                   </h3>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-brand-grey group-hover:text-brand-primary-80">
+                  <p className="text-brand-grey group-hover:text-brand-primary-80 text-sm sm:text-base">
                     {feature.description}
                   </p>
                 </CardContent>
               </Card>
             ))}
           </div>
-
           {/* Right column - Main feature card */}
           <Card
-            className={`from-brand-sky-mint text-brand-primary cursor-pointer bg-gradient-to-br transition-all duration-500 hover:scale-105 ${
+            className={`from-brand-sky-mint text-brand-primary h-auto cursor-pointer bg-gradient-to-br transition-all duration-500 hover:scale-105 sm:h-full ${
               isVisible
                 ? "translate-y-0 opacity-100"
                 : "translate-y-10 opacity-0"
@@ -154,26 +151,27 @@ export default function WhyChooseUs() {
             style={{ transitionDelay: "800ms" }}
           >
             <CardHeader>
-              <div className="bg-brand-primary-20 mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full">
-                <mainFeature.icon className="text-brand-primary h-8 w-8" />
+              <div className="bg-brand-primary-20 mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full sm:mb-6 sm:h-16 sm:w-16">
+                <mainFeature.icon className="text-brand-primary h-6 w-6 sm:h-8 sm:w-8" />
               </div>
-              <h3 className="text-2xl font-bold">{mainFeature.title}</h3>
+              <h3 className="text-lg font-bold sm:text-2xl">
+                {mainFeature.title}
+              </h3>
             </CardHeader>
             <CardContent className="flex flex-col">
-              <p className="text-brand-primary-80 flex-1">
+              <p className="text-brand-primary-80 flex-1 text-sm sm:text-base">
                 {mainFeature.description}
               </p>
-
-              <div className=" mb-8 space-y-3 ">
+              <div className="mb-4 space-y-2 sm:mb-8 sm:space-y-3">
                 {mainFeature.features.map((feature, index) => (
                   <div key={index} className="flex items-center space-x-2">
-                    <span className="text-sm">{feature}</span>
+                    <span className="text-xs sm:text-sm">{feature}</span>
                   </div>
                 ))}
               </div>
             </CardContent>
             <CardFooter className="mt-auto">
-              <Button className="bg-brand-primary hover:bg-brand-primary-90 text-brand-sky-mint w-full font-semibold">
+              <Button className="bg-brand-primary hover:bg-brand-primary-90 text-brand-sky-mint w-full text-sm font-semibold sm:text-base">
                 Free Demo Class
               </Button>
             </CardFooter>
