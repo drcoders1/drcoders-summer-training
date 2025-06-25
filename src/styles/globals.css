@@ -349,3 +349,13 @@ h1, h2, h3 { font-family: 'Poppins', sans-serif; }
 .no-visible-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+.card-gradient-animate {
+  background: linear-gradient(to bottom, hsl(var(--brand-sky-mint)), hsl(var(--brand-primary)));
+  background-size: 100% 200%;
+  background-position: top;
+  transition: background-position 0.5s;
+}
+.card-gradient-animate:hover {
+  background-position: bottom;
+}
