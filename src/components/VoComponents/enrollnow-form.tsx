@@ -15,6 +15,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Send, Sparkles, AlertCircle } from "lucide-react";
 import clsx from "clsx";
+import LiveCodeEditor from "./live-code-editor";
 
 // Course Prices
 const courses = {
@@ -97,7 +98,9 @@ export default function EnrollNowForm({ onDirtyChange }: EnrollNowFormProps) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => entry!.isIntersecting && setIsVisible(true),
-      { threshold: 0.1 },
+      {
+        threshold: 0.1,
+      },
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
@@ -232,318 +235,338 @@ export default function EnrollNowForm({ onDirtyChange }: EnrollNowFormProps) {
       ref={sectionRef}
       className="bg-brand-primary relative px-4 py-12 sm:py-20"
     >
-      <div className="mx-auto max-w-3xl">
-        <Card className="bg-brand-white-5 border-brand-white-10 backdrop-blur-sm">
-          <CardHeader>
-            <CardTitle className="text-brand-white text-2xl font-bold sm:text-3xl">
-              Enroll Now
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-6 sm:space-y-8">
-              {/* Course Select */}
-              <div className="space-y-2">
-                <Label
-                  htmlFor="course"
-                  className="text-brand-white text-sm sm:text-base"
-                >
-                  Select a Course *
-                </Label>
-                <Select
-                  onValueChange={(value) => handleInputChange("course", value)}
-                >
-                  <SelectTrigger
-                    className={clsx(
-                      "bg-brand-white-10 border-brand-white-20 text-brand-white",
-                      formErrors.course && "border-red-500",
-                    )}
-                  >
-                    <SelectValue placeholder="Choose course" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-brand-primary border-brand-white-20">
-                    {Object.entries(courses).map(([key, course]) => (
-                      <SelectItem
-                        key={key}
-                        value={key}
-                        className="text-brand-white hover:bg-brand-sky-mint-20"
+      <div className="mx-auto max-w-7xl">
+        <div className="grid min-h-[800px] grid-cols-1 gap-8 lg:grid-cols-2">
+          {/* Left Column - Enrollment Form */}
+          <div className="flex flex-col">
+            <Card className="bg-brand-white-5 border-brand-white-10 flex-1 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-brand-white text-2xl font-bold sm:text-3xl">
+                  Enroll Now
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-6 sm:space-y-8">
+                  {/* Course Select */}
+                  <div className="space-y-2">
+                    <Label
+                      htmlFor="course"
+                      className="text-brand-white text-sm sm:text-base"
+                    >
+                      Select a Course *
+                    </Label>
+                    <Select
+                      onValueChange={(value) =>
+                        handleInputChange("course", value)
+                      }
+                    >
+                      <SelectTrigger
+                        className={clsx(
+                          "bg-brand-white-10 border-brand-white-20 text-brand-white",
+                          formErrors.course && "border-red-500",
+                        )}
                       >
-                        {course.name}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                {formErrors.course && (
-                  <div className="flex items-center space-x-1 text-sm text-red-400">
-                    <AlertCircle className="h-4 w-4" />
-                    <span>{formErrors.course}</span>
+                        <SelectValue placeholder="Choose course" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-brand-primary border-brand-white-20">
+                        {Object.entries(courses).map(([key, course]) => (
+                          <SelectItem
+                            key={key}
+                            value={key}
+                            className="text-brand-white hover:bg-brand-sky-mint-20"
+                          >
+                            {course.name}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    {formErrors.course && (
+                      <div className="flex items-center space-x-1 text-sm text-red-400">
+                        <AlertCircle className="h-4 w-4" />
+                        <span>{formErrors.course}</span>
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
 
-              {/* Personal Information */}
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div className="space-y-2">
-                  <Label
-                    htmlFor="name"
-                    className="text-brand-white text-sm sm:text-base"
-                  >
-                    Full Name *
-                  </Label>
-                  <Input
-                    id="name"
-                    value={formData.name}
-                    onChange={(e) => handleInputChange("name", e.target.value)}
-                    placeholder="John Doe"
-                    className={clsx(
-                      "bg-brand-white-10 border-brand-white-20 text-brand-white placeholder:text-brand-grey",
-                      formErrors.name && "border-red-500",
-                    )}
-                  />
-                  {formErrors.name && (
-                    <div className="flex items-center space-x-1 text-sm text-red-400">
-                      <AlertCircle className="h-4 w-4" />
-                      <span>{formErrors.name}</span>
+                  {/* Personal Information */}
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <div className="space-y-2">
+                      <Label
+                        htmlFor="name"
+                        className="text-brand-white text-sm sm:text-base"
+                      >
+                        Full Name *
+                      </Label>
+                      <Input
+                        id="name"
+                        value={formData.name}
+                        onChange={(e) =>
+                          handleInputChange("name", e.target.value)
+                        }
+                        placeholder="John Doe"
+                        className={clsx(
+                          "bg-brand-white-10 border-brand-white-20 text-brand-white placeholder:text-brand-grey",
+                          formErrors.name && "border-red-500",
+                        )}
+                      />
+                      {formErrors.name && (
+                        <div className="flex items-center space-x-1 text-sm text-red-400">
+                          <AlertCircle className="h-4 w-4" />
+                          <span>{formErrors.name}</span>
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
 
-                <div className="space-y-2">
-                  <Label
-                    htmlFor="email"
-                    className="text-brand-white text-sm sm:text-base"
-                  >
-                    Email *
-                  </Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => handleInputChange("email", e.target.value)}
-                    placeholder="john@example.com"
-                    className={clsx(
-                      "bg-brand-white-10 border-brand-white-20 text-brand-white placeholder:text-brand-grey",
-                      formErrors.email && "border-red-500",
-                    )}
-                  />
-                  {formErrors.email && (
-                    <div className="flex items-center space-x-1 text-sm text-red-400">
-                      <AlertCircle className="h-4 w-4" />
-                      <span>{formErrors.email}</span>
+                    <div className="space-y-2">
+                      <Label
+                        htmlFor="email"
+                        className="text-brand-white text-sm sm:text-base"
+                      >
+                        Email *
+                      </Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) =>
+                          handleInputChange("email", e.target.value)
+                        }
+                        placeholder="john@example.com"
+                        className={clsx(
+                          "bg-brand-white-10 border-brand-white-20 text-brand-white placeholder:text-brand-grey",
+                          formErrors.email && "border-red-500",
+                        )}
+                      />
+                      {formErrors.email && (
+                        <div className="flex items-center space-x-1 text-sm text-red-400">
+                          <AlertCircle className="h-4 w-4" />
+                          <span>{formErrors.email}</span>
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
-              </div>
+                  </div>
 
-              {/* Academic Information */}
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div className="space-y-2">
-                  <Label
-                    htmlFor="semester"
-                    className="text-brand-white text-sm sm:text-base"
-                  >
-                    Current Semester *
-                  </Label>
-                  <Select
-                    onValueChange={(value) =>
-                      handleInputChange("semester", value)
-                    }
-                  >
-                    <SelectTrigger
+                  {/* Academic Information */}
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <div className="space-y-2">
+                      <Label
+                        htmlFor="semester"
+                        className="text-brand-white text-sm sm:text-base"
+                      >
+                        Current Semester *
+                      </Label>
+                      <Select
+                        onValueChange={(value) =>
+                          handleInputChange("semester", value)
+                        }
+                      >
+                        <SelectTrigger
+                          className={clsx(
+                            "bg-brand-white-10 border-brand-white-20 text-brand-white",
+                            formErrors.semester && "border-red-500",
+                          )}
+                        >
+                          <SelectValue placeholder="Select semester" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-brand-primary border-brand-white-20">
+                          {semesters.map((semester) => (
+                            <SelectItem
+                              key={semester}
+                              value={semester}
+                              className="text-brand-white hover:bg-brand-sky-mint-20"
+                            >
+                              {semester}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                      {formErrors.semester && (
+                        <div className="flex items-center space-x-1 text-sm text-red-400">
+                          <AlertCircle className="h-4 w-4" />
+                          <span>{formErrors.semester}</span>
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label
+                        htmlFor="university"
+                        className="text-brand-white text-sm sm:text-base"
+                      >
+                        University *
+                      </Label>
+                      <Select
+                        onValueChange={(value) =>
+                          handleInputChange("university", value)
+                        }
+                      >
+                        <SelectTrigger
+                          className={clsx(
+                            "bg-brand-white-10 border-brand-white-20 text-brand-white",
+                            formErrors.university && "border-red-500",
+                          )}
+                        >
+                          <SelectValue placeholder="Select university" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-brand-primary border-brand-white-20">
+                          {universities.map((university) => (
+                            <SelectItem
+                              key={university}
+                              value={university}
+                              className="text-brand-white hover:bg-brand-sky-mint-20"
+                            >
+                              {university}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                      {formErrors.university && (
+                        <div className="flex items-center space-x-1 text-sm text-red-400">
+                          <AlertCircle className="h-4 w-4" />
+                          <span>{formErrors.university}</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Promo Code */}
+                  <div className="space-y-2">
+                    <Label
+                      htmlFor="promo"
+                      className="text-brand-white text-sm sm:text-base"
+                    >
+                      Promo Code
+                    </Label>
+                    <div className="flex items-center space-x-2">
+                      <Input
+                        id="promo"
+                        value={promoCode}
+                        onChange={(e) => {
+                          setPromoCode(e.target.value);
+                          setPromoError("");
+                        }}
+                        placeholder="Enter code"
+                        className="bg-brand-white-10 border-brand-white-20 text-brand-white placeholder:text-brand-grey"
+                        disabled={discountApplied}
+                      />
+                      <Button
+                        type="button"
+                        onClick={applyPromo}
+                        disabled={discountApplied}
+                        className="bg-brand-sky-mint hover:bg-brand-sky-mint-90 text-brand-primary px-4 text-sm font-semibold disabled:opacity-50"
+                      >
+                        {discountApplied ? "Applied" : "Apply"}
+                      </Button>
+                    </div>
+
+                    {promoError && (
+                      <div className="flex items-center space-x-1 text-sm text-red-400">
+                        <AlertCircle className="h-4 w-4" />
+                        <span>{promoError}</span>
+                      </div>
+                    )}
+
+                    {discountApplied && (
+                      <div className="flex animate-pulse items-center space-x-1 text-sm text-green-400">
+                        <Sparkles className="h-4 w-4" />
+                        <span>Congrats! ₹1000 discount applied.</span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Dynamic Price Display */}
+                  {formData.course && (
+                    <div
                       className={clsx(
-                        "bg-brand-white-10 border-brand-white-20 text-brand-white",
-                        formErrors.semester && "border-red-500",
+                        "text-brand-white text-lg font-semibold transition-all duration-700",
+                        discountApplied ? "animate-bounce text-green-400" : "",
                       )}
                     >
-                      <SelectValue placeholder="Select semester" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-brand-primary border-brand-white-20">
-                      {semesters.map((semester) => (
-                        <SelectItem
-                          key={semester}
-                          value={semester}
-                          className="text-brand-white hover:bg-brand-sky-mint-20"
-                        >
-                          {semester}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                  {formErrors.semester && (
-                    <div className="flex items-center space-x-1 text-sm text-red-400">
-                      <AlertCircle className="h-4 w-4" />
-                      <span>{formErrors.semester}</span>
+                      Final Price: Rs {finalPrice}
                     </div>
                   )}
-                </div>
 
-                <div className="space-y-2">
-                  <Label
-                    htmlFor="university"
-                    className="text-brand-white text-sm sm:text-base"
-                  >
-                    University *
-                  </Label>
-                  <Select
-                    onValueChange={(value) =>
-                      handleInputChange("university", value)
-                    }
-                  >
-                    <SelectTrigger
+                  {/* Bank Details */}
+                  <div className="bg-brand-white-10 border-brand-white-20 text-brand-white rounded-md border p-4 text-sm">
+                    <p className="mb-1 font-semibold">Bank Details:</p>
+                    <p>Account Title: Dr Coders</p>
+                    <p>Account No: 1234567890</p>
+                    <p>Bank: Meezan Bank</p>
+                    <p>IBAN: PK00MEZN0000001234567890</p>
+                  </div>
+
+                  {/* Payment Proof Upload */}
+                  <div className="space-y-2">
+                    <Label
+                      htmlFor="screenshot"
+                      className="text-brand-white text-sm sm:text-base"
+                    >
+                      Upload Payment Proof *
+                    </Label>
+                    <Input
+                      type="file"
+                      id="screenshot"
+                      accept="image/*"
+                      onChange={(e) =>
+                        handleInputChange(
+                          "paymentProof",
+                          e.target.files?.[0] || null,
+                        )
+                      }
                       className={clsx(
                         "bg-brand-white-10 border-brand-white-20 text-brand-white",
-                        formErrors.university && "border-red-500",
+                        formErrors.paymentProof && "border-red-500",
                       )}
-                    >
-                      <SelectValue placeholder="Select university" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-brand-primary border-brand-white-20">
-                      {universities.map((university) => (
-                        <SelectItem
-                          key={university}
-                          value={university}
-                          className="text-brand-white hover:bg-brand-sky-mint-20"
-                        >
-                          {university}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                  {formErrors.university && (
-                    <div className="flex items-center space-x-1 text-sm text-red-400">
-                      <AlertCircle className="h-4 w-4" />
-                      <span>{formErrors.university}</span>
-                    </div>
-                  )}
-                </div>
-              </div>
+                    />
+                    {formErrors.paymentProof && (
+                      <div className="flex items-center space-x-1 text-sm text-red-400">
+                        <AlertCircle className="h-4 w-4" />
+                        <span>{formErrors.paymentProof}</span>
+                      </div>
+                    )}
+                  </div>
 
-              {/* Promo Code */}
-              <div className="space-y-2">
-                <Label
-                  htmlFor="promo"
-                  className="text-brand-white text-sm sm:text-base"
-                >
-                  Promo Code
-                </Label>
-                <div className="flex items-center space-x-2">
-                  <Input
-                    id="promo"
-                    value={promoCode}
-                    onChange={(e) => {
-                      setPromoCode(e.target.value);
-                      setPromoError("");
-                    }}
-                    placeholder="Enter code"
-                    className="bg-brand-white-10 border-brand-white-20 text-brand-white placeholder:text-brand-grey"
-                    disabled={discountApplied}
-                  />
+                  {/* Optional Message */}
+                  <div className="space-y-2">
+                    <Label
+                      htmlFor="message"
+                      className="text-brand-white text-sm sm:text-base"
+                    >
+                      Message (Optional)
+                    </Label>
+                    <Textarea
+                      id="message"
+                      value={formData.message}
+                      onChange={(e) =>
+                        handleInputChange("message", e.target.value)
+                      }
+                      placeholder="Tell us about your goals..."
+                      className="bg-brand-white-10 border-brand-white-20 text-brand-white placeholder:text-brand-grey"
+                    />
+                  </div>
+
+                  {/* Submit Button */}
                   <Button
                     type="button"
-                    onClick={applyPromo}
-                    disabled={discountApplied}
-                    className="bg-brand-sky-mint hover:bg-brand-sky-mint-90 text-brand-primary px-4 text-sm font-semibold disabled:opacity-50"
+                    onClick={handleSubmit}
+                    disabled={isSubmitting}
+                    className="bg-brand-sky-mint hover:bg-brand-sky-mint-90 text-brand-primary w-full py-2 text-sm font-semibold disabled:opacity-50 sm:text-base"
                   >
-                    {discountApplied ? "Applied" : "Apply"}
+                    <Send className="mr-2 h-4 w-4" />
+                    {isSubmitting ? "Submitting..." : "Submit Enrollment"}
                   </Button>
                 </div>
+              </CardContent>
+            </Card>
+          </div>
 
-                {promoError && (
-                  <div className="flex items-center space-x-1 text-sm text-red-400">
-                    <AlertCircle className="h-4 w-4" />
-                    <span>{promoError}</span>
-                  </div>
-                )}
-
-                {discountApplied && (
-                  <div className="flex animate-pulse items-center space-x-1 text-sm text-green-400">
-                    <Sparkles className="h-4 w-4" />
-                    <span>Congrats! ₹1000 discount applied.</span>
-                  </div>
-                )}
-              </div>
-
-              {/* Dynamic Price Display */}
-              {formData.course && (
-                <div
-                  className={clsx(
-                    "text-brand-white text-lg font-semibold transition-all duration-700",
-                    discountApplied ? "animate-bounce text-green-400" : "",
-                  )}
-                >
-                  Final Price: Rs {finalPrice}
-                </div>
-              )}
-
-              {/* Bank Details */}
-              <div className="bg-brand-white-10 border-brand-white-20 text-brand-white rounded-md border p-4 text-sm">
-                <p className="mb-1 font-semibold">Bank Details:</p>
-                <p>Account Title: Dr Coders</p>
-                <p>Account No: 1234567890</p>
-                <p>Bank: Meezan Bank</p>
-                <p>IBAN: PK00MEZN0000001234567890</p>
-              </div>
-
-              {/* Payment Proof Upload */}
-              <div className="space-y-2">
-                <Label
-                  htmlFor="screenshot"
-                  className="text-brand-white text-sm sm:text-base"
-                >
-                  Upload Payment Proof *
-                </Label>
-                <Input
-                  type="file"
-                  id="screenshot"
-                  accept="image/*"
-                  onChange={(e) =>
-                    handleInputChange(
-                      "paymentProof",
-                      e.target.files?.[0] || null,
-                    )
-                  }
-                  className={clsx(
-                    "bg-brand-white-10 border-brand-white-20 text-brand-white",
-                    formErrors.paymentProof && "border-red-500",
-                  )}
-                />
-                {formErrors.paymentProof && (
-                  <div className="flex items-center space-x-1 text-sm text-red-400">
-                    <AlertCircle className="h-4 w-4" />
-                    <span>{formErrors.paymentProof}</span>
-                  </div>
-                )}
-              </div>
-
-              {/* Optional Message */}
-              <div className="space-y-2">
-                <Label
-                  htmlFor="message"
-                  className="text-brand-white text-sm sm:text-base"
-                >
-                  Message (Optional)
-                </Label>
-                <Textarea
-                  id="message"
-                  value={formData.message}
-                  onChange={(e) => handleInputChange("message", e.target.value)}
-                  placeholder="Tell us about your goals..."
-                  className="bg-brand-white-10 border-brand-white-20 text-brand-white placeholder:text-brand-grey"
-                />
-              </div>
-
-              {/* Submit Button */}
-              <Button
-                type="button"
-                onClick={handleSubmit}
-                disabled={isSubmitting}
-                className="bg-brand-sky-mint hover:bg-brand-sky-mint-90 text-brand-primary w-full py-2 text-sm font-semibold disabled:opacity-50 sm:text-base"
-              >
-                <Send className="mr-2 h-4 w-4" />
-                {isSubmitting ? "Submitting..." : "Submit Enrollment"}
-              </Button>
+          {/* Right Column - Live Code Editor */}
+          <div className="flex flex-col">
+            <div className="h-full min-h-[600px] lg:min-h-[800px]">
+              <LiveCodeEditor selectedCourse={formData.course} />
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import clsx from "clsx";
-import EnrollNowModal from "./EnrollNowModal";
 
 const courses = [
   {
@@ -268,7 +267,6 @@ export default function CourseDetails() {
             </button>
           </div>
         </div>
-        <EnrollNowModal open={showEnroll} onOpenChange={setShowEnroll} />
       </div>
     </section>
   );

@@ -41,7 +41,7 @@ const SummerTraining = () => {
       <CoursesOffered />
       <CourseDetails />
       <TestimonialSection />
-      {/* <EnrollNowForm /> */}
+      <EnrollNowForm />
       {/* <ProjectsSection /> */}
       <FaqSection />
       <ContactForm />
