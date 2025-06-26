@@ -88,8 +88,8 @@ export default function AmbassadorSection() {
                 : "translate-y-10 opacity-0"
             }`}
           >
-            <h2 className="text-gradient-skymint-white mb-4 text-3xl font-bold sm:text-4xl lg:text-5xl">
-              Become a Campus Ambassador
+            <h2 className="text-gradient-skymint-white mb-4 text-3xl font-bold sm:pr-8 sm:text-4xl lg:text-5xl">
+              What we ahve Build till now?
             </h2>
             <p className="text-brand-grey mb-6 max-w-lg text-base sm:text-lg">
               Empower your campus by bringing tech learning to life. Lead,
@@ -97,7 +97,7 @@ export default function AmbassadorSection() {
             </p>
 
             <Button className="bg-brand-sky-mint text-brand-primary hover:bg-brand-sky-mint-80">
-              Join as Ambassador
+              Join the community
             </Button>
           </div>
 

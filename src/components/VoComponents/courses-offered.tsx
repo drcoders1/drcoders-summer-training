@@ -72,7 +72,7 @@ export default function CoursesOffered() {
     <section
       id="courses"
       ref={sectionRef}
-      className="bg-brand-primary relative overflow-hidden py-12 sm:py-20"
+      className="bg-brand-primary relative overflow-hidden px-4 py-12 sm:py-20"
     >
       {/* Gradient blob effects */}
       <div className="bg-brand-sky-mint-10 absolute bottom-4 right-4 h-40 w-40 rounded-full blur-2xl filter sm:bottom-20 sm:right-10 sm:h-80 sm:w-80 sm:blur-3xl"></div>
