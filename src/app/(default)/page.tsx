@@ -1,6 +1,7 @@
 import ContactForm from "@/components/VoComponents/contact-form";
 import CourseDetails from "@/components/VoComponents/course-details";
 import CoursesOffered from "@/components/VoComponents/courses-offered";
+import EnrollNowForm from "@/components/VoComponents/enrollnow-form";
 import FaqSection from "@/components/VoComponents/faq-section";
 import HeroSection from "@/components/VoComponents/hero-section";
 import PartnerSection from "@/components/VoComponents/partner-section";
@@ -40,6 +41,7 @@ const SummerTraining = () => {
       <CoursesOffered />
       <CourseDetails />
       <TestimonialSection />
+      {/* <EnrollNowForm /> */}
       {/* <ProjectsSection /> */}
       <FaqSection />
       <ContactForm />

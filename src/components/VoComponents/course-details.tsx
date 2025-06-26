@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import clsx from "clsx";
+import EnrollNowModal from "./EnrollNowModal";
 
 const courses = [
   {
@@ -82,6 +83,7 @@ export default function CourseDetails() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isFading, setIsFading] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [showEnroll, setShowEnroll] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
@@ -189,7 +191,10 @@ export default function CourseDetails() {
                 ))}
               </div>
               <div className="hidden sm:block">
-                <Button className="bg-brand-sky-mint hover:bg-brand-sky-mint-90 text-brand-primary px-6 py-3 text-base font-semibold sm:px-8 sm:py-4 sm:text-lg">
+                <Button
+                  className="bg-brand-sky-mint hover:bg-brand-sky-mint-90 text-brand-primary px-6 py-3 text-base font-semibold sm:px-8 sm:py-4 sm:text-lg"
+                  onClick={() => setShowEnroll(true)}
+                >
                   Enroll Now - {course!.price}
                 </Button>
               </div>
@@ -227,7 +232,10 @@ export default function CourseDetails() {
                 </div>
                 {/* Mobile CTA */}
                 <div className="pt-8 sm:hidden">
-                  <Button className="bg-brand-sky-mint hover:bg-brand-sky-mint-90 text-brand-primary w-full px-6 py-3 text-base font-semibold">
+                  <Button
+                    className="bg-brand-sky-mint hover:bg-brand-sky-mint-90 text-brand-primary w-full px-6 py-3 text-base font-semibold"
+                    onClick={() => setShowEnroll(true)}
+                  >
                     Enroll Now - {course!.price}
                   </Button>
                 </div>
@@ -260,6 +268,7 @@ export default function CourseDetails() {
             </button>
           </div>
         </div>
+        <EnrollNowModal open={showEnroll} onOpenChange={setShowEnroll} />
       </div>
     </section>
   );

@@ -4,9 +4,11 @@ import { useEffect, useState } from "react";
 import { ChevronRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PartnerSection from "./partner-section";
+import EnrollNowModal from "./EnrollNowModal";
 
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
+  const [showEnroll, setShowEnroll] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
@@ -82,6 +84,7 @@ export default function HeroSection() {
             <Button
               size="sm"
               className="bg-brand-sky-mint hover:bg-brand-sky-mint-90 text-brand-primary hover:shadow-brand-sky-mint-2525 group relative overflow-hidden px-4 py-2 text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl sm:px-8 sm:py-4 sm:text-lg"
+              onClick={() => setShowEnroll(true)}
             >
               <span className="relative z-10 flex items-center">
                 Enrol Now
@@ -143,6 +146,7 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
+        <EnrollNowModal open={showEnroll} onOpenChange={setShowEnroll} />
       </div>
     </section>
   );

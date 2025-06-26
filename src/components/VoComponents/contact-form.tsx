@@ -13,9 +13,16 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Instagram,
+  MessageCircle,
+} from "lucide-react";
 
-export default function ContactForm() {
+export default function ContactSection() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -36,6 +43,17 @@ export default function ContactForm() {
     return () => observer.disconnect();
   }, []);
 
+  // LinkedIn SVG Icon Component
+  const LinkedInIcon = () => (
+    <svg
+      viewBox="0 0 24 24"
+      className="h-5 w-5 sm:h-6 sm:w-6"
+      fill="currentColor"
+    >
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    </svg>
+  );
+
   return (
     <section
       id="contact"
@@ -51,11 +69,10 @@ export default function ContactForm() {
           className={`mb-8 text-center transition-all duration-1000 sm:mb-16 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
         >
           <h2 className="text-gradient-skymint-white mb-4 text-2xl font-bold xs:text-3xl sm:text-4xl lg:text-5xl">
-            Ready to Start Your Journey?
+            Connect With Us
           </h2>
           <p className="text-brand-grey mx-auto max-w-xs text-base xs:max-w-md xs:text-lg sm:max-w-2xl">
-            Get in touch with us to learn more about our courses and enrollment
-            process
+            Get in touch with us and explore partnership opportunities
           </p>
         </div>
 
@@ -111,7 +128,43 @@ export default function ContactForm() {
                     </p>
                   </div>
                 </div>
+
+                {/* Social Media Links */}
                 <div className="pt-4 sm:pt-6">
+                  <h3 className="text-brand-white mb-4 text-sm font-semibold sm:text-base">
+                    Follow Us
+                  </h3>
+                  <div className="flex gap-3 sm:gap-4">
+                    <a
+                      href="https://instagram.com/drcoders"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-brand-white-10 hover:bg-brand-sky-mint-20 border-brand-white-20 hover:border-brand-sky-mint group inline-flex h-10 w-10 items-center justify-center rounded-full border backdrop-blur-sm transition-all duration-300 sm:h-12 sm:w-12"
+                    >
+                      <Instagram className="text-brand-white group-hover:text-brand-sky-mint h-5 w-5 transition-colors duration-300 sm:h-6 sm:w-6" />
+                    </a>
+                    <a
+                      href="https://wa.me/15551234567"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-brand-white-10 hover:bg-brand-sky-mint-20 border-brand-white-20 hover:border-brand-sky-mint group inline-flex h-10 w-10 items-center justify-center rounded-full border backdrop-blur-sm transition-all duration-300 sm:h-12 sm:w-12"
+                    >
+                      <MessageCircle className="text-brand-white group-hover:text-brand-sky-mint h-5 w-5 transition-colors duration-300 sm:h-6 sm:w-6" />
+                    </a>
+                    <a
+                      href="https://linkedin.com/company/drcoders"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-brand-white-10 hover:bg-brand-sky-mint-20 border-brand-white-20 hover:border-brand-sky-mint group inline-flex h-10 w-10 items-center justify-center rounded-full border backdrop-blur-sm transition-all duration-300 sm:h-12 sm:w-12"
+                    >
+                      <div className="text-brand-white group-hover:text-brand-sky-mint transition-colors duration-300">
+                        <LinkedInIcon />
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div className="pt-2 sm:pt-4">
                   <h3 className="text-brand-white mb-2 text-sm font-semibold sm:mb-4 sm:text-base">
                     Why Choose Us?
                   </h3>
@@ -134,130 +187,90 @@ export default function ContactForm() {
             </Card>
           </div>
 
-          {/* Contact Form */}
+          {/* Partnership Options */}
           <div
             className={`transition-all duration-1000 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}`}
             style={{ transitionDelay: "400ms" }}
           >
-            <Card className="bg-brand-white-5 border-brand-white-10 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-brand-white text-lg font-bold sm:text-2xl">
-                  Enroll Now
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form className="space-y-4 sm:space-y-6">
-                  <div className="grid grid-cols-1 gap-2 sm:gap-4 md:grid-cols-2">
-                    <div className="space-y-1 sm:space-y-2">
-                      <Label
-                        htmlFor="firstName"
-                        className="text-brand-white text-xs sm:text-base"
-                      >
-                        First Name
-                      </Label>
-                      <Input
-                        id="firstName"
-                        placeholder="John"
-                        className="bg-brand-white-10 border-brand-white-20 text-brand-white placeholder:text-brand-grey focus:border-brand-sky-mint text-xs sm:text-base"
-                      />
+            <div className="space-y-4 sm:space-y-6">
+              {/* Ambassador Card */}
+              <Card className="bg-brand-white-5 border-brand-white-10 hover:bg-brand-white-10 backdrop-blur-sm transition-all duration-300">
+                <CardHeader>
+                  <CardTitle className="text-brand-white text-lg font-bold sm:text-xl">
+                    🌟 Join as Ambassador
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-brand-grey mb-4 text-sm sm:text-base">
+                    Become a DrCoders ambassador and help spread coding
+                    education in your community while earning rewards.
+                  </p>
+                  <div className="mb-4 space-y-2">
+                    <div className="flex items-center space-x-2">
+                      <div className="bg-brand-sky-mint h-2 w-2 rounded-full"></div>
+                      <span className="text-brand-white text-xs sm:text-sm">
+                        Earn commission on referrals
+                      </span>
                     </div>
-                    <div className="space-y-1 sm:space-y-2">
-                      <Label
-                        htmlFor="lastName"
-                        className="text-brand-white text-xs sm:text-base"
-                      >
-                        Last Name
-                      </Label>
-                      <Input
-                        id="lastName"
-                        placeholder="Doe"
-                        className="bg-brand-white-10 border-brand-white-20 text-brand-white placeholder:text-brand-grey focus:border-brand-sky-mint text-xs sm:text-base"
-                      />
+                    <div className="flex items-center space-x-2">
+                      <div className="bg-brand-sky-mint h-2 w-2 rounded-full"></div>
+                      <span className="text-brand-white text-xs sm:text-sm">
+                        Access to exclusive content
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="bg-brand-sky-mint h-2 w-2 rounded-full"></div>
+                      <span className="text-brand-white text-xs sm:text-sm">
+                        Marketing support & materials
+                      </span>
                     </div>
                   </div>
-                  <div className="space-y-1 sm:space-y-2">
-                    <Label
-                      htmlFor="email"
-                      className="text-brand-white text-xs sm:text-base"
-                    >
-                      Email
-                    </Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="john@example.com"
-                      className="bg-brand-white-10 border-brand-white-20 text-brand-white placeholder:text-brand-grey focus:border-brand-sky-mint text-xs sm:text-base"
-                    />
-                  </div>
-                  <div className="space-y-1 sm:space-y-2">
-                    <Label
-                      htmlFor="phone"
-                      className="text-brand-white text-xs sm:text-base"
-                    >
-                      Phone
-                    </Label>
-                    <Input
-                      id="phone"
-                      placeholder="+1 (555) 123-4567"
-                      className="bg-brand-white-10 border-brand-white-20 text-brand-white placeholder:text-brand-grey focus:border-brand-sky-mint text-xs sm:text-base"
-                    />
-                  </div>
-                  <div className="space-y-1 sm:space-y-2">
-                    <Label
-                      htmlFor="course"
-                      className="text-brand-white text-xs sm:text-base"
-                    >
-                      Interested Course
-                    </Label>
-                    <Select>
-                      <SelectTrigger className="bg-brand-white-10 border-brand-white-20 text-brand-white focus:border-brand-sky-mint text-xs sm:text-base">
-                        <SelectValue placeholder="Select a course" />
-                      </SelectTrigger>
-                      <SelectContent className="bg-brand-primary border-brand-white-20">
-                        <SelectItem
-                          value="fullstack"
-                          className="text-brand-white hover:bg-brand-sky-mint-20"
-                        >
-                          Full Stack Development
-                        </SelectItem>
-                        <SelectItem
-                          value="mobile"
-                          className="text-brand-white hover:bg-brand-sky-mint-20"
-                        >
-                          Mobile App Development
-                        </SelectItem>
-                        <SelectItem
-                          value="frontend"
-                          className="text-brand-white hover:bg-brand-sky-mint-20"
-                        >
-                          Frontend Development
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="space-y-1 sm:space-y-2">
-                    <Label
-                      htmlFor="message"
-                      className="text-brand-white text-xs sm:text-base"
-                    >
-                      Message (Optional)
-                    </Label>
-                    <Textarea
-                      id="message"
-                      placeholder="Tell us about your goals and experience..."
-                      className="bg-brand-white-10 border-brand-white-20 text-brand-white placeholder:text-brand-grey focus:border-brand-sky-mint min-h-[80px] text-xs sm:min-h-[100px] sm:text-base"
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    className="bg-brand-sky-mint hover:bg-brand-sky-mint-90 text-brand-primary group w-full py-2 text-xs font-semibold sm:py-3 sm:text-base"
-                  >
-                    <Send className="mr-2 h-4 w-4 transition-transform group-hover:translate-x-1 sm:h-5 sm:w-5" />
-                    Send Message
+                  <Button className="bg-brand-sky-mint hover:bg-brand-sky-mint-90 text-brand-primary group w-full py-2 text-xs font-semibold sm:py-3 sm:text-sm">
+                    <Send className="mr-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    Apply as Ambassador
                   </Button>
-                </form>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+
+              {/* Community Partner Card */}
+              <Card className="bg-brand-white-5 border-brand-white-10 hover:bg-brand-white-10 backdrop-blur-sm transition-all duration-300">
+                <CardHeader>
+                  <CardTitle className="text-brand-white text-lg font-bold sm:text-xl">
+                    🤝 Community Partner
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-brand-grey mb-4 text-sm sm:text-base">
+                    Partner with us to bring coding bootcamps and workshops
+                    directly to your organization or community.
+                  </p>
+                  <div className="mb-4 space-y-2">
+                    <div className="flex items-center space-x-2">
+                      <div className="bg-brand-sky-mint h-2 w-2 rounded-full"></div>
+                      <span className="text-brand-white text-xs sm:text-sm">
+                        Custom training programs
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="bg-brand-sky-mint h-2 w-2 rounded-full"></div>
+                      <span className="text-brand-white text-xs sm:text-sm">
+                        Group discounts available
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="bg-brand-sky-mint h-2 w-2 rounded-full"></div>
+                      <span className="text-brand-white text-xs sm:text-sm">
+                        Ongoing partnership support
+                      </span>
+                    </div>
+                  </div>
+                  <Button className="border-brand-sky-mint text-brand-sky-mint hover:bg-brand-sky-mint hover:text-brand-primary group w-full border py-2 text-xs font-semibold transition-all duration-300 sm:py-3 sm:text-sm">
+                    <Send className="mr-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    Partner with Us
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </div>
