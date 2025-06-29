@@ -89,15 +89,24 @@ export default function AmbassadorSection() {
             }`}
           >
             <h2 className="text-gradient-skymint-white mb-4 text-3xl font-bold sm:pr-8 sm:text-4xl lg:text-5xl">
-              What we ahve Build till now?
+              The Numbers That Tell Our Story
             </h2>
             <p className="text-brand-grey mb-6 max-w-lg text-base sm:text-lg">
-              Empower your campus by bringing tech learning to life. Lead,
-              inspire, and build your resume with real-world experience.
+              Here is what our journey looks like so far, powered by real
+              students and real results.
             </p>
 
-            <Button className="bg-brand-sky-mint text-brand-primary hover:bg-brand-sky-mint-80">
-              Join the community
+            <Button
+              className="bg-brand-sky-mint text-brand-primary hover:bg-brand-sky-mint-80"
+              asChild
+            >
+              <a
+                href="https://chatgpt.com/c/68597243-877c-8010-9029-5f3d89af6394"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Join the community
+              </a>
             </Button>
           </div>
 

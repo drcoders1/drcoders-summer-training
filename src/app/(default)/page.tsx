@@ -6,6 +6,7 @@ import FaqSection from "@/components/VoComponents/faq-section";
 import HeroSection from "@/components/VoComponents/hero-section";
 import PartnerSection from "@/components/VoComponents/partner-section";
 import ProjectsSection from "@/components/VoComponents/projects-section";
+import QuizSection from "@/components/VoComponents/QuizSection";
 import StatsSection from "@/components/VoComponents/stats-section";
 import TestimonialSection from "@/components/VoComponents/testimonial-section";
 import WhyChooseUs from "@/components/VoComponents/why-choose-us";
@@ -22,6 +23,7 @@ const SummerTraining = () => {
   return (
     <section className="mt-14 md:mt-8">
       <HeroSection />
+      <QuizSection />
 
       {/* <div className="invisible h-28" aria-hidden></div>
       <SummerCardGrid /> */}
@@ -40,7 +42,7 @@ const SummerTraining = () => {
       <StatsSection />
       <CoursesOffered />
       <CourseDetails />
-      <TestimonialSection />
+      {/* <TestimonialSection /> */}
       <EnrollNowForm />
       {/* <ProjectsSection /> */}
       <FaqSection />
