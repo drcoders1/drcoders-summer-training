@@ -10,7 +10,7 @@ const navItems = [
   { name: "Why Us", href: "#why-choose-us" },
   { name: "Stats", href: "#stats" },
   { name: "Courses", href: "#courses" },
-  { name: "Testimonials", href: "#testimonials" },
+  { name: "FAQ", href: "#faq" },
 ];
 
 export default function Navbar() {
@@ -44,7 +44,7 @@ export default function Navbar() {
               alt="Logo"
               width={80}
               height={80}
-              className="h-12 w-24 sm:h-20 sm:w-20"
+              className="h-8 w-auto sm:h-12 md:h-16"
             />
           </div>
 
@@ -96,12 +96,6 @@ export default function Navbar() {
               {item.name}
             </button>
           ))}
-          <button
-            onClick={() => scrollToSection("#enroll")}
-            className="bg-brand-sky-mint text-brand-primary hover:bg-brand-sky-mint-90 mt-2 block w-full rounded-lg px-4 py-2 text-left text-lg font-semibold transition"
-          >
-            Enroll Now
-          </button>
         </div>
       </div>
     </nav>
