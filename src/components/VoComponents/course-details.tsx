@@ -16,62 +16,62 @@ const courses = [
   {
     title: "Full Stack Web Development Bootcamp",
     description:
-      "Become a professional web developer in 12 weeks with our comprehensive bootcamp covering frontend, backend, and deployment.",
-    price: "$2,999",
+      "A complete roadmap to becoming a job-ready developer in just 12 weeks. From creating slick UIs to building secure backends and deploying your own full-stack apps — this bootcamp walks you through it all, step by step.",
+    price: "PKR 3,500/month",
     features: [
-      "React & Next.js Frontend Development",
-      "Node.js & Express Backend",
-      "Database Design with PostgreSQL",
-      "Authentication & Security",
-      "API Development & Integration",
-      "Deployment & DevOps Basics",
-      "Real-world Project Portfolio",
-      "Career Support & Job Placement",
+      "Build frontend apps using React and Next.js",
+      "Design secure backends with Node.js & Express",
+      "Work with real-world databases using MongoDB",
+      "Implement login systems with JWT/Auth",
+      "Connect everything through clean API integrations",
+      "Learn deployment & hosting like a pro",
+      "Create a portfolio with real, working projects",
+      "Get job prep, resume support, and hiring referrals",
     ],
     stats: [
-      { icon: Clock, label: "Duration", value: "12 Weeks" },
+      { icon: Clock, label: "Duration", value: "16 Weeks" },
       { icon: Users, label: "Class Size", value: "Max 20" },
       { icon: Award, label: "Certificate", value: "Included" },
     ],
   },
   {
-    title: "Frontend Development Bootcamp",
+    title: "Frontend Web Development Bootcamp",
     description:
-      "Master the modern frontend stack including HTML, CSS, JavaScript, React, and responsive UI design in 8 weeks.",
-    price: "$1,999",
+      "Build stunning, responsive websites that don’t just work — they impress. In just 12 weeks, go from basic HTML to professional-level React UIs with animations, design systems, and API connections.",
+    price: "PKR 3,500/month",
     features: [
-      "HTML, CSS, JavaScript Fundamentals",
-      "Advanced Responsive UI/UX",
-      "React and Component Design",
-      "State Management",
-      "API Integration",
-      "Version Control with Git",
-      "Portfolio Projects",
-      "Deployment & Hosting",
+      "HTML, CSS, and JavaScript – from scratch to strong",
+      "Create responsive layouts with Tailwind CSS",
+      "Master React for real-world component design",
+      "Manage state with hooks & context APIs",
+      "Call and use real APIs in your projects",
+      "Push code like a pro using Git & GitHub",
+      "Build a full portfolio website",
+      "Deploy your projects live to the web",
     ],
     stats: [
-      { icon: Clock, label: "Duration", value: "8 Weeks" },
+      { icon: Clock, label: "Duration", value: "12 Weeks" },
       { icon: Users, label: "Class Size", value: "Max 25" },
       { icon: Award, label: "Certificate", value: "Included" },
     ],
   },
   {
-    title: "Mobile App Development using Flutter",
+    title: "Mobile App Development with Flutter",
     description:
-      "Build beautiful cross-platform apps using Flutter and Dart with real-world features and Firebase backend.",
-    price: "$2,499",
+      "Learn how to build smooth, modern mobile apps with Flutter and Dart — even if you’ve never written a single line of code before. Publish to Play Store, integrate Firebase, and bring your app ideas to life.",
+    price: "PKR 3,500/month",
     features: [
-      "Dart Programming Fundamentals",
-      "Flutter UI Widgets",
-      "Navigation & State Management",
-      "Firebase Integration",
-      "Authentication & Storage",
-      "Push Notifications",
-      "Publishing to App Stores",
-      "Capstone App Project",
+      "Dart basics and Flutter setup",
+      "Craft beautiful UI using widgets",
+      "Add navigation and manage state",
+      "Connect Firebase for auth & real-time storage",
+      "Send push notifications",
+      "Test & debug like a pro",
+      "Launch your app on Google Play",
+      "Build a capstone app by the end",
     ],
     stats: [
-      { icon: Clock, label: "Duration", value: "10 Weeks" },
+      { icon: Clock, label: "Duration", value: "12 Weeks" },
       { icon: Users, label: "Class Size", value: "Max 15" },
       { icon: Award, label: "Certificate", value: "Included" },
     ],
@@ -160,7 +160,7 @@ export default function CourseDetails() {
                   : "-translate-x-10 opacity-0"
               }`}
             >
-              <h2 className="text-brand-white mb-4 text-2xl font-bold xs:text-3xl sm:mb-6 sm:text-4xl">
+              <h2 className="text-gradient-skymint-white mb-4 text-3xl font-bold sm:pr-8 sm:text-4xl lg:text-5xl">
                 {course!.title}
               </h2>
               <p className="text-brand-grey mb-6 text-base xs:text-lg sm:mb-8">
