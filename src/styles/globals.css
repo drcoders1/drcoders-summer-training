@@ -359,3 +359,46 @@ h1, h2, h3 { font-family: 'Poppins', sans-serif; }
 .card-gradient-animate:hover {
   background-position: bottom;
 }
+
+/* Add these new keyframe animations for floating elements */
+@keyframes float-slow {
+  0%, 100% { 
+    transform: translateY(0); 
+  }
+  50% { 
+    transform: translateY(-15px); 
+  }
+}
+
+@keyframes float-medium {
+  0%, 100% { 
+    transform: translateY(0); 
+  }
+  50% { 
+    transform: translateY(-20px); 
+  }
+}
+
+@keyframes float-fast {
+  0%, 100% { 
+    transform: translateY(0); 
+  }
+  50% { 
+    transform: translateY(-25px); 
+  }
+}
+
+/* Add these new utility classes */
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.animate-float-fast {
+  animation: float-fast 4s ease-in-out infinite;
+  animation-delay: 0.5s;
+}

@@ -1,7 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Smartphone, Code, Monitor } from "lucide-react";
+import {
+  Smartphone,
+  Code,
+  Monitor,
+  Clock,
+  FolderOpen,
+  Award,
+  TrendingUp,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
@@ -10,39 +18,33 @@ const courses = [
     icon: Smartphone,
     title: "Mobile App Development",
     description: "Build native and cross-platform mobile applications",
-    features: [
-      "⏰ 12 Weeks Duration",
-      "📊 Beginner to Advanced",
-      "🎥 40+ Live Lectures",
-      "📱 5+ Real Projects",
-      "🏆 Industry Certificate",
-    ],
+    duration: "12 Weeks",
+    projects: "5+ Projects",
+    certificate: "Industry Certificate",
+    level: "Beginner Level",
+    detailsLink: "/pdfs/mobile-app-development.pdf",
     isHighlighted: false,
   },
   {
     icon: Code,
     title: "Full Stack Development",
     description: "Master both frontend and backend development",
-    features: [
-      "⏰ 16 Weeks Duration",
-      "📊 Intermediate Level",
-      "🎥 60+ Live Lectures",
-      "🌐 8+ Full Stack Projects",
-      "💼 Job Placement Support",
-    ],
+    duration: "16 Weeks",
+    projects: "8+ Projects",
+    certificate: "Job Placement Support",
+    level: "Beginner Level",
+    detailsLink: "/pdfs/full-stack-development.pdf",
     isHighlighted: true,
   },
   {
     icon: Monitor,
     title: "Frontend Development",
     description: "Create beautiful and responsive user interfaces",
-    features: [
-      "⏰ 10 Weeks Duration",
-      "📊 Beginner Friendly",
-      "🎥 35+ Live Lectures",
-      "🎨 6+ UI/UX Projects",
-      "📜 Completion Certificate",
-    ],
+    duration: "10 Weeks",
+    projects: "6+ Projects",
+    certificate: "Completion Certificate",
+    level: "Beginner Level",
+    detailsLink: "/pdfs/frontend-development.pdf",
     isHighlighted: false,
   },
 ];
@@ -68,6 +70,18 @@ export default function CoursesOffered() {
     return () => observer.disconnect();
   }, []);
 
+  const handleDetailsClick = (detailsLink: string) => {
+    window.open(detailsLink, "_blank");
+  };
+
+  const handleEnrollClick = () => {
+    // Scroll to enrollment form
+    const enrollSection = document.getElementById("enroll-now");
+    if (enrollSection) {
+      enrollSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       id="courses"
@@ -76,9 +90,12 @@ export default function CoursesOffered() {
     >
       {/* Gradient blob effects */}
       <div className="bg-brand-sky-mint-10 absolute bottom-4 right-4 h-40 w-40 rounded-full blur-2xl filter sm:bottom-20 sm:right-10 sm:h-80 sm:w-80 sm:blur-3xl"></div>
+
       <div className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8">
         <div
-          className={`mb-8 text-center transition-all duration-1000 sm:mb-16 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+          className={`mb-8 text-center transition-all duration-1000 sm:mb-16 ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+          }`}
         >
           <h2 className="text-gradient-skymint-white mb-4 text-2xl font-bold xs:text-3xl sm:text-4xl lg:text-5xl">
             What this summer got for you
@@ -87,58 +104,151 @@ export default function CoursesOffered() {
             Choose your path and start building your future today
           </p>
         </div>
+
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-4 sm:max-w-6xl sm:gap-8 md:grid-cols-3">
           {courses.map((course, index) => (
             <Card
               key={course.title}
-              className={`h-80 border-none transition-all duration-300 hover:scale-105 sm:h-[500px] ${
+              className={`flex flex-col border-none transition-all duration-300 hover:scale-105 ${
                 course.isHighlighted
                   ? "from-brand-sky-mint to-brand-sky-mint-80 text-brand-primary bg-gradient-to-br"
                   : "bg-brand-white-5 border-brand-white-10 text-brand-white hover:bg-brand-white-10 backdrop-blur-sm"
               } ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <CardHeader>
+              <CardHeader className="flex-shrink-0 pb-4">
                 <div
-                  className={`mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full sm:mb-6 sm:h-16 sm:w-16 ${
+                  className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full sm:mb-6 sm:h-16 sm:w-16 ${
                     course.isHighlighted
                       ? "bg-brand-primary-20"
                       : "bg-brand-sky-mint-20"
                   }`}
                 >
                   <course.icon
-                    className={`h-6 w-6 sm:h-8 sm:w-8 ${course.isHighlighted ? "text-brand-primary" : "text-brand-sky-mint"}`}
+                    className={`h-7 w-7 sm:h-9 sm:w-9 ${
+                      course.isHighlighted
+                        ? "text-brand-primary"
+                        : "text-brand-sky-mint"
+                    }`}
                   />
                 </div>
-                <h3 className="text-lg font-bold sm:text-2xl">
+
+                <h3 className="mb-2 text-lg font-bold sm:text-2xl">
                   {course.title}
                 </h3>
+
                 <p
-                  className={`text-sm sm:text-base ${course.isHighlighted ? "text-brand-primary-80" : "text-brand-grey"}`}
+                  className={`text-sm sm:text-base ${
+                    course.isHighlighted
+                      ? "text-brand-primary-80"
+                      : "text-brand-grey"
+                  }`}
                 >
                   {course.description}
                 </p>
               </CardHeader>
-              <CardContent className="flex h-full flex-col">
-                <div className="mb-4 flex-1 space-y-2 sm:mb-8 sm:space-y-3">
-                  {course.features.map((feature, featureIndex) => (
+
+              <CardContent className="flex flex-1 flex-col">
+                {/* Feature Icons Grid */}
+                <div className="mb-6 grid grid-cols-2 gap-4 sm:gap-6">
+                  {/* Duration */}
+                  <div className="flex flex-col items-center text-center">
                     <div
-                      key={featureIndex}
-                      className="flex items-center space-x-2"
+                      className={`mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full sm:h-12 sm:w-12 ${
+                        course.isHighlighted
+                          ? "bg-brand-primary-20"
+                          : "bg-brand-sky-mint-20"
+                      }`}
                     >
-                      <span className="text-xs sm:text-sm">{feature}</span>
+                      <Clock
+                        className={`h-5 w-5 sm:h-6 sm:w-6 ${course.isHighlighted ? "text-brand-primary" : "text-brand-sky-mint"}`}
+                      />
                     </div>
-                  ))}
+                    <span className="text-xs font-medium sm:text-sm">
+                      {course.duration}
+                    </span>
+                  </div>
+
+                  {/* Projects */}
+                  <div className="flex flex-col items-center text-center">
+                    <div
+                      className={`mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full sm:h-12 sm:w-12 ${
+                        course.isHighlighted
+                          ? "bg-brand-primary-20"
+                          : "bg-brand-sky-mint-20"
+                      }`}
+                    >
+                      <FolderOpen
+                        className={`h-5 w-5 sm:h-6 sm:w-6 ${course.isHighlighted ? "text-brand-primary" : "text-brand-sky-mint"}`}
+                      />
+                    </div>
+                    <span className="text-xs font-medium sm:text-sm">
+                      {course.projects}
+                    </span>
+                  </div>
+
+                  {/* Certificate */}
+                  <div className="flex flex-col items-center text-center">
+                    <div
+                      className={`mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full sm:h-12 sm:w-12 ${
+                        course.isHighlighted
+                          ? "bg-brand-primary-20"
+                          : "bg-brand-sky-mint-20"
+                      }`}
+                    >
+                      <Award
+                        className={`h-5 w-5 sm:h-6 sm:w-6 ${course.isHighlighted ? "text-brand-primary" : "text-brand-sky-mint"}`}
+                      />
+                    </div>
+                    <span className="text-center text-xs font-medium leading-tight sm:text-sm">
+                      {course.certificate}
+                    </span>
+                  </div>
+
+                  {/* Level */}
+                  <div className="flex flex-col items-center text-center">
+                    <div
+                      className={`mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full sm:h-12 sm:w-12 ${
+                        course.isHighlighted
+                          ? "bg-brand-primary-20"
+                          : "bg-brand-sky-mint-20"
+                      }`}
+                    >
+                      <TrendingUp
+                        className={`h-5 w-5 sm:h-6 sm:w-6 ${course.isHighlighted ? "text-brand-primary" : "text-brand-sky-mint"}`}
+                      />
+                    </div>
+                    <span className="text-xs font-medium sm:text-sm">
+                      {course.level}
+                    </span>
+                  </div>
                 </div>
-                <Button
-                  className={`w-full text-xs font-semibold sm:text-base ${
-                    course.isHighlighted
-                      ? "bg-brand-primary hover:bg-brand-primary-90 text-brand-sky-mint"
-                      : "bg-brand-sky-mint hover:bg-brand-sky-mint-90 text-brand-primary"
-                  }`}
-                >
-                  Learn More
-                </Button>
+
+                {/* Buttons - Always at bottom */}
+                <div className="mt-auto space-y-3 pt-4">
+                  <Button
+                    onClick={() => handleDetailsClick(course.detailsLink)}
+                    variant="outline"
+                    className={`w-full py-2 text-sm font-semibold sm:py-3 ${
+                      course.isHighlighted
+                        ? "border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-brand-sky-mint bg-transparent"
+                        : "border-brand-sky-mint text-brand-sky-mint hover:bg-brand-sky-mint hover:text-brand-primary bg-transparent"
+                    }`}
+                  >
+                    View Details
+                  </Button>
+
+                  <Button
+                    onClick={handleEnrollClick}
+                    className={`w-full py-2 text-sm font-semibold sm:py-3 ${
+                      course.isHighlighted
+                        ? "bg-brand-primary hover:bg-brand-primary-90 text-brand-sky-mint"
+                        : "bg-brand-sky-mint hover:bg-brand-sky-mint-90 text-brand-primary"
+                    }`}
+                  >
+                    Enroll Now
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           ))}

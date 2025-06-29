@@ -264,9 +264,9 @@ export default function ContactSection() {
                       </span>
                     </div>
                   </div>
-                  <Button className="border-brand-sky-mint text-brand-sky-mint hover:bg-brand-sky-mint hover:text-brand-primary group w-full border py-2 text-xs font-semibold transition-all duration-300 sm:py-3 sm:text-sm">
+                  <Button className="bg-brand-sky-mint hover:bg-brand-sky-mint-90 text-brand-primary group w-full py-2 text-xs font-semibold sm:py-3 sm:text-sm">
                     <Send className="mr-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    Partner with Us
+                    Partner with us
                   </Button>
                 </CardContent>
               </Card>
