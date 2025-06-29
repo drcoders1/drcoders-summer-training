@@ -2,6 +2,14 @@ import { NextRequest, NextResponse } from "next/server";
 import { isValidPassword } from "./lib/isValidPassword";
 
 export async function middleware(req: NextRequest) {
+  // Skip authentication in development mode
+  if (
+    process.env.NODE_ENV === "development" &&
+    process.env.SKIP_AUTH === "true"
+  ) {
+    return NextResponse.next();
+  }
+
   if ((await isAuthenticated(req)) === false) {
     return new NextResponse(
       "Unauthorized: You don't have access to this page",

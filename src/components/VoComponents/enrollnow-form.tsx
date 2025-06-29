@@ -196,15 +196,36 @@ export default function EnrollNowForm({ onDirtyChange }: EnrollNowFormProps) {
     }
     setIsSubmitting(true);
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      // Here you would normally send the form data to your backend
-      console.log("Form submitted:", {
-        ...formData,
-        finalPrice,
-        discountApplied,
+      // Create FormData object
+      const formDataToSend = new FormData();
+      formDataToSend.append("course", formData.course);
+      formDataToSend.append("name", formData.name);
+      formDataToSend.append("email", formData.email);
+      formDataToSend.append("semester", formData.semester);
+      formDataToSend.append("university", formData.university);
+      formDataToSend.append("message", formData.message);
+      formDataToSend.append("finalPrice", finalPrice.toString());
+      formDataToSend.append("discountApplied", discountApplied.toString());
+      formDataToSend.append("promoCode", promoCode);
+
+      if (formData.paymentProof) {
+        formDataToSend.append("paymentProof", formData.paymentProof);
+      }
+
+      // Send to API
+      const response = await fetch("/api/enroll", {
+        method: "POST",
+        body: formDataToSend,
       });
 
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to submit enrollment");
+      }
+
       alert("Enrollment submitted successfully! We'll contact you soon.");
+
       // Reset form
       setFormData({
         course: "",
@@ -223,7 +244,12 @@ export default function EnrollNowForm({ onDirtyChange }: EnrollNowFormProps) {
       setHasEdited(false);
       if (onDirtyChange) onDirtyChange(false);
     } catch (error) {
-      alert("Something went wrong. Please try again.");
+      console.error("Submission error:", error);
+      alert(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again.",
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -241,14 +267,27 @@ export default function EnrollNowForm({ onDirtyChange }: EnrollNowFormProps) {
           <div className="flex flex-col">
             <Card className="bg-brand-white-5 border-brand-white-10 flex-1 backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="text-brand-white text-2xl font-bold sm:text-3xl">
+                <CardTitle
+                  className={`text-brand-white text-2xl font-bold transition-all duration-1000 sm:text-3xl ${
+                    isVisible
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-10 opacity-0"
+                  }`}
+                >
                   Enroll Now
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-6 sm:space-y-8">
                   {/* Course Select */}
-                  <div className="space-y-2">
+                  <div
+                    className={`space-y-2 transition-all duration-1000 ${
+                      isVisible
+                        ? "translate-y-0 opacity-100"
+                        : "translate-y-10 opacity-0"
+                    }`}
+                    style={{ transitionDelay: "100ms" }}
+                  >
                     <Label
                       htmlFor="course"
                       className="text-brand-white text-sm sm:text-base"
@@ -289,7 +328,14 @@ export default function EnrollNowForm({ onDirtyChange }: EnrollNowFormProps) {
                   </div>
 
                   {/* Personal Information */}
-                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div
+                    className={`grid grid-cols-1 gap-4 transition-all duration-1000 sm:grid-cols-2 ${
+                      isVisible
+                        ? "translate-y-0 opacity-100"
+                        : "translate-y-10 opacity-0"
+                    }`}
+                    style={{ transitionDelay: "200ms" }}
+                  >
                     <div className="space-y-2">
                       <Label
                         htmlFor="name"
@@ -347,7 +393,14 @@ export default function EnrollNowForm({ onDirtyChange }: EnrollNowFormProps) {
                   </div>
 
                   {/* Academic Information */}
-                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div
+                    className={`grid grid-cols-1 gap-4 transition-all duration-1000 sm:grid-cols-2 ${
+                      isVisible
+                        ? "translate-y-0 opacity-100"
+                        : "translate-y-10 opacity-0"
+                    }`}
+                    style={{ transitionDelay: "300ms" }}
+                  >
                     <div className="space-y-2">
                       <Label
                         htmlFor="semester"
@@ -430,7 +483,14 @@ export default function EnrollNowForm({ onDirtyChange }: EnrollNowFormProps) {
                   </div>
 
                   {/* Promo Code */}
-                  <div className="space-y-2">
+                  <div
+                    className={`space-y-2 transition-all duration-1000 ${
+                      isVisible
+                        ? "translate-y-0 opacity-100"
+                        : "translate-y-10 opacity-0"
+                    }`}
+                    style={{ transitionDelay: "400ms" }}
+                  >
                     <Label
                       htmlFor="promo"
                       className="text-brand-white text-sm sm:text-base"
@@ -487,7 +547,14 @@ export default function EnrollNowForm({ onDirtyChange }: EnrollNowFormProps) {
                   )}
 
                   {/* Bank Details */}
-                  <div className="bg-brand-white-10 border-brand-white-20 text-brand-white rounded-md border p-4 text-sm">
+                  <div
+                    className={`bg-brand-white-10 border-brand-white-20 text-brand-white rounded-md border p-4 text-sm transition-all duration-1000 ${
+                      isVisible
+                        ? "translate-y-0 opacity-100"
+                        : "translate-y-10 opacity-0"
+                    }`}
+                    style={{ transitionDelay: "500ms" }}
+                  >
                     <p className="mb-1 font-semibold">Bank Details:</p>
                     <p>Account Title: Dr Coders</p>
                     <p>Account No: 1234567890</p>
@@ -496,7 +563,14 @@ export default function EnrollNowForm({ onDirtyChange }: EnrollNowFormProps) {
                   </div>
 
                   {/* Payment Proof Upload */}
-                  <div className="space-y-2">
+                  <div
+                    className={`space-y-2 transition-all duration-1000 ${
+                      isVisible
+                        ? "translate-y-0 opacity-100"
+                        : "translate-y-10 opacity-0"
+                    }`}
+                    style={{ transitionDelay: "600ms" }}
+                  >
                     <Label
                       htmlFor="screenshot"
                       className="text-brand-white text-sm sm:text-base"
@@ -527,7 +601,14 @@ export default function EnrollNowForm({ onDirtyChange }: EnrollNowFormProps) {
                   </div>
 
                   {/* Optional Message */}
-                  <div className="space-y-2">
+                  <div
+                    className={`space-y-2 transition-all duration-1000 ${
+                      isVisible
+                        ? "translate-y-0 opacity-100"
+                        : "translate-y-10 opacity-0"
+                    }`}
+                    style={{ transitionDelay: "700ms" }}
+                  >
                     <Label
                       htmlFor="message"
                       className="text-brand-white text-sm sm:text-base"
@@ -550,7 +631,12 @@ export default function EnrollNowForm({ onDirtyChange }: EnrollNowFormProps) {
                     type="button"
                     onClick={handleSubmit}
                     disabled={isSubmitting}
-                    className="bg-brand-sky-mint hover:bg-brand-sky-mint-90 text-brand-primary w-full py-2 text-sm font-semibold disabled:opacity-50 sm:text-base"
+                    className={`bg-brand-sky-mint hover:bg-brand-sky-mint-90 text-brand-primary w-full py-2 text-sm font-semibold transition-all duration-1000 disabled:opacity-50 sm:text-base ${
+                      isVisible
+                        ? "translate-y-0 opacity-100"
+                        : "translate-y-10 opacity-0"
+                    }`}
+                    style={{ transitionDelay: "800ms" }}
                   >
                     <Send className="mr-2 h-4 w-4" />
                     {isSubmitting ? "Submitting..." : "Submit Enrollment"}
@@ -561,7 +647,14 @@ export default function EnrollNowForm({ onDirtyChange }: EnrollNowFormProps) {
           </div>
 
           {/* Right Column - Live Code Editor */}
-          <div className="flex flex-col">
+          <div
+            className={`flex flex-col transition-all duration-1000 ${
+              isVisible
+                ? "translate-x-0 opacity-100"
+                : "translate-x-10 opacity-0"
+            }`}
+            style={{ transitionDelay: "200ms" }}
+          >
             <div className="h-full min-h-[600px] lg:min-h-[800px]">
               <LiveCodeEditor selectedCourse={formData.course} />
             </div>
