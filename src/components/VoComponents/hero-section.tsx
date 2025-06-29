@@ -62,9 +62,10 @@ export default function HeroSection() {
           className={`transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
         >
           <h1 className="text-gradient-skymint-white mb-8 pb-4 text-2xl font-bold leading-tight xs:text-3xl sm:text-4xl md:text-6xl lg:text-7xl">
-            This Summer Learn Exciting With Our Experts
-            {/* <span className="text-gradient-skymint-white block"> */}
-            {/* </span> */}
+            From Beginners to builders
+            <span className="text-gradient-skymint-white mt-4 block">
+              Learn. Build. Become.
+            </span>
           </h1>
         </div>
         <div

@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
-import { writeFile } from "fs/promises";
-import { join } from "path";
+import { put } from "@vercel/blob";
 
 const prisma = new PrismaClient();
 
@@ -60,6 +59,7 @@ export async function POST(request: NextRequest) {
     // Handle file upload
     let paymentProofPath = "";
     if (paymentProofFile) {
+      // Read file as buffer
       const bytes = await paymentProofFile.arrayBuffer();
       const buffer = Buffer.from(bytes);
 
@@ -67,20 +67,12 @@ export async function POST(request: NextRequest) {
       const timestamp = Date.now();
       const filename = `payment-proof-${timestamp}-${paymentProofFile.name}`;
 
-      // Save to public/uploads directory
-      const uploadsDir = join(process.cwd(), "public", "uploads");
-      const filePath = join(uploadsDir, filename);
-
-      try {
-        await writeFile(filePath, buffer);
-        paymentProofPath = `/uploads/${filename}`;
-      } catch (error) {
-        console.error("Error saving file:", error);
-        return NextResponse.json(
-          { error: "Failed to save payment proof" },
-          { status: 500 },
-        );
-      }
+      // Upload to Vercel Blob
+      const { url } = await put(filename, buffer, {
+        access: "public",
+        token: process.env.BLOB_READ_WRITE_TOKEN,
+      });
+      paymentProofPath = url;
     }
 
     // Save to database
