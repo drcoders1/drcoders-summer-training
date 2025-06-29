@@ -12,32 +12,27 @@ const faqs = [
   {
     question: "How long does it take to complete a course?",
     answer:
-      "Course duration varies depending on the program. Our bootcamps typically range from 8-16 weeks, with flexible scheduling options including part-time and full-time tracks.",
+      "Our courses run for 3 to 4 months depending on the track — with regular sessions, mentorship, and projects built into each week.",
   },
   {
-    question: "Do I need prior experience to enroll?",
+    question: "Do I need prior coding experience?",
     answer:
-      "No prior experience is required for most of our beginner courses. We provide comprehensive foundational training and support to help you succeed regardless of your background.",
+      "Nope! These courses are designed for absolute beginners. We’ll guide you from the basics all the way to building real apps.",
   },
   {
-    question: "What kind of job support do you provide?",
+    question: "Will I get a certificate after completion?",
     answer:
-      "We offer comprehensive career support including resume review, interview preparation, portfolio development, and direct connections with our hiring partners.",
+      "Yes, all students who complete the course and submit their final project will receive a verified certificate from Dr Coders Academy.",
   },
   {
-    question: "Are the courses taught live or pre-recorded?",
+    question: "Are the classes live or recorded?",
     answer:
-      "We offer a hybrid approach with live interactive sessions, pre-recorded content for review, and hands-on projects. This ensures flexibility while maintaining engagement.",
+      "All sessions are conducted live with mentors — and every class is recorded so you can catch up anytime if you miss one.",
   },
   {
-    question: "What is your refund policy?",
+    question: "What tools or software do I need before starting?",
     answer:
-      "We offer a 30-day money-back guarantee. If you're not satisfied with the course within the first 30 days, you can request a full refund.",
-  },
-  {
-    question: "Do I get a certificate upon completion?",
-    answer:
-      "Yes, you'll receive a verified certificate upon successful completion of your course, which you can add to your LinkedIn profile and resume.",
+      "A laptop with stable internet is enough. We’ll guide you step-by-step on setting up your coding environment in the first week.",
   },
 ];
 
@@ -74,12 +69,12 @@ export default function FaqSection() {
         <div
           className={`mb-8 text-center transition-all duration-1000 sm:mb-16 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
         >
-          <h2 className="text-gradient-skymint-white mb-4 text-2xl font-bold xs:text-3xl sm:text-4xl lg:text-5xl">
-            Frequently Asked Questions
+          <h2 className="text-gradient-skymint-white mb-4 pb-4 text-2xl font-bold xs:text-3xl sm:text-4xl lg:text-5xl">
+            Got Questions? We've Got You.
           </h2>
           <p className="text-brand-grey mx-auto max-w-xs text-base xs:max-w-md xs:text-lg sm:max-w-2xl">
-            Get answers to the most common questions about our courses and
-            programs
+            Here are some answers to the things students ask us most. And if
+            you're still unsure don't worry, were just a DM away.
           </p>
         </div>
         <div
