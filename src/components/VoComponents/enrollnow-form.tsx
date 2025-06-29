@@ -261,6 +261,17 @@ export default function EnrollNowForm({ onDirtyChange }: EnrollNowFormProps) {
       ref={sectionRef}
       className="bg-brand-primary relative px-4 py-12 sm:py-20"
     >
+      <div
+        className={`mb-8 text-center transition-all duration-1000 sm:mb-16 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+      >
+        <h2 className="text-gradient-skymint-white mb-4 pb-4 text-2xl font-bold xs:text-3xl sm:text-4xl lg:text-5xl">
+          Are you ready to Start Building?
+        </h2>
+        <p className="text-brand-grey mx-auto max-w-xs text-base xs:max-w-md xs:text-lg sm:max-w-2xl">
+          Spots are limited and the journey begins soon. Enroll and secure your
+          seat now.
+        </p>
+      </div>
       <div className="mx-auto max-w-7xl">
         <div className="grid min-h-[800px] grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Left Column - Enrollment Form */}
