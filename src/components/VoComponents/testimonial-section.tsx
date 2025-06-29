@@ -6,32 +6,24 @@ import { Button } from "@/components/ui/button";
 
 const testimonials = [
   {
-    name: "Ayesha",
-    role: "Mern Stack",
     content:
-      "Lorem Ipsum Dolor Sit Amet Consectetur. Netus Sit Blandit Dui Tincidunt Dignissim Dictum",
-    rating: 5,
+      "I never thought I could build a real app until I joined this program. The hands-on projects and supportive mentors made all the difference! Highly recommended.",
   },
   {
-    name: "John",
-    role: "Frontend Developer",
     content:
-      "Lorem Ipsum Dolor Sit Amet Consectetur. Netus Sit Blandit Dui Tincidunt Dignissim Dictum",
-    rating: 5,
+      "The course structure is fantastic. I landed my first internship just two weeks after finishing! The community is super helpful too.",
   },
   {
-    name: "Sarah",
-    role: "Full Stack Developer",
     content:
-      "Lorem Ipsum Dolor Sit Amet Consectetur. Netus Sit Blandit Dui Tincidunt Dignissim Dictum",
-    rating: 5,
+      "As a complete beginner, I was nervous. But the step-by-step approach and real-world examples made learning fun and easy. I'm now building my own portfolio!",
   },
   {
-    name: "Mike",
-    role: "Mobile Developer",
     content:
-      "Lorem Ipsum Dolor Sit Amet Consectetur. Netus Sit Blandit Dui Tincidunt Dignissim Dictum",
-    rating: 5,
+      "The instructors genuinely care about your progress. I loved the live sessions and the feedback on my projects. This was the best investment in my career.",
+  },
+  {
+    content:
+      "I've tried other online courses, but this one stands out for its practical focus and community support. I feel confident to apply for developer jobs now!",
   },
 ];
 
@@ -119,46 +111,10 @@ export default function TestimonialSection() {
                   key={index}
                   className={`flex-1 transition-all duration-500 ${isTransitioning ? (index === 0 ? "-translate-x-2" : "translate-x-2") : "translate-x-0"}`}
                 >
-                  <div
-                    className={`h-full rounded-xl p-6 ${
-                      index === 0
-                        ? "bg-brand-white text-brand-primary"
-                        : "bg-brand-white-10 border-brand-white-20 text-brand-white border backdrop-blur-lg"
-                    }`}
-                  >
-                    <div className="mb-4">
-                      <div className="text-lg font-semibold">
-                        {testimonial!.name}
-                      </div>
-                      <div
-                        className={
-                          index === 0
-                            ? "text-brand-primary-80"
-                            : "text-brand-sky-mint"
-                        }
-                      >
-                        {testimonial!.role}
-                      </div>
-                    </div>
-                    <p
-                      className={`mb-4 flex-1 text-sm ${
-                        index === 0
-                          ? "text-brand-primary-90"
-                          : "text-brand-white"
-                      }`}
-                    >
+                  <div className="bg-brand-white-10 border-brand-white-20 text-brand-white h-full rounded-xl border p-8 shadow-xl backdrop-blur-lg">
+                    <p className="text-brand-white mb-0 flex-1 text-lg font-medium leading-relaxed">
                       "{testimonial!.content}"
                     </p>
-                    <div className="flex items-center space-x-1">
-                      {[...Array(testimonial!.rating)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className={`h-4 w-4 fill-current ${
-                            index === 0 ? "text-yellow-600" : "text-yellow-400"
-                          }`}
-                        />
-                      ))}
-                    </div>
                   </div>
                 </div>
               ))}
@@ -184,46 +140,10 @@ export default function TestimonialSection() {
                   key={index}
                   className={`transition-all duration-500 ${isTransitioning ? (index === 0 ? "-translate-y-2" : "translate-y-2") : "translate-y-0"}`}
                 >
-                  <div
-                    className={`rounded-xl p-6 ${
-                      index === 0
-                        ? "bg-brand-white text-brand-primary"
-                        : "bg-brand-white-10 border-brand-white-20 text-brand-white border backdrop-blur-lg"
-                    }`}
-                  >
-                    <div className="mb-3">
-                      <div className="text-base font-semibold">
-                        {testimonial!.name}
-                      </div>
-                      <div
-                        className={
-                          index === 0
-                            ? "text-brand-primary-80"
-                            : "text-brand-sky-mint"
-                        }
-                      >
-                        {testimonial!.role}
-                      </div>
-                    </div>
-                    <p
-                      className={`mb-3 flex-1 text-xs ${
-                        index === 0
-                          ? "text-brand-primary-90"
-                          : "text-brand-white"
-                      }`}
-                    >
+                  <div className="bg-brand-white-10 border-brand-white-20 text-brand-white rounded-xl border p-6 shadow-xl backdrop-blur-lg">
+                    <p className="text-brand-white mb-0 flex-1 text-base font-medium leading-relaxed">
                       "{testimonial!.content}"
                     </p>
-                    <div className="flex items-center space-x-1">
-                      {[...Array(testimonial!.rating)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className={`h-3 w-3 fill-current ${
-                            index === 0 ? "text-yellow-600" : "text-yellow-400"
-                          }`}
-                        />
-                      ))}
-                    </div>
                   </div>
                 </div>
               ))}
