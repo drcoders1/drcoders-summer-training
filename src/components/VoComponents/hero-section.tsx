@@ -1,9 +1,40 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ChevronRight, Play } from "lucide-react";
+import { ChevronRight, Play, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PartnerSection from "./partner-section";
+
+// Floating coding elements
+const FloatingCodingElements = () => {
+  const elements = [
+    { content: "</>", style: "text-4xl font-bold" },
+    { content: "{}", style: "text-3xl font-bold" },
+    { content: "()", style: "text-3xl font-bold" },
+    { content: ";", style: "text-4xl font-bold" },
+    // { content: <Code className="h-8 w-8" />, style: "" },
+  ];
+  const positions = [
+    { top: "12%", left: "6%", anim: "animate-float-slow" },
+    { top: "18%", right: "8%", anim: "animate-float-medium" },
+    { bottom: "48%", left: "10%", anim: "animate-float-slow" },
+    { bottom: "45%", right: "12%", anim: "animate-float-medium" },
+    // { top: "35%", left: "48%", anim: "animate-float-fast" },
+  ];
+  return (
+    <div className="pointer-events-none absolute inset-0 z-0 hidden md:block">
+      {elements.map((el, i) => (
+        <div
+          key={i}
+          className={`text-brand-sky-mint absolute select-none opacity-30 ${el.style} ${positions[i]!.anim}`}
+          style={{ ...positions[i] }}
+        >
+          {el.content}
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -12,40 +43,61 @@ export default function HeroSection() {
   useEffect(() => {
     setIsVisible(true);
   }, []);
+  // Interactive cursor trail
+  const CursorTrail = () => {
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [trails, setTrails] = useState<
+      Array<{ x: number; y: number; id: number }>
+    >([]);
 
+    useEffect(() => {
+      const handleMouseMove = (e: MouseEvent) => {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+
+        const newTrail = { x: e.clientX, y: e.clientY, id: Date.now() };
+        setTrails((prev) => [...prev.slice(-10), newTrail]);
+      };
+
+      window.addEventListener("mousemove", handleMouseMove);
+      return () => window.removeEventListener("mousemove", handleMouseMove);
+    }, []);
+
+    return (
+      <div className="pointer-events-none fixed inset-0 z-50">
+        {trails.map((trail, index) => (
+          <div
+            key={trail.id}
+            className="bg-brand-sky-mint absolute h-2 w-2 animate-ping rounded-full opacity-50"
+            style={{
+              left: trail.x - 4,
+              top: trail.y - 4,
+              animationDelay: `${index * 50}ms`,
+              animationDuration: "1s",
+            }}
+          />
+        ))}
+      </div>
+    );
+  };
+  const handleEnrollClick = () => {
+    // Scroll to enrollment form
+    const enrollSection = document.getElementById("enroll-now");
+    if (enrollSection) {
+      enrollSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <section
       id="hero"
       className="bg-brand-primary relative flex min-h-[50vh] items-center justify-center overflow-hidden px-2 sm:min-h-screen sm:px-4"
     >
+      <FloatingCodingElements />
+      <CursorTrail />
       {/* Animated Star Effects */}
       <div className="absolute inset-0 overflow-hidden">
         {/* gradient glob */}
         <div className="bg-brand-sky-mint-20 absolute -right-10 top-10 h-28 w-28 rounded-full blur-3xl filter sm:h-96 sm:w-96 lg:-right-20 lg:h-60 lg:w-60"></div>
-        <div className="bg-brand-sky-mint-20 absolute bottom-14 rounded-full blur-3xl filter sm:h-96 sm:w-96 lg:-left-20 lg:bottom-24 lg:h-60 lg:w-60"></div>
-        {/* Main star image */}
-        <div className="left-1/8 absolute top-1/3 hidden h-16 w-16 animate-pulse opacity-60 xs:block sm:h-32 sm:w-32">
-          <img
-            src="/images/star.png"
-            alt="Star effect"
-            className="animate-spin-slow h-full w-full object-contain"
-          />
-        </div>
-        <div className="absolute right-8 top-20 hidden h-16 w-16 animate-pulse opacity-60 xs:block sm:right-32 sm:top-36 sm:h-32 sm:w-32">
-          <img
-            src="/images/star.png"
-            alt="Star effect"
-            className="animate-spin-slow h-full w-full object-contain"
-          />
-        </div>
-        {/* Additional star effects */}
-        <div className="absolute right-1/4 top-3/4 hidden h-10 w-10 animate-pulse opacity-40 delay-1000 xs:block sm:h-24 sm:w-24">
-          <img
-            src="/images/star.png"
-            alt="Star effect"
-            className="animate-spin-slow h-full w-full object-contain"
-          />
-        </div>
+
         <div className="delay-2000 absolute bottom-1/4 left-1/3 hidden h-8 w-8 animate-pulse opacity-60 xs:block sm:h-16 sm:w-16">
           <img
             src="/images/star.png"
@@ -61,7 +113,7 @@ export default function HeroSection() {
         <div
           className={`transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
         >
-          <h1 className="text-gradient-skymint-white mb-8 pb-4 text-2xl font-bold leading-tight xs:text-3xl sm:text-4xl md:text-6xl lg:text-7xl">
+          <h1 className="text-gradient-skymint-white lg:-6xl mb-8  pb-4  text-[28px] font-bold leading-tight xs:text-3xl sm:text-5xl  md:text-6xl lg:text-7xl">
             From Beginners to builders
             <span className="text-gradient-skymint-white mt-4 block">
               Learn. Build. Become.
@@ -84,10 +136,10 @@ export default function HeroSection() {
             <Button
               size="sm"
               className="bg-brand-sky-mint hover:bg-brand-sky-mint-90 text-brand-primary hover:shadow-brand-sky-mint-2525 group relative overflow-hidden px-4 py-2 text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl sm:px-8 sm:py-4 sm:text-lg"
-              onClick={() => setShowEnroll(true)}
+              onClick={() => handleEnrollClick()}
             >
               <span className="relative z-10 flex items-center">
-                Enrol Now
+                Enroll Now
                 <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 sm:ml-2 sm:h-5 sm:w-5" />
               </span>
               <div className="from-brand-sky-mint to-brand-sky-mint-80 absolute inset-0 origin-left scale-x-0 transform bg-gradient-to-r transition-transform duration-300 group-hover:scale-x-100"></div>
